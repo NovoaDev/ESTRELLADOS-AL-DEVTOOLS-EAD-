@@ -1,0 +1,42 @@
+{
+    "name": "anj-al-devtools",
+    "displayName": "AL-DEVTOOLS(ANJ)",
+    "description": "Mis herramientas para desarollo en AL",
+    "version": "1.0.0",
+    "publisher": "antonionovoa0104",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Saycoron/ANJ-AL-DEVTOOLS"
+    },
+    "license": "UNLICENSED",
+    "icon": "images/novoa128x128.jpg",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "powershell",
+                "path": "./snippets/docker.json"
+            }, 
+            {
+                "language": "al",
+                "path": "./snippets/al.json"
+            }
+        ]
+    },
+    "author": {
+		"name": "Antonio Novoa",
+		"url": "https://www.tipsdevbusinesscentral.com",
+		"email": "antonio.novoa@outlook.es"
+	},
+	"keywords": [
+		"AL Language",
+        "AL-DEVTOOLS",
+        "AL Snippets",
+        "ANJ"
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"tdockercrearctn": {
+		"prefix": "tdocker crear contenedor BC (ANJ)",
+		"body": [
+			"#Install-Module navcontainerhelper -force\r",
+			"#Import-Module navcontainerhelper\r",
+			"$accept_eula = $true\r",
+			"# Rutas y nombres\r",
+			"$bcDockerImage = 'mcr.microsoft.com/businesscentral/${1:sandbox:15.1.37881.39313-es-ltsc2019}'\r",
+			"$licenseFileUri = 'C:\\Licencia\\${2:licencia}.flf'\r",
+			"$containername = '${3:NombreContenedor}'\r",
+			"\r",
+			"# Usuarios\r",
+			"$userName = \"${4:Usuario}\"\r",
+			"$password = ConvertTo-SecureString -String \"${5:Pass}\" -AsPlainText -Force\r",
+			"$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList $userName, $password\r",
+			"\r",
+			"New-BCContainer -accept_eula:$accept_eula `\r",
+			"                 -containername $containername `\r",
+			"                 -auth UserPassword `\r",
+			"                 -Credential $credential `\r",
+			"                 -licenseFile $licenseFileUri `\r",
+			"                 -includeAL `\r",
+			"                 -updateHosts `\r",
+			"                 -assignPremiumPlan `\r",
+			"                 -imageName $bcdockerimage `\r",
+			"                 -useBestContainerOS"
+		],
+		"description": "Script para crear un contenedor de Business Central (ANJ) "
+	},
+	"tdockerimportartest": {
+		"prefix": "tdocker importar codeunit y extensiones de test (ANJ)",
+		"body": [
+			"$containername = '${1:NombreContenedor}'\r",
+			"\r",
+			"Import-TestToolkitToBCContainer -containerName $containerName -testToolkitCountry ${2:ES}"
+		],
+		"description": "tdocker importar codeunit y extensiones de test (ANJ) "
+	}
+}

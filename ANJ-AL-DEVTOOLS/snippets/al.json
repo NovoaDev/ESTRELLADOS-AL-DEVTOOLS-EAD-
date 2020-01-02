@@ -1,0 +1,47 @@
+{
+	"tblobescribir": {
+		"prefix": "Tblob escribir desde texto (ANJ)",
+		"body": [
+			"procedure ${1:SetBlob}(Text: Text)\r",
+			"var \r",
+			"    OutStream: OutStream; \r",
+			"begin \r",
+			"    ${2:\"Campo BLOB\"}.CreateOutStream(OutStream); \r",
+			"    OutStream.WriteText(Text); \r",
+			"end; "
+		],
+		"description": "Escribir un campo de tipo blob desde un texto (ANJ)"
+	},
+	"tblobleer": {
+		"prefix": "Tblob obtener texto desde blob (ANJ)",
+		"body": [
+			"procedure ${1:GetBlob}(): Text \r",
+			"Var \r",
+			"    InStream: InStream; \r",
+			"    Text: Text; \r",
+			"Begin \r",
+			"    CalcFields(${2:\"Campo BLOB\"}); \r",
+			"    ${2:\"Campo BLOB\"}.CreateInStream(InStream); \r",
+			"    InStream.ReadText(Text); \r",
+			"    exit(Text); \r",
+			"end; "
+		],
+		"description": "Obtener texto desde un campo de tipo blob (ANJ)"
+    },
+    "NUN Sing": {
+        "prefix": "TFirma una línea (ANJ)",
+        "body": [
+            "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}"
+        ],
+        "description": "Plantilla para firmar codigo una linea (ANJ)"
+    },
+   "NUN Sing multiline": {
+       "prefix": "TFirma multilínea (ANJ)",
+       "body": [
+           "//NUN - ${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
+           " ",
+           "//NUN - $1 - $2 - FIN"
+       ],
+       "description": "Plantilla para firmar codigo multilínea (ANJ)"
+    }
+}
