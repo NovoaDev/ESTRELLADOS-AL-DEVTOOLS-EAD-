@@ -4,37 +4,87 @@
 		"body": [
 			"#Install-Module navcontainerhelper -force\r",
 			"#Import-Module navcontainerhelper\r",
-			"$accept_eula = $true\r",
 			"# Rutas y nombres\r",
-			"$bcDockerImage = 'mcr.microsoft.com/businesscentral/${1:sandbox:15.1.37881.39313-es-ltsc2019}'\r",
-			"$licenseFileUri = 'C:\\Licencia\\${2:licencia}.flf'\r",
-			"$containername = '${3:NombreContenedor}'\r",
-			"\r",
+			"\\$bcDockerImage = 'mcr.microsoft.com/businesscentral/${1:sandbox:15.1.37881.39313-es-ltsc2019}'\r",
+			"\\$licenseFileUri = 'C:\\Licencia\\licencia.flf'\r",
+			"\\$containername = '${3:NombreContenedor}'\r",
 			"# Usuarios\r",
-			"$userName = \"${4:Usuario}\"\r",
-			"$password = ConvertTo-SecureString -String \"${5:Pass}\" -AsPlainText -Force\r",
-			"$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList $userName, $password\r",
+			"\\$userName = \"${4:Usuario}\"\r",
+			"\\$password = ConvertTo-SecureString -String \"${5:Pass}\" -AsPlainText -Force\r",
+			"\\$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList \\$userName, \\$password\r",
 			"\r",
-			"New-BCContainer -accept_eula:$accept_eula `\r",
-			"                 -containername $containername `\r",
+			"New-BCContainer -accept_eula `\r",
+			"                 -containername \\$containername `\r",
 			"                 -auth UserPassword `\r",
-			"                 -Credential $credential `\r",
-			"                 -licenseFile $licenseFileUri `\r",
+			"                 -Credential \\$credential `\r",
+			"                 -licenseFile \\$licenseFileUri `\r",
 			"                 -includeAL `\r",
 			"                 -updateHosts `\r",
+			"                 -accept_outdated `\r",
 			"                 -assignPremiumPlan `\r",
-			"                 -imageName $bcdockerimage `\r",
+			"                 -imageName \\$bcdockerimage `\r",
 			"                 -useBestContainerOS"
 		],
 		"description": "Script para crear un contenedor de Business Central (ANJ) "
 	},
+	"tdockercrearctndesdebak": {
+		"prefix": "tdocker crear contenedor BC desde .bak (ANJ)",
+		"body": [
+			"#Install-Module navcontainerhelper -force\r",
+			"#Import-Module navcontainerhelper\r",
+			"# Rutas y nombres\r",
+			"\\$bcDockerImage = 'mcr.microsoft.com/businesscentral/${1:sandbox:15.1.37881.39313-es-ltsc2019}'\r",
+			"\\$licenseFileUri = 'C:\\Licencia\\licencia.flf'\r",
+			"\\$containername = '${3:NombreContenedor}'\r",
+			"\\$backup = 'C:\\backup\\\\${4:backup}.bak'\r",
+			"# Usuarios\r",
+			"\\$userName = \"${5:Usuario}\"\r",
+			"\\$password = ConvertTo-SecureString -String \"${6:Pass}\" -AsPlainText -Force\r",
+			"\\$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList \\$userName, \\$password\r",
+			"\r",
+			"New-BCContainer -accept_eula `\r",
+			"                 -containername \\$containername `\r",
+			"                 -auth UserPassword `\r",
+			"                 -Credential \\$credential `\r",
+			"                 -licenseFile \\$licenseFileUri `\r",
+			"                 -includeAL `\r",
+			"                 -updateHosts `\r",
+			"                 -accept_outdated `\r",
+			"                 -assignPremiumPlan `\r",
+			"                 -imageName \\$bcdockerimage `\r",
+			"                 -useBestContainerOS `\r",
+			"                 -bakFile \\$backup"
+		],
+		"description": "Script para crear un contenedor de Business Central desde .bak (ANJ) "
+	},
 	"tdockerimportartest": {
 		"prefix": "tdocker importar codeunit y extensiones de test (ANJ)",
 		"body": [
-			"$containername = '${1:NombreContenedor}'\r",
+			"\\$containername = '${1:NombreContenedor}'\r",
 			"\r",
-			"Import-TestToolkitToBCContainer -containerName $containerName -testToolkitCountry ${2:ES}"
+			"Import-TestToolkitToBCContainer -containerName \\$containerName -testToolkitCountry ${2:ES}"
 		],
-		"description": "tdocker importar codeunit y extensiones de test (ANJ) "
+		"description": "Importar codeunit y extensiones de test (ANJ) "
+	},
+	"tDockerVerDetallesImagenesDocker": {
+		"prefix": "tDocker ver detalles de imagenes de Docker (ANJ)",
+		"body": [
+			"\\$bcDockerImage = 'mcr.microsoft.com/businesscentral/sandbox:15.1.37881.39313-es-ltsc2019'\r",
+			"\r",
+			"Get-NavContainerImageLabels \\$bcDockerImage"
+		],
+		"description": "Ver detalles de imagenes de Docker (ANJ)"
+	},
+	"tDockerExtraerBaseDeCtn": {
+		"prefix": "tDocker extraer codigo de la BaseAPP desde contenedor (ANJ)",
+		"body": [
+			"# Nombre del contenedor del que queremos extraer la baseapp\r",
+			"# Tiene que ser un contenedor creado con el flag de -includeAL y sin -doNotExportObjectsToText.\r",
+			"\\$containerName = \"${1:BaseAL}\"\r",
+			"\\$alProjectFolder = \"C:\\Repositorio\\\\${2:BaseAPP15}\"\r",
+			"\r",
+			"Create-AlProjectFolderFromBcContainer -containerName \\$containerName -alProjectFolder \\$alProjectFolder -useBaseLine -useBaseAppProperties -addGIT"
+		],
+		"description": "Extraer codigo de la BaseAPP desde contenedor (ANJ)"
 	}
 }

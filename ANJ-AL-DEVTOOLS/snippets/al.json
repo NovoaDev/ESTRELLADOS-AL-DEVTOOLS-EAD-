@@ -1,6 +1,6 @@
 {
 	"tblobescribir": {
-		"prefix": "Tblob escribir desde texto (ANJ)",
+		"prefix": "TBlob escribir desde texto (ANJ)",
 		"body": [
 			"procedure ${1:SetBlob}(Text: Text)\r",
 			"var \r",
@@ -13,7 +13,7 @@
 		"description": "Escribir un campo de tipo blob desde un texto (ANJ)"
 	},
 	"tblobleer": {
-		"prefix": "Tblob obtener texto desde blob (ANJ)",
+		"prefix": "TBlob obtener texto desde blob (ANJ)",
 		"body": [
 			"procedure ${1:GetBlob}(): Text \r",
 			"Var \r",
@@ -28,20 +28,41 @@
 		],
 		"description": "Obtener texto desde un campo de tipo blob (ANJ)"
     },
-    "NUN Sing": {
+    "tSing": {
         "prefix": "TFirma una línea (ANJ)",
         "body": [
             "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}"
         ],
         "description": "Plantilla para firmar codigo una linea (ANJ)"
     },
-   "NUN Sing multiline": {
+   "tSingMultiline": {
        "prefix": "TFirma multilínea (ANJ)",
        "body": [
-           "//NUN - ${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
+           "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
            " ",
-           "//NUN - $1 - $2 - FIN"
+           "//$1 - $2 - FIN"
        ],
        "description": "Plantilla para firmar codigo multilínea (ANJ)"
-    }
+	},
+	"TFindset": {
+		"prefix": "TFindset recorrer record (ANJ)",
+		"body": [
+			"if ${1:record}.Findset() then",
+			"\trepeat",
+			"\t\t${3}",
+			"\tuntil $1.next() = 0;"
+		],
+		"description": "Snippet plantilla para recorrer record (ANJ)"
+	},
+		"TCampoPagina": {
+		"prefix": "TCampo en pagina (ANJ)",
+		"body": [
+			"field(${1:Campo})",
+			"{",
+			"\tApplicationArea = All;",
+			"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
+			"}"
+		],
+		"description": "Snippet plantilla para crear campos en tablas (ANJ)"
+	}
 }
