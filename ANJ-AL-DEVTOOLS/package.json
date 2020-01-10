@@ -25,6 +25,10 @@
             {
                 "language": "al",
                 "path": "./snippets/al.json"
+            },
+            {
+                "language": "al",
+                "path": "./snippets/test.json"
             }
         ]
     },
