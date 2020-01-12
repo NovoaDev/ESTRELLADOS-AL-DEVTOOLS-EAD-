@@ -1,12 +1,12 @@
 {
-    "name": "anj-al-devtools",
-    "displayName": "AL-DEVTOOLS(ANJ)",
-    "description": "Mis herramientas para desarollo en AL",
+    "name": "estrellados-al-devtools",
+    "displayName": "ESTRELLADOS-AL-DEVTOOLS",
+    "description": "Herramientas para desarollo en AL de los estrellados.",
     "version": "1.0.0",
     "publisher": "antonionovoa0104",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Saycoron/ANJ-AL-DEVTOOLS"
+        "url": "https://github.com/Saycoron/ESTRELLADOS-AL-DEVTOOLS-EAD-"
     },
     "license": "UNLICENSED",
     "icon": "images/novoa128x128.jpg",

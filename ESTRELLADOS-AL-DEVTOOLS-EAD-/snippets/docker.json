@@ -1,6 +1,6 @@
 {
 	"tdockercrearctn": {
-		"prefix": "tdocker crear contenedor BC (ANJ)",
+		"prefix": "tdocker crear contenedor BC (EAD)",
 		"body": [
 			"#Install-Module navcontainerhelper -force\r",
 			"#Import-Module navcontainerhelper\r",
@@ -25,10 +25,10 @@
 			"                 -imageName \\$bcdockerimage `\r",
 			"                 -useBestContainerOS"
 		],
-		"description": "Script para crear un contenedor de Business Central (ANJ) "
+		"description": "Script para crear un contenedor de Business Central (EAD) "
 	},
 	"tdockercrearctndesdebak": {
-		"prefix": "tdocker crear contenedor BC desde .bak (ANJ)",
+		"prefix": "tdocker crear contenedor BC desde .bak (EAD)",
 		"body": [
 			"#Install-Module navcontainerhelper -force\r",
 			"#Import-Module navcontainerhelper\r",
@@ -55,28 +55,28 @@
 			"                 -useBestContainerOS `\r",
 			"                 -bakFile \\$backup"
 		],
-		"description": "Script para crear un contenedor de Business Central desde .bak (ANJ) "
+		"description": "Script para crear un contenedor de Business Central desde .bak (EAD) "
 	},
 	"tdockerimportartest": {
-		"prefix": "tdocker importar codeunit y extensiones de test (ANJ)",
+		"prefix": "tdocker importar codeunit y extensiones de test (EAD)",
 		"body": [
 			"\\$containername = '${1:NombreContenedor}'\r",
 			"\r",
 			"Import-TestToolkitToBCContainer -containerName \\$containerName -testToolkitCountry ${2:ES}"
 		],
-		"description": "Importar codeunit y extensiones de test (ANJ) "
+		"description": "Importar codeunit y extensiones de test (EAD) "
 	},
-	"tDockerVerDetallesImagenesDocker": {
-		"prefix": "tDocker ver detalles de imagenes de Docker (ANJ)",
+	"tdockerVerDetallesImagenesDocker": {
+		"prefix": "tdocker ver detalles de imagenes de Docker (EAD)",
 		"body": [
 			"\\$bcDockerImage = 'mcr.microsoft.com/businesscentral/sandbox:15.1.37881.39313-es-ltsc2019'\r",
 			"\r",
 			"Get-NavContainerImageLabels \\$bcDockerImage"
 		],
-		"description": "Ver detalles de imagenes de Docker (ANJ)"
+		"description": "Ver detalles de imagenes de Docker (EAD)"
 	},
-	"tDockerExtraerBaseDeCtn": {
-		"prefix": "tDocker extraer codigo de la BaseAPP desde contenedor (ANJ)",
+	"tdockerExtraerBaseDeCtn": {
+		"prefix": "tdocker extraer codigo de la BaseAPP desde contenedor (EAD)",
 		"body": [
 			"# Nombre del contenedor del que queremos extraer la baseapp\r",
 			"# Tiene que ser un contenedor creado con el flag de -includeAL y sin -doNotExportObjectsToText.\r",
@@ -85,6 +85,6 @@
 			"\r",
 			"Create-AlProjectFolderFromBcContainer -containerName \\$containerName -alProjectFolder \\$alProjectFolder -useBaseLine -useBaseAppProperties -addGIT"
 		],
-		"description": "Extraer codigo de la BaseAPP desde contenedor (ANJ)"
+		"description": "Extraer codigo de la BaseAPP desde contenedor (EAD)"
 	}
 }

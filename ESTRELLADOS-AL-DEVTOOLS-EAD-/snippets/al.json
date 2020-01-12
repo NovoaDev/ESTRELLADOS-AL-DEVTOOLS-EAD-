@@ -1,0 +1,69 @@
+{
+	"tblobescribir": {
+		"prefix": "tblob escribir desde texto (EAD)",
+		"body": [
+			"procedure ${1:SetBlob}(Text: Text)\r",
+			"var \r",
+			"    OutStream: OutStream; \r",
+			"begin \r",
+			"    ${2:\"Campo BLOB\"}.CreateOutStream(OutStream); \r",
+			"    OutStream.WriteText(Text); \r",
+			"end; "
+		],
+		"description": "Escribir un campo de tipo blob desde un texto (EAD)"
+	},
+	"tblobleer": {
+		"prefix": "tblob obtener texto desde blob (EAD)",
+		"body": [
+			"procedure ${1:GetBlob}(): Text \r",
+			"Var \r",
+			"    InStream: InStream; \r",
+			"    Text: Text; \r",
+			"Begin \r",
+			"    CalcFields(${2:\"Campo BLOB\"}); \r",
+			"    ${2:\"Campo BLOB\"}.CreateInStream(InStream); \r",
+			"    InStream.ReadText(Text); \r",
+			"    exit(Text); \r",
+			"end; "
+		],
+		"description": "Obtener texto desde un campo de tipo blob (EAD)"
+    },
+    "tsing": {
+        "prefix": "tfirma una línea (EAD)",
+        "body": [
+            "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}"
+        ],
+        "description": "Plantilla para firmar codigo una linea (EAD)"
+    },
+   "tsingMultiline": {
+       "prefix": "tfirma multilínea (EAD)",
+       "body": [
+           "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
+           " ",
+           "//$1 - $2 - FIN"
+       ],
+       "description": "Plantilla para firmar codigo multilínea (EAD)"
+	},
+	"tfindset": {
+		"prefix": "tfindset recorrer record (EAD)",
+		"body": [
+			"        if not ${1:record}.IsEmpty() then",
+			"            if ${1:record}.Findset() then",
+			"                repeat",
+			"",
+			"                until ${1:record}.next() = 0;"
+		],
+		"description": "Snippet plantilla para recorrer record (EAD)"
+	},
+	"tcampoPagina": {
+	"prefix": "tcampo en pagina con tooltip (EAD)",
+	"body": [
+		"field(${1:Campo})",
+		"{",
+		"\tApplicationArea = All;",
+		"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
+		"}"
+		],
+		"description": "Snippet plantilla para crear campos en tablas con tooltip (EAD)"
+	}
+}
