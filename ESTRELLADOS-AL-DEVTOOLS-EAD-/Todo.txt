@@ -1,0 +1,25 @@
+AL
+TEST!
+Consumir WS
+Sacar overflow campos
+
+DOCKER
+Crear contenedor SQL externo
+Instalar app ctn 
+Actualizar app ctn
+desinstalar app ctn
+Instalar fuentes ctn
+Importa licencia ctn
+Crear usuario ctn
+
+HTTP para probar API'S
+get todos
+post insert
+post filtrado
+delete
+update
+
+JSON
+Settings.json
+
+Una vez terminemos esto actualizar releasenotes 
