@@ -86,5 +86,35 @@
 			"Create-AlProjectFolderFromBcContainer -containerName \\$containerName -alProjectFolder \\$alProjectFolder -useBaseLine -useBaseAppProperties -addGIT"
 		],
 		"description": "Extraer codigo de la BaseAPP desde contenedor (EAD)"
+	},
+	"tdockerverayuda": {
+		"prefix": "tdocker ver ayuda de navcontainerhelper (EAD)",
+		"body": [
+			"get-command -Module navcontainerhelper\r",
+			"Get-Help New-NavContainer -full\r",
+			"help new-navcontainer -detailed\r",
+			"Write-NavContainerHelperWelcomeText"
+		],
+		"description": "Ver ayuda de navcontainerhelper desde vscode (EAD)"
+	},
+	"tdockercopiarcontenedoralocal": {
+		"prefix": "tdocker copiar archivo desde contenedor a local (EAD)",
+		"body": [
+			"Copy-FileFromNavContainer `\r",
+			"    -containerName \"${1:CTN}\" `\r",
+			"    -containerPath \"${2:C:\\run\\my}\" `\r",
+			"    -localPath \"${3:C:\\Temp\\file.app}\""
+		],
+		"description": "Copiar archivo desde contenedor a local (EAD)"
+	},
+	"tdockercopiarlocalacontenedor": {
+		"prefix": "tdocker copiar archivo local a contenedor (EAD)",
+		"body": [
+			"Copy-FileToNavContainer `\r",
+			"    -containerName \"${1:CTN}\" `\r",
+			"    -containerPath \"${2:C:\\run\\my}\" `\r",
+			"    -localPath \"${3:C:\\Temp\\file.app}\""
+		],
+		"description": "Copiar archivo local a contenedor (EAD)"
 	}
 }
