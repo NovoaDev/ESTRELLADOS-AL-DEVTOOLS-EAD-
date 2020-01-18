@@ -8,10 +8,6 @@ Crear contenedor SQL externo
 Instalar app ctn 
 Actualizar app ctn
 desinstalar app ctn
-Instalar fuentes ctn
-Importa licencia ctn
-Crear usuario ctn
-Crear ctn hibrido
 
 HTTP para probar API'S
 get todos

@@ -66,7 +66,7 @@
 		],
 		"description": "Importar codeunit y extensiones de test (EAD) "
 	},
-	"tdockerVerDetallesImagenesDocker": {
+	"tdockerverdetallesimagenesdocker": {
 		"prefix": "tdocker ver detalles de imagenes de Docker (EAD)",
 		"body": [
 			"\\$bcDockerImage = 'mcr.microsoft.com/businesscentral/sandbox:15.1.37881.39313-es-ltsc2019'\r",
@@ -75,7 +75,7 @@
 		],
 		"description": "Ver detalles de imagenes de Docker (EAD)"
 	},
-	"tdockerExtraerBaseDeCtn": {
+	"tdockerextraerbasedectn": {
 		"prefix": "tdocker extraer codigo de la BaseAPP desde contenedor (EAD)",
 		"body": [
 			"# Nombre del contenedor del que queremos extraer la baseapp\r",
@@ -101,7 +101,7 @@
 		"prefix": "tdocker copiar archivo desde contenedor a local (EAD)",
 		"body": [
 			"Copy-FileFromNavContainer `\r",
-			"    -containerName \"${1:CTN}\" `\r",
+			"    -containerName \"${1:NombreContenedor}\" `\r",
 			"    -containerPath \"${2:C:\\run\\my}\" `\r",
 			"    -localPath \"${3:C:\\Temp\\file.app}\""
 		],
@@ -111,10 +111,42 @@
 		"prefix": "tdocker copiar archivo local a contenedor (EAD)",
 		"body": [
 			"Copy-FileToNavContainer `\r",
-			"    -containerName \"${1:CTN}\" `\r",
+			"    -containerName \"${1:NombreContenedor}\" `\r",
 			"    -containerPath \"${2:C:\\run\\my}\" `\r",
 			"    -localPath \"${3:C:\\Temp\\file.app}\""
 		],
 		"description": "Copiar archivo local a contenedor (EAD)"
+	},
+	"tdockerimportarlicencia": {
+		"prefix": "tdocker importar licencia (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\\$licenseFileUri = '${2:C:\\Licencia\\licencia.flf}'\r",
+			"\r",
+			"Import-NavContainerLicense -licenseFile \\$licenseFileUri -containerName \\$containerName"
+		],
+		"description": "Importar licencia (EAD)"
+	},
+	"tdockeragregarfuentesalcontenedor": {
+		"prefix": "tdocker agregar fuentes de Windows a un contenedor (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\r",
+			"Add-FontsToNavContainer -containerName \\$containerName"
+		],
+		"description": "Agregar fuentes de Windows a un contenedor (EAD)"
+	},
+	"tdockercrearusuario": {
+		"prefix": "tdocker crear usuario en contenedor (EAD)",
+		"body": [
+			"$containername = 'NombreContenedor'\r",
+			"$userName = \"Usuario\"\r",
+			"$password = ConvertTo-SecureString -String \"Pass\" -AsPlainText -Force\r",
+			"$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList $userName, $password\r",
+			"$permisionSetId = \"SUPER\"\r",
+			"\r",
+			"New-NavContainerNavUser -Credential $credential -containerName $containername -PermissionSetId $permisionSetId\r"
+		],
+		"description": "Crear usuario en contenedor (EAD)"
 	}
 }
