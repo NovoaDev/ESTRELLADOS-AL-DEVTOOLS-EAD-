@@ -9,7 +9,7 @@
         "url": "https://github.com/Saycoron/ESTRELLADOS-AL-DEVTOOLS-EAD-"
     },
     "license": "UNLICENSED",
-    "icon": "images/novoa128x128.jpg",
+    "icon": "images/logo128x128.jpg",
     "engines": {
         "vscode": "^1.41.0"
     },

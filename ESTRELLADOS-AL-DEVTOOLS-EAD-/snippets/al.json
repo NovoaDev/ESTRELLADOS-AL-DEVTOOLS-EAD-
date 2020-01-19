@@ -35,7 +35,7 @@
         ],
         "description": "Plantilla para firmar codigo una linea (EAD)"
     },
-   "tsingMultiline": {
+    "tsingMultiline": {
        "prefix": "tfirma multilínea (EAD)",
        "body": [
            "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
@@ -56,20 +56,20 @@
 		"description": "Snippet plantilla para recorrer record (EAD)"
 	},
 	"tcampoPagina": {
-	"prefix": "tcampo en pagina con tooltip (EAD)",
-	"body": [
-		"field(${1:Campo})",
-		"{",
-		"\tApplicationArea = All;",
-		"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
-		"}"
+		"prefix": "tcampo en pagina con tooltip (EAD)",
+		"body": [
+			"field(${1:Campo})",
+			"{",
+			"\tApplicationArea = All;",
+			"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
+			"}"
 		],
 		"description": "Snippet plantilla para crear campos en tablas con tooltip (EAD)"
 	}, 
 	"tnotification": {
         "prefix": "tnotification (EAD)",
         "body": [
-            "    procedure ${1:ShowNotifications}(id: Text)",
+            "    procedure ${1:ShowNotifications}(id: GUID)",
 			"    var",
 			"        TheNotification: Notification;",
 			"        ActionProcedure: label 'ShowWizard';",

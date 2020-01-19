@@ -148,5 +148,87 @@
 			"New-NavContainerNavUser -Credential $credential -containerName $containername -PermissionSetId $permisionSetId\r"
 		],
 		"description": "Crear usuario en contenedor (EAD)"
-	}
+	},
+	"tdockerdesinstalarapp": {
+		"prefix": "tdocker desinstalar/despublicar app (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\\$appName = \"${2:App}\"\r",
+			"\r",
+			"UnInstall-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -Verbose `",
+			"    -ErrorAction SilentlyContinue",
+			"\r",
+			"UnPublish-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -Verbose `",
+			"    -ErrorAction SilentlyContinue"
+		],
+		"description": "Desinstalar/despublicar app (EAD)"
+	},
+	"tdockerinstalarapp": {
+		"prefix": "tdocker instalar app (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\\$rutaApp = \"${2:C:\\temp\\app.app}\"\r",
+			"\\$appName = \"${3:App}\"\r",
+			"\r",
+			"Publish-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appFile \\$rutaApp `",
+			"    -Verbose `",
+			"    -SkipVerification `",
+			"    -ErrorAction stop",
+			"\r",
+			"Sync-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -ErrorAction stop",
+			"\r",
+			"Install-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName"
+		],
+		"description": "Instalar app (EAD)"
+	},
+	"tdockeractualizarapp": {
+		"prefix": "tdocker actualizar app (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\\$rutaApp = \"${2:C:\\temp\\app.app}\"\r",
+			"\\$appName = \"${3:App}\"\r",
+			"\r",
+			"UnInstall-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -Verbose `",
+			"    -ErrorAction SilentlyContinue",
+			"\r",
+			"UnPublish-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -Verbose `",
+			"    -ErrorAction SilentlyContinue",
+			"\r",
+			"Publish-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appFile \\$rutaApp `",
+			"    -Verbose `",
+			"    -SkipVerification `",
+			"    -ErrorAction stop",
+			"\r",
+			"Sync-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -ErrorAction stop",
+			"\r",
+			"Start-NavContainerAppDataUpgrade `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName"
+		],
+		"description": "Actualizar app (EAD)"
+	}		
 }
