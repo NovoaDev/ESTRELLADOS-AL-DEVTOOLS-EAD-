@@ -35,7 +35,7 @@
         ],
         "description": "Plantilla para firmar codigo una linea (EAD)"
     },
-   "tsingMultiline": {
+    "tsingMultiline": {
        "prefix": "tfirma multilínea (EAD)",
        "body": [
            "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
@@ -56,14 +56,83 @@
 		"description": "Snippet plantilla para recorrer record (EAD)"
 	},
 	"tcampoPagina": {
-	"prefix": "tcampo en pagina con tooltip (EAD)",
-	"body": [
-		"field(${1:Campo})",
-		"{",
-		"\tApplicationArea = All;",
-		"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
-		"}"
+		"prefix": "tcampo en pagina con tooltip (EAD)",
+		"body": [
+			"field(${1:Campo})",
+			"{",
+			"\tApplicationArea = All;",
+			"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
+			"}"
 		],
 		"description": "Snippet plantilla para crear campos en tablas con tooltip (EAD)"
+	}, 
+	"tnotification": {
+        "prefix": "tnotification (EAD)",
+        "body": [
+            "    procedure ${1:ShowNotifications}(id: GUID)",
+			"    var",
+			"        TheNotification: Notification;",
+			"        ActionProcedure: label 'ShowWizard';",
+			"        MessageText: label '${2:English}', comment = 'ESP=\"${3:Message}\"';",
+			"        ActionText: label '${4:English}', comment = 'ESP=\"${5:Message}\"';",
+			"    begin",
+			"        IF ${6:Validations}() then begin",
+			"            TheNotification.Id := id;",
+			"            TheNotification.Scope := NotificationScope::LocalScope;",
+			"            TheNotification.Message := MessageText;",
+			"            TheNotification.AddAction(ActionText, CODEUNIT::${7:Codeunit}, ActionProcedure);",
+			"            TheNotification.Send();",
+			"        end;",
+			"    end;",
+            "",
+            "    local procedure ${6:Validations}():boolean",
+			"    begin",
+			"        if true then",
+			"            exit(true)",
+			"        else",
+            "            exit(false);",
+            "    end;",
+            "",
+			"    local procedure ShowWizard(TheNotification: Notification)",
+			"    begin",
+			"        Page.Run(PAGE::${8:Pagina});",
+			"    end;"
+        ],
+        "description": "Snippet para crear notificaciones no exclusiva para el usuario (EAD)"
+   },
+	"tcambiarcolor": {
+		"prefix": "tcambiar color de campos en pagina (EAD)",
+		"body": [
+			"procedure ${1:fontColorChange}(VAR ${2:styleColor}: Text; ${3:Validations : Text})",
+			"// Para funcionar correctamente necesitamos:",
+			"// 1- Propiedad StyleExpr en los campos en los que queremos cambiar el estilo. Ejemplo: StyleExpr = fontStyle (Variable global de página).",
+			"// 2- Usa un disparador para llamar a nuestra función a la cual pasaremos como la variable global que asignamos a la propiedad StyleExpr.",
+			"// 3- Modifica el parámetro \"Validación\", el caso y los colores que queremos usar.",
+			"begin",
+				"\tcase ${4:Validations} of",
+					"\t\t'Soft Red':",
+						"\t\t\t${2:styleColor}:= 'Attention';",
+					"\t\t'Soft blue':",
+						"\t\t\t${2:styleColor} := 'AttentionAccent';",
+					"\t\t'Soft gray':",
+						"\t\t\t${2:styleColor} := 'Subordinate';",
+					"\t\t'Standard Black':",
+						"\t\t\t${2:styleColor} := 'Standard';",
+					"\t\t'Standard Blue':",
+						"\t\t\t${2:styleColor} := 'StandardAccent';",
+					"\t\t'Strong Black':",
+						"\t\t\t${2:styleColor} := 'Strong';",
+					"\t\t'Strong Blue':",
+						"\t\t\t${2:styleColor} := 'StrongAccent';",
+					"\t\t'Red strong':",
+						"\t\t\t${2:styleColor} := 'Unfavorable';",
+					"\t\t'Green':",
+						"\t\t\t${2:styleColor}:= 'Favorable';",
+					"\t\t'Yellow':",
+						"\t\t\t${2:styleColor} := 'Ambiguous';",  
+				"\tend;",
+			"end;"
+		],
+		"description": "Plantilla para cambiar el color de texto en paginas (EAD)"
 	}
 }

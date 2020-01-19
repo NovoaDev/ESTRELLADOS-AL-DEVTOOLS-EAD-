@@ -1,65 +1,95 @@
-# anj-al-devtools README
+# ESTRELLADOS-AL-DEVTOOLS-EAD- README
 
-This is the README for your extension "anj-al-devtools". After writing up a brief description, we recommend including the following sections.
+Snippets creados para mejorar la experiencia de desarrollo de BC del grupo estrellados.
 
-## Features
+## Caracteristicas
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+AL
+* Crear procesos para escribir en un campo blob.
+* Crear procesos para leer un campo blob.
+* Agregar comentario para firmar codigo.
+* Agregar comentario para firmar codigo en varias lienas.
+* Agregar complemento para Findset repeater.
+* Crear campo en pagina con tooltip.
+* Crear plantilla para Notificacion.
+* Crear plantilla para cambiar color de los campos en paginas.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+DOCKER
+* Crear contenedor.
+* Crear contenedor desde respaldo .bak. 
+* Importar C/U de test.
+* Extraer BaseApp desde un contenedor.
+* Ver detalles de imagen antes de descargar.
+* Ver ayuda navcontainerhelper.
+* Copiar archivo de contenedor a local.
+* Copiar archivo de local a contenedor.
+* Importar licencia a contenedor.
+* Agergar fuentes de Windows a un contenedor.
+* Crear usuarios navcontainer.
+* Desinstalar .app.
+* Instalar .app.
+* Actualizar .app.
 
 -----------------------------------------------------------------------------------------------------------
 
-## Working with Markdown
+## Snippets
+We use all snnipets with the prefix "t"
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+* AL
+    * `tblob escribir desde texto (EAD)` - Crear procesos para escribir en un campo blob.
+    * `tblob obtener texto desde blob (EAD)` - Crear procesos para leer un campo blob.
+    * `tfirma una línea (EAD)` - Agregar comentario para firmar codigo.
+    * `tfirma multilínea (EAD)` - Agregar comentario para firmar codigo en varias lienas.
+    * `tfindset recorrer record (EAD)` - Agregar complemento para Findset repeater.
+    * `tcampo en pagina con tooltip (EAD)` - Crear campo en pagina con tooltip.
+    * `tnotification (EAD)` - Crear plantilla para Notificacion.
+    * `tcambiar color de campos en pagina (EAD)` - Crear plantilla para cambiar color de los campos en paginas.
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+* DOCKER
+    * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
+    * `tdocker crear contenedor BC desde .bak (EAD)` - Crear contenedor desde respaldo .bak.
+    * `tdocker importar codeunit y extensiones de test (EAD)` - Importar C/U de test.
+    * `tdocker ver detalles de imagenes de Docker (EAD)` - Extraer BaseApp desde un contenedor.
+    * `tdocker extraer codigo de la BaseAPP desde contenedor (EAD)` - Ver detalles de imagen antes de descargar.
+    * `tdocker ver ayuda de navcontainerhelper (EAD)` - Ver ayuda navcontainerhelper.
+    * `tdocker copiar archivo desde contenedor a local (EAD)` - Copiar archivo de contenedor a local.
+    * `tdocker copiar archivo local a contenedor (EAD)` - Copiar archivo de local a contenedor.
+    * `tdocker importar licencia (EAD)` - Importar licencia a contenedor.
+    * `tdocker agregar fuentes de Windows a un contenedor (EAD)` - Agergar fuentes de Windows a un contenedor.
+    * `tdocker crear usuario en contenedor (EAD)` - Crear usuarios navcontainer.
+    * `tdocker desinstalar/despublicar app (EAD)` - Desinstalar .app.
+    * `tdocker instalar app (EAD)` - Instalar .app.
+    * `tdocker actualizar app (EAD)` - Actualizar .app.
 
-### For more information
+## Release Notes
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+### 1.0.0
+
+* Versión inicial: se agregaron los siguientes snippets
+    * Docker - Crear contenedor.
+    * Docker - Crear contenedor desde respaldo .bak. 
+    * Docker - Importar C/U de test.
+    * Docker - Extraer BaseApp desde un contenedor.
+    * Docker - Ver detalles de imagen antes de descargar.
+    * Docker - Ver ayuda navcontainerhelper.
+    * Docker - Copiar archivo de contenedor a local.
+    * Docker - Copiar archivo de local a contenedor.
+    * Docker - Importar licencia a contenedor.
+    * Docker - Agergar fuentes de Windows a un contenedor.
+    * Docker - Crear usuarios navcontainer.
+    * Docker - Desinstalar .app.
+    * Docker - Instalar .app.
+    * Docker - Actualizar .app.
+    * AL - Escribir blob.
+    * AL - Leer blob.
+    * AL - Firma.
+    * AL - Firma multilinea.
+    * AL - Findset repeater.
+    * AL - Campo pagina con tooltip.
+    * AL - Notificacion.
+    * AL - Cambiar color de los campos en paginas.
 
 **Enjoy!**
+
+Good vibes <br>
+Antonio Novoa.
