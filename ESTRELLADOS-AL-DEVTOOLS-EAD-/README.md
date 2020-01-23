@@ -1,4 +1,4 @@
-# ESTRELLADOS-AL-DEVTOOLS-EAD- README
+# ESTRELLADOS AL DEVTOOLS EAD
 
 Snippets creados para mejorar la experiencia de desarrollo de BC del grupo estrellados.
 
@@ -60,6 +60,65 @@ DOCKER
     * `tdocker instalar app (EAD)` - Instalar .app.
     * `tdocker actualizar app (EAD)` - Actualizar .app.
 
+####Ejemplos :
+**`tdocker crear contenedor BC (EAD)`**
+```powershell
+#Install-Module navcontainerhelper -force
+#Import-Module navcontainerhelper
+# Rutas y nombres
+$bcDockerImage = 'mcr.microsoft.com/businesscentral/sandbox:15.1.37881.39313-es-ltsc2019'
+$licenseFileUri = 'C:\Licencia\licencia.flf'
+$containername = 'NombreContenedor'
+# Usuarios
+$userName = "Usuario"
+$password = ConvertTo-SecureString -String "Pass" -AsPlainText -Force
+$credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $userName, $password
+
+New-BCContainer -accept_eula `
+                 -containername $containername `
+                 -auth UserPassword `
+                 -Credential $credential `
+                 -licenseFile $licenseFileUri `
+                 -includeAL `
+                 -updateHosts `
+                 -accept_outdated `
+                 -assignPremiumPlan `
+                 -imageName $bcdockerimage `
+                 -useBestContainerOS
+```
+
+**`tcambiar color de campos en pagina (EAD)`**
+```pascal
+procedure fontColorChange(VAR styleColor: Text; Validations : Text)
+// Para funcionar correctamente necesitamos:
+// 1- Propiedad StyleExpr en los campos en los que queremos cambiar el estilo. Ejemplo: StyleExpr = fontStyle (Variable global de página).
+// 2- Usa un disparador para llamar a nuestra función a la cual pasaremos como la variable global que asignamos a la propiedad StyleExpr.
+// 3- Modifica el parámetro "Validación", el caso y los colores que queremos usar.
+begin
+    case Validations of
+        'Soft Red':
+            styleColor:= 'Attention';
+        'Soft blue':
+            styleColor := 'AttentionAccent';
+        'Soft gray':
+            styleColor := 'Subordinate';
+        'Standard Black':
+            styleColor := 'Standard';
+        'Standard Blue':
+            styleColor := 'StandardAccent';
+        'Strong Black':
+            styleColor := 'Strong';
+        'Strong Blue':
+            styleColor := 'StrongAccent';
+        'Red strong':
+            styleColor := 'Unfavorable';
+        'Green':
+            styleColor:= 'Favorable';
+        'Yellow':
+            styleColor := 'Ambiguous';
+    end;
+end;
+```
 ## Release Notes
 
 ### 1.0.0
