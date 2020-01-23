@@ -1,0 +1,28 @@
+Crear llave publica y privada
+
+# Tenemos que crear llave privada y publica en el ordenador.
+
+--------- Gitbash -------------
+# Abrimos la gitbash y en home ejecutamos el siguiente comando dejando las rutas por defecto.
+ssh-keygen -t rsa -b 4096 -C "xxx@mail.com"
+
+# Buscamos dentro de la carpeta de nuestro usuario una carpeta oculta llamada .ssh.
+# Ahi se creo tanto la llave publica(id_rsa.pub) como la privada(id_rsa).
+
+# evaluamos si es encuentra corriendo el servicio de ssh.
+eval $(ssh-agent -s)
+
+# Agregaremos la llave privada a gitbash
+ssh-add ~/.ssh/id_rsa
+
+--------- Github -------------
+# Iremos a settigns añadir sshkey pegamos nuestra llave publica. 
+# Ahora vamos a nuestro repositorio y en el apartado de clone or download hacemos click sobre ssh
+# Copiaremos la url ssh.
+
+--------- Gitbash -------------
+# Ver remote que tenemos configurado
+git remote -v 
+
+# Remplazar remote http a remote ssh
+git remote set-url origin <Url copiada de repositorio de git>
