@@ -33,7 +33,6 @@ DOCKER
 -----------------------------------------------------------------------------------------------------------
 
 ## Snippets
-We use all snnipets with the prefix "t"
 
 * AL
     * `tblob escribir desde texto (EAD)` - Crear procesos para escribir en un campo blob.
@@ -92,4 +91,3 @@ We use all snnipets with the prefix "t"
 **Enjoy!**
 
 Good vibes <br>
-Antonio Novoa.

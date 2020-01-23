@@ -2,6 +2,8 @@
 
 Todos los cambios de la extensión "ESTRELLADOS-AL-DEVTOOLS" se documentaran en este archivo.
 
+## [1.0.1]
+
 ## [1.0.0]
 
 * Versión inicial: se agregaron los siguientes snippets
