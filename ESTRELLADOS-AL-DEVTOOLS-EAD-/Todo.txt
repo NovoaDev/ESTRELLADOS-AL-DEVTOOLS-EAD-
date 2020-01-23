@@ -2,12 +2,15 @@ AL
 TEST!
 Consumir WS
 Dimensiones
-Sacar overflow campos
+Correo
 tfieldpageconcaption y coment solo sin ES
 
 DOCKER
 Crear contenedor SQL externo
 Extraer codigo de las apis
+        Get-NavContainerAppInfo `
+            -containerName $TESTServer 
+------------------------------------------------
 
 HTTP para probar API'S
 get todos
@@ -27,7 +30,8 @@ Extensiones extras
 - Boton en vscode como el de git de arriba que abra la url dle contendedor
         Start-Process "http://$($DEVServer):8080/"
         ----------------------------------------
-        Get-NavContainerAppInfo `
-            -containerName $TESTServer 
-------------------------------------------------
+
     start $TESTmainPageUrl
+
+    -------------------------------------------------------------------------------------------------
+    Traer campos de configuracion desde paginas de configuracion si esta marcado con un booll
