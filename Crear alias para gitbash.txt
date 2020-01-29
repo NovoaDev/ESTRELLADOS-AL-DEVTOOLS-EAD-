@@ -1,3 +1,6 @@
 alias arbolito="git log --all --graph --decorate --oneline"
 
 alias irCarpetaEAD="cd \"C:\Users\anton\OneDrive\Escritorio\2020\Ext VSCode\ESTRELLADOS-AL-DEVTOOLS-EAD-\""
+
+// crear alias en la configuracion global de git
+git config --global alias.stats "shortlog -sn --all --no-merges"

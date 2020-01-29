@@ -28,6 +28,10 @@
             },
             {
                 "language": "al",
+                "path": "./snippets/alUtil.json"
+            },
+            {
+                "language": "al",
                 "path": "./snippets/test.json"
             }
         ]

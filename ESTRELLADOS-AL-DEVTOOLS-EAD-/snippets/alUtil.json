@@ -1,0 +1,16 @@
+{
+	"tutildivisible": {
+		"prefix": "tutil numero es divisible (EAD)",
+		"body": [
+			"    procedure itsDivisibleBy(number: integer; multiple: Integer): Boolean\r",
+			"    var\r",
+			"        moduleOP: Integer;\r",
+			"    begin\r",
+			"        moduleOP := number MOD multiple;\r",
+			"        if moduleOP = 0 then\r",
+			"            exit(true);\r",
+			"    end;"
+		],
+		"description": "Muestra si un numero es multiplo de otro (EAD)"
+	}
+}
