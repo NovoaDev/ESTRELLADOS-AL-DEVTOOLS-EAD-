@@ -12,5 +12,30 @@
 			"    end;"
 		],
 		"description": "Muestra si un numero es multiplo de otro (EAD)"
+	},
+	"tutilenviarmail": {
+		"prefix": "tutil enviar mail (EAD)",
+		"body": [
+			"    local procedure SendMail(SenderName: Text; SenderAddress: Text; Recipients: List of [Text]; Subject: Text; Body: Text)\r",
+			"    var\r",
+			"        SMTPMail: Codeunit \"SMTP Mail\";\r",
+			"    begin\r",
+			"        SMTPMail.CreateMessage(SenderName, SenderAddress, Recipients, Subject, Body);\r",
+			"        SMTPMail.Send();\r",
+			"    end;"
+		],
+		"description": "Procedimiento para enviar email (EAD)"
+	},
+	"tutilcambiarinforme": {
+		"prefix": "tutil reemplazar informe (EAD)",
+		"body": [
+			"    [EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', false, false)]\r",
+			"    local procedure OnSubstituteReport(ReportId: Integer; var NewReportId: Integer)\r",
+			"    begin\r",
+			"        if ReportId = Report::${1:\"Customer - List\"} then\r",
+			"            NewReportId := Report::${2:\"Sales - Invoice\"};\r",
+			"    end;"
+		],
+		"description": "Suscripción a un evento para remplazar report (EAD)"
 	}
 }

@@ -13,6 +13,9 @@ AL
 * Crear campo en pagina con tooltip.
 * Crear plantilla para Notificacion.
 * Crear plantilla para cambiar color de los campos en paginas.
+* Crea proceso para verificar si un numero es multiplo de alguno.
+* Proceso para enviar correo.
+* Suscripción a un evento para remplazar report.
 
 DOCKER
 * Crear contenedor.
@@ -43,6 +46,9 @@ DOCKER
     * `tcampo en pagina con tooltip (EAD)` - Crear campo en pagina con tooltip.
     * `tnotification (EAD)` - Crear plantilla para Notificacion.
     * `tcambiar color de campos en pagina (EAD)` - Crear plantilla para cambiar color de los campos en paginas.
+    * `tutil numero es divisible (EAD)` - Muestra si un numero es multiplo de otro.
+    * `tutil enviar mail (EAD)` - Procedimiento para enviar email.
+    * `tutil reemplazar informe (EAD)` - Suscripción a un evento para remplazar report.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -120,6 +126,15 @@ begin
 end;
 ```
 ## Release Notes
+
+### 1.0.1
+* Se agregaron los siguientes snippets:
+    * AL - Verificar numero divisible.
+    * AL - Proceso para enviar email.
+    * AL - Suscripcion para remplazar reports.
+
+* Se Modificaron los siguientes snippets:
+    * Docker - Crear usuarios navcontainer.
 
 ### 1.0.0
 
