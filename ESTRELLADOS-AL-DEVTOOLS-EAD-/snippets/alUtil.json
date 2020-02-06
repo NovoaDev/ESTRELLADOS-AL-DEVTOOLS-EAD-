@@ -37,5 +37,57 @@
 			"    end;"
 		],
 		"description": "Suscripción a un evento para remplazar report (EAD)"
+	},
+	"tutilapiinsertmodify": {
+		"prefix": "tutil API insert/modify (EAD)",
+		"body": [
+			"    trigger OnInsertRecord(BelowxRec: Boolean): Boolean",
+			"    begin",
+			"        Insert(true);",
+			"        Modify(true);",
+			"        exit(false);",
+			"    end;",
+			"",
+			"    trigger OnModifyRecord(): Boolean",
+			"    var",
+			"        AppHistory: Record \"RIE Hist\";",
+			"    begin",
+			"        AppHistory.SETRANGE(Id, Id);",
+			"        if AppHistory.FINDFIRST() then",
+			"            IF Mov <> AppHistory.Mov THEN BEGIN",
+			"                AppHistory.TRANSFERFIELDS(Rec, FALSE);",
+			"                AppHistory.RENAME(Mov);",
+			"                TRANSFERFIELDS(AppHistory);",
+			"            end;",
+			"    end;"
+		],
+		"description": "tutil API insert/modify (EAD)"
+	},
+	"tutilaccioncargarblob": {
+		"prefix": "tutil accion cargar blob (EAD)",
+		"body": [
+			"        action(\"UploadFile\")\r",
+			"        {\r",
+			"           Caption = 'Upload', comment = 'ESP=\"Actualizar\"';\r",
+			"           ToolTip = 'Action to upload image', comment = 'ESP=\"Accion para subir imagen\"';\r",
+			"\r",
+			"           ApplicationArea = All;\r",
+			"           Image = LaunchWeb;\r",
+			"           Promoted = true;\r",
+			"           PromotedCategory = Process;\r",
+			"           PromotedIsBig = true;\r",
+			"           PromotedOnly = true;\r",
+			"\r",
+			"           trigger OnAction()\r",
+			"           var\r",
+			"               InStr: InStream;\r",
+			"               FileName: Text;\r",
+			"           begin\r",
+			"               UploadIntoStream('Upload', '', '', FileName, InStr);\r",
+			"              \"Campo\".ImportStream(InStr, FileName);\r",
+			"           end;\r",
+			"        }"
+		],
+		"description": "tutil accion cargar blob (EAD)"
 	}
 }

@@ -1,0 +1,73 @@
+{
+	"tapirestobtenertodasmisapis": {
+		"prefix": "tapi obtener todas las APIs BC Aut basica (EAD)",
+		"body": [
+			"@TenantID = ${1:11111111-1111-1111-1111-111111111111}",
+			"@Env = ${2:Production}",
+			"@APIPublisher = ${3:anj}",
+			"@APIGroup = ${4:anjtools}",
+			"@APIVersion = ${5:v1.0}",
+			"@User = ${6:ADMIN}\r",
+			"@WSPass = ${7:1263912368723182763}",
+			"\r",
+			"GET https://api.businesscentral.dynamics.com/v1.0/{{TenantID}}/{{Env}}/api/{{APIPublisher}}/{{APIGroup}}/{{APIVersion}}\r",
+			"Authorization: Basic {{User}} {{WSPass}}"
+		],
+		"description": "tapi obtener todas las APIs BC Aut basica (EAD)"
+	},
+	"tapirestobtenerempresas": {
+		"prefix": "tapi obtener empresas (EAD)",
+		"body": [
+			"@TenantID = ${1:11111111-1111-1111-1111-111111111111}",
+			"@User = ${2:ADMIN}",
+			"@WSPass = ${3:1263912368723182763}",
+			"\r",
+			"\r",
+			"GET https://api.businesscentral.dynamics.com/v1.0/{{TenantID}}/Production/api/beta/companies\r",
+			"Authorization: Basic {{User}} {{WSPass}}"
+		],
+		"description": "tapi obtener empresas (EAD)"
+	},
+	"tapirestobtenertodoslosreg": {
+		"prefix": "tapi obtener todos los registros de una API BC Aut basica (EAD)",
+		"body": [
+			"@TenantID = ${1:11111111-1111-1111-1111-111111111111}",
+			"@Env = ${2:Production}",
+			"@APIPublisher = ${3:anj}",
+			"@APIGroup = ${4:anjtools}",
+			"@APIVersion = ${5:v1.0}",
+			"@CompaniesID = ${6:11111111-1111-1111-1111-111111111111}",
+			"@EntityName = ${7:riemon}",
+			"@User = ${8:ADMIN}",
+			"@WSPass = ${9:1263912368723182763}",
+			"",
+			"GET https://api.businesscentral.dynamics.com/v1.0/{{TenantID}}/{{Env}}/api/{{APIPublisher}}/{{APIGroup}}/{{APIVersion}}/companies({{CompaniesID}})/{{EntityName}}",
+			"Authorization: Basic {{User}} {{WSPass}}"
+		],
+		"description": "obtener todos los registros de una API BC Aut basica (EAD)"
+	},
+	"tapiresinsertarreg": {
+		"prefix": "tapi insertar registros una API BC Aut basica (EAD)",
+		"body": [
+			"@TenantID = ${1:11111111-1111-1111-1111-111111111111}",
+			"@Env = ${2:Production}",
+			"@APIPublisher = ${3:anj}",
+			"@APIGroup = ${4:anjtools}",
+			"@APIVersion = ${5:v1.0}",
+			"@CompaniesID = ${6:11111111-1111-1111-1111-111111111111}",
+			"@EntityName = ${7:riemon}",
+			"@User = ${8:ADMIN}",
+			"@WSPass = ${9:1263912368723182763}",
+			"",
+			"POST https://api.businesscentral.dynamics.com/v1.0/{{TenantID}}/{{Env}}/api/{{APIPublisher}}/{{APIGroup}}/{{APIVersion}}/companies({{CompaniesID}})/{{EntityName}}",
+			"Authorization: Basic {{User}} {{WSPass}}",
+			"content-type: application/json",
+			"",
+			"{",
+			"    \"Text\": \"Text\",",
+			"    \"Int\": 100,",
+			"}"
+		],
+		"description": "tapi insertar registros una API BC Aut basica (EAD)"
+	}
+}

@@ -16,6 +16,8 @@ AL
 * Crea proceso para verificar si un numero es multiplo de alguno.
 * Proceso para enviar correo.
 * Suscripción a un evento para remplazar report.
+* API insert/modify.
+* Accion para cargar blob.
 
 DOCKER
 * Crear contenedor.
@@ -33,6 +35,12 @@ DOCKER
 * Instalar .app.
 * Actualizar .app.
 
+HTTP
+Obtener todas las APis BC Aut Basica.
+Obtener todas las empresas Aut Basica.
+Obtener todos los registros Aut Basica.
+Insertar registro Aut Basica.
+
 -----------------------------------------------------------------------------------------------------------
 
 ## Snippets
@@ -49,6 +57,8 @@ DOCKER
     * `tutil numero es divisible (EAD)` - Muestra si un numero es multiplo de otro.
     * `tutil enviar mail (EAD)` - Procedimiento para enviar email.
     * `tutil reemplazar informe (EAD)` - Suscripción a un evento para remplazar report.
+    * `tutil API insert/modify (EAD)` - API Insert/Modify.
+    * `tutil accion cargar blob (EAD)` - Accion cargar blob.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -65,6 +75,12 @@ DOCKER
     * `tdocker desinstalar/despublicar app (EAD)` - Desinstalar .app.
     * `tdocker instalar app (EAD)` - Instalar .app.
     * `tdocker actualizar app (EAD)` - Actualizar .app.
+
+* HTTP
+    * `tapi obtener todas las APIs BC Aut basica (EAD)` - Obtener todas las apis personalizadas.
+    * `tapi obtener empresas (EAD)` - Obtener todas las empresas.
+    * `tapi obtener todos los registros de una API BC Aut basica (EAD)` - Obtener todos los los registros de una entidad.
+    * `tapi insertar registros una API BC Aut basica (EAD)` - Insertar registros.
 
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
@@ -132,6 +148,12 @@ end;
     * AL - Verificar numero divisible.
     * AL - Proceso para enviar email.
     * AL - Suscripcion para remplazar reports.
+    * AL - API insert/modify.
+    * AL - Accion cargar blob.
+    * HTTP - Obtener APIs personalizadas Aut basica.
+    * HTTP - Obtener empresas Aut basica.
+    * HTTP - Obtener todos los registros Aut basica.
+    * HTTP - Insertar registrosAut basica.
 
 * Se Modificaron los siguientes snippets:
     * Docker - Crear usuarios navcontainer.

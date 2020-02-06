@@ -33,6 +33,10 @@
             {
                 "language": "al",
                 "path": "./snippets/test.json"
+            },
+            {
+                "language": "http",
+                "path": "./snippets/http.json"
             }
         ]
     },
