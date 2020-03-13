@@ -36,10 +36,12 @@ DOCKER
 * Actualizar .app.
 
 HTTP
-Obtener todas las APis BC Aut Basica.
-Obtener todas las empresas Aut Basica.
-Obtener todos los registros Aut Basica.
-Insertar registro Aut Basica.
+* Obtener todas las APis BC Aut Basica.
+* Obtener todas las empresas Aut Basica.
+* Obtener todos los registros Aut Basica.
+* Insertar registro Aut Basica.
+* Modificar registro Aut Basica.
+* Eliminar registro Aut Basica.
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -77,10 +79,7 @@ Insertar registro Aut Basica.
     * `tdocker actualizar app (EAD)` - Actualizar .app.
 
 * HTTP
-    * `tapi obtener todas las APIs BC Aut basica (EAD)` - Obtener todas las apis personalizadas.
-    * `tapi obtener empresas (EAD)` - Obtener todas las empresas.
-    * `tapi obtener todos los registros de una API BC Aut basica (EAD)` - Obtener todos los los registros de una entidad.
-    * `tapi insertar registros una API BC Aut basica (EAD)` - Insertar registros.
+    * `tapi Test APIs BC Aut basica (EAD)` - Test apis personalizadas BC.
 
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
@@ -150,10 +149,7 @@ end;
     * AL - Suscripcion para remplazar reports.
     * AL - API insert/modify.
     * AL - Accion cargar blob.
-    * HTTP - Obtener APIs personalizadas Aut basica.
-    * HTTP - Obtener empresas Aut basica.
-    * HTTP - Obtener todos los registros Aut basica.
-    * HTTP - Insertar registrosAut basica.
+    * HTTP - Test APIs personalizadas Aut basica.
 
 * Se Modificaron los siguientes snippets:
     * Docker - Crear usuarios navcontainer.
