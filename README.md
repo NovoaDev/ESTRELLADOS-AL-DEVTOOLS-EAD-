@@ -13,6 +13,11 @@ AL
 * Crear campo en pagina con tooltip.
 * Crear plantilla para Notificacion.
 * Crear plantilla para cambiar color de los campos en paginas.
+* Crea proceso para verificar si un numero es multiplo de alguno.
+* Proceso para enviar correo.
+* Suscripción a un evento para remplazar report.
+* API insert/modify.
+* Accion para cargar blob.
 
 DOCKER
 * Crear contenedor.
@@ -30,6 +35,14 @@ DOCKER
 * Instalar .app.
 * Actualizar .app.
 
+HTTP
+* Obtener todas las APis BC Aut Basica.
+* Obtener todas las empresas Aut Basica.
+* Obtener todos los registros Aut Basica.
+* Insertar registro Aut Basica.
+* Modificar registro Aut Basica.
+* Eliminar registro Aut Basica.
+
 -----------------------------------------------------------------------------------------------------------
 
 ## Snippets
@@ -43,6 +56,11 @@ DOCKER
     * `tcampo en pagina con tooltip (EAD)` - Crear campo en pagina con tooltip.
     * `tnotification (EAD)` - Crear plantilla para Notificacion.
     * `tcambiar color de campos en pagina (EAD)` - Crear plantilla para cambiar color de los campos en paginas.
+    * `tutil numero es divisible (EAD)` - Muestra si un numero es multiplo de otro.
+    * `tutil enviar mail (EAD)` - Procedimiento para enviar email.
+    * `tutil reemplazar informe (EAD)` - Suscripción a un evento para remplazar report.
+    * `tutil API insert/modify (EAD)` - API Insert/Modify.
+    * `tutil accion cargar blob (EAD)` - Accion cargar blob.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -59,6 +77,9 @@ DOCKER
     * `tdocker desinstalar/despublicar app (EAD)` - Desinstalar .app.
     * `tdocker instalar app (EAD)` - Instalar .app.
     * `tdocker actualizar app (EAD)` - Actualizar .app.
+
+* HTTP
+    * `tapi Test APIs BC Aut basica (EAD)` - Test apis personalizadas BC.
 
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
@@ -120,6 +141,18 @@ begin
 end;
 ```
 ## Release Notes
+
+### 1.0.1
+* Se agregaron los siguientes snippets:
+    * AL - Verificar numero divisible.
+    * AL - Proceso para enviar email.
+    * AL - Suscripcion para remplazar reports.
+    * AL - API insert/modify.
+    * AL - Accion cargar blob.
+    * HTTP - Test APIs personalizadas Aut basica.
+
+* Se Modificaron los siguientes snippets:
+    * Docker - Crear usuarios navcontainer.
 
 ### 1.0.0
 

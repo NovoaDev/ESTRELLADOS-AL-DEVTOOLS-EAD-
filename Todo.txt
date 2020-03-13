@@ -1,9 +1,7 @@
 AL
 TEST!
-Consumir WS
 Dimensiones
 Correo
-tfieldpageconcaption y coment solo sin ES
 
 DOCKER
 Crear contenedor SQL externo
@@ -11,13 +9,6 @@ Extraer codigo de las apis
         Get-NavContainerAppInfo `
             -containerName $TESTServer 
 ------------------------------------------------
-
-HTTP para probar API'S
-get todos
-post insert
-post filtrado
-delete
-update
 
 JSON
 Settings.json

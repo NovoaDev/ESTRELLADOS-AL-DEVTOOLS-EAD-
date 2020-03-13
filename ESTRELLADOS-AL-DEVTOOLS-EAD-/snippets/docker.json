@@ -139,13 +139,13 @@
 	"tdockercrearusuario": {
 		"prefix": "tdocker crear usuario en contenedor (EAD)",
 		"body": [
-			"$containername = 'NombreContenedor'\r",
-			"$userName = \"Usuario\"\r",
-			"$password = ConvertTo-SecureString -String \"Pass\" -AsPlainText -Force\r",
-			"$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList $userName, $password\r",
-			"$permisionSetId = \"SUPER\"\r",
+			"\\$containername = 'NombreContenedor'\r",
+			"\\$userName = \"Usuario\"\r",
+			"\\$password = ConvertTo-SecureString -String \"Pass\" -AsPlainText -Force\r",
+			"\\$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList \\$userName, \\$password\r",
+			"\\$permisionSetId = \"SUPER\"\r",
 			"\r",
-			"New-NavContainerNavUser -Credential $credential -containerName $containername -PermissionSetId $permisionSetId\r"
+			"New-NavContainerNavUser -Credential \\$credential -containerName \\$containername -PermissionSetId \\$permisionSetId\r"
 		],
 		"description": "Crear usuario en contenedor (EAD)"
 	},
