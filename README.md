@@ -18,6 +18,11 @@ AL
 * Suscripción a un evento para remplazar report.
 * API insert/modify.
 * Accion para cargar blob.
+* Algoritmo de ordenamiento bubbleSort
+* Algoritmo de ordenamiento InsertionSort 
+* Algoritmo de ordenamiento QuickSort 
+* Algoritmo de ordenamiento cocktailSort  
+* Factorial recursividad
 
 DOCKER
 * Crear contenedor.
@@ -61,6 +66,11 @@ HTTP
     * `tutil reemplazar informe (EAD)` - Suscripción a un evento para remplazar report.
     * `tutil API insert/modify (EAD)` - API Insert/Modify.
     * `tutil accion cargar blob (EAD)` - Accion cargar blob.
+    * `talgo ordenamiento bubbleSort (EAD)` - Algoritmo de ordenamiento bubbleSort (existen mejores algoritmos).
+    * `talgo ordenamiento InsertionSort (EAD)` - Algoritmo de ordenamiento InsertionSort (existen mejores algoritmos).
+    * `talgo ordenamiento QuickSort (EAD)` - Algoritmo de ordenamiento QuickSort.
+    * `talgo ordenamiento cocktailSort (EAD)` - Algoritmo de ordenamiento cocktailSort (existen mejores algoritmos).
+    * `talgo recursividad/factorial (EAD` - Procedimiento para hacer factoriales - recursividad.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -150,6 +160,11 @@ end;
     * AL - API insert/modify.
     * AL - Accion cargar blob.
     * HTTP - Test APIs personalizadas Aut basica.
+    * AL - Algoritmo de ordenamiento bubbleSort
+    * AL - Algoritmo de InsertionSort bubbleSort
+    * AL - Algoritmo de QuickSort bubbleSort
+    * AL - Algoritmo de cocktailSort bubbleSort
+    * AL - factoriales - recursividad
 
 * Se Modificaron los siguientes snippets:
     * Docker - Crear usuarios navcontainer.
