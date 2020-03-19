@@ -27,6 +27,10 @@
                 "path": "./snippets/al.json"
             },
             {
+            "language": "al",
+            "path": "./snippets/algoritmos.json"
+            },
+            {
                 "language": "al",
                 "path": "./snippets/alUtil.json"
             },
