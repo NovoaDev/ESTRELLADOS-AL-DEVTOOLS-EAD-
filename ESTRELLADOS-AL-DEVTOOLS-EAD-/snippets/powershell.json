@@ -1,0 +1,16 @@
+{
+    "tpowershellfeaturelinux": {
+		"prefix": "tpowershell Activar caracteristica Microsoft-Windows-Subsystem-Linux (EAD)",
+		"body": [
+			"Enable-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux -Online"
+		],
+		"description": "Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows (EAD)"
+    },
+    "tpowershellcompararfc": {
+		"prefix": "tpowershell comparar ficheros de texto desde PS (EAD)",
+		"body": [
+			"fc \"C:\\Temp\\1\\*.txt\" \"C:\\Temp\\2\\*.txt\" > \"C:\\Temp\\result.txt\""
+		],
+		"description": "Comparar ficheros de texto desde PS (Verificar rutas) (EAD)"
+	} 
+}

@@ -26,3 +26,11 @@ Extensiones extras
 
     -------------------------------------------------------------------------------------------------
     Traer campos de configuracion desde paginas de configuracion si esta marcado con un booll
+
+
+----------------------------------------------------------------------------------
+    Un último detallito importante: los archivos que tienes en tu Linux le pertenecen… Para acceder a los archivos que tienes en Windows (o grabar nuevos archivos desde tu Linux) debes ingresar en /mnt/c/Users/TU_USUARIO, donde TU_USUARIO debe ser reemplazado por tu nombre de usuario de Windows.
+
+Ahora sí, cualquier archivo que guardes en esa localización podrá ser accedido con las herramientas propias de Windows. > ruta archivos emulados desde consola ubuntu
+----------------------------------------------------------------------------------
+Grep palabra archivo -> para devolver en la terminal solo la linea que coincida con la palabra

@@ -1,0 +1,20 @@
+{
+    "tcrearruleset": {
+        "prefix": "tcrear ruleset que excluya warning en nombre de archivo (EAD)",
+        "body": [
+            "{\r",
+            "    \"name\": \"EADRuleset\",\r",
+            "    \"description\": \"Personalizacion del analizador para que excluya warning en nombres de archivos\",\r",
+            "    \"rules\": [\r",
+            "        {\r",
+            "            \"id\": \"AA0215\",\r",
+            "            \"action\": \"None\",\r",
+            "            \"justification\": \"No queremos ver warning en nombres de archivos\"\r",
+            "        }\r",
+            "    ]\r",
+            "}\r",
+            ""
+        ],
+        "description": "Crear ruleset que excluya warning en nombre de archivo (EAD)"
+    }
+}

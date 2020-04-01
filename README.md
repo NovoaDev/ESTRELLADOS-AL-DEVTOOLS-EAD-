@@ -23,6 +23,9 @@ AL
 * Algoritmo de ordenamiento QuickSort 
 * Algoritmo de ordenamiento cocktailSort  
 * Factorial recursividad
+* Manejar overflow en campos texto
+* Cambiar idioma en report
+* Función format mes report
 
 DOCKER
 * Crear contenedor.
@@ -48,6 +51,13 @@ HTTP
 * Modificar registro Aut Basica.
 * Eliminar registro Aut Basica.
 
+POWERSHELL
+* Activar caracteristica Microsoft-Windows-Subsystem-Linux.
+* Comparar ficheros de texto.
+
+JSON
+* Crear ruleset que excluya warning.
+
 -----------------------------------------------------------------------------------------------------------
 
 ## Snippets
@@ -70,7 +80,10 @@ HTTP
     * `talgo ordenamiento InsertionSort (EAD)` - Algoritmo de ordenamiento InsertionSort (existen mejores algoritmos).
     * `talgo ordenamiento QuickSort (EAD)` - Algoritmo de ordenamiento QuickSort.
     * `talgo ordenamiento cocktailSort (EAD)` - Algoritmo de ordenamiento cocktailSort (existen mejores algoritmos).
-    * `talgo recursividad/factorial (EAD` - Procedimiento para hacer factoriales - recursividad.
+    * `talgo recursividad/factorial (EAD)` - Procedimiento para hacer factoriales - recursividad.
+    * `tutil overflow en campos texto (EAD)` - Manejar overflow en campos texto.
+    * `tutil cambiar idioma en report (EAD)` - Cambiar idioma en report.
+    * `tutil format mes report (EAD)` - Función format mes report.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -88,8 +101,15 @@ HTTP
     * `tdocker instalar app (EAD)` - Instalar .app.
     * `tdocker actualizar app (EAD)` - Actualizar .app.
 
+* POWERSHELL
+    * `tpowershell Activar caracteristica Microsoft-Windows-Subsystem-Linux (EAD)` - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows.
+    * `tpowershell comparar ficheros de texto desde PS (EAD)` - Comparar ficheros de texto desde PS (Verificar rutas).
+
 * HTTP
     * `tapi Test APIs BC Aut basica (EAD)` - Test apis personalizadas BC.
+
+* JSON
+    * `tcrear ruleset que excluya warning en nombre de archivo (EAD)` - Crear ruleset que excluya warning en nombre de archivo.
 
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
@@ -159,12 +179,18 @@ end;
     * AL - Suscripcion para remplazar reports.
     * AL - API insert/modify.
     * AL - Accion cargar blob.
-    * HTTP - Test APIs personalizadas Aut basica.
     * AL - Algoritmo de ordenamiento bubbleSort
     * AL - Algoritmo de InsertionSort bubbleSort
     * AL - Algoritmo de QuickSort bubbleSort
     * AL - Algoritmo de cocktailSort bubbleSort
-    * AL - factoriales - recursividad
+    * AL - Factoriales - recursividad
+    * AL - Manejar overflow en campos texto
+    * AL - Cambiar idioma en report
+    * AL - Función format mes report
+    * HTTP - Test APIs personalizadas Aut basica.
+    * POWERSHELL - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows
+    * POWERSHELL - Comparar ficheros de texto desde PS (Verificar rutas)
+    * JSON - Crear ruleset que excluya warning en nombre de archivo
 
 * Se Modificaron los siguientes snippets:
     * Docker - Crear usuarios navcontainer.
