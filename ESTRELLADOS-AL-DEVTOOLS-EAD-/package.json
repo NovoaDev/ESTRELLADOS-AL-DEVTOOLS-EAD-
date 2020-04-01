@@ -16,11 +16,21 @@
     "categories": [
         "Snippets"
     ],
-    "contributes": {
+    "contributes": {	
+        "commands": [
+        {
+            "command": "ALToolsFunctions.GenerateXliffFiles",
+            "title": "TestLola"
+        }
+    ],
         "snippets": [
             {
                 "language": "powershell",
                 "path": "./snippets/docker.json"
+            }, 
+            {
+                "language": "powershell",
+                "path": "./snippets/powershell.json"
             }, 
             {
                 "language": "al",
@@ -41,6 +51,10 @@
             {
                 "language": "http",
                 "path": "./snippets/http.json"
+            },
+            {
+                "language": "json",
+                "path": "./snippets/json.json"
             }
         ]
     },
