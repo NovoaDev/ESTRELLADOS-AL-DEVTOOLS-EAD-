@@ -12,5 +12,131 @@
 			"fc \"C:\\Temp\\1\\*.txt\" \"C:\\Temp\\2\\*.txt\" > \"C:\\Temp\\result.txt\""
 		],
 		"description": "Comparar ficheros de texto desde PS (Verificar rutas) (EAD)"
-	} 
+	},
+	"tgitcambiarorigin": {
+		"prefix": "tgit cambiar origin git (EAD)",
+		"body": [
+			"\\$URL = 'git@github.com:Saycoron/ESTRELLADOS-AL-DEVTOOLS-EAD-.git'\r",
+			"\r",
+			"git remote set-url origin \\$URL"
+		],
+		"description": "Cambiar origin git (EAD)"
+	} ,
+	"tgitactivarssl": {
+		"prefix": "tgit activar o desactivar uso de ssl en git (EAD)",
+		"body": [
+			"# Colocar true o false al final para activar o desactivar el ssl\r",
+			"git config --global http.sslVerify "
+		],
+		"description": "tgit activar o desactivar uso de ssl en git (EAD)"
+	},
+	"tgitañadirauthsshgithub": {
+		"prefix": "tgit añadir auth ssh github (EAD)",
+		"body": [
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"#Crear llave publica y privada\r",
+			"# Tenemos que crear llave privada y publica en el ordenador.\r",
+			"\r",
+			"##### Gitbash/PS \r",
+			"# Abrimos la gitbash y en home ejecutamos el siguiente comando dejando las rutas por defecto.\r",
+			"ssh-keygen -t rsa -b 4096 -C \"xxx@mail.com\"\r",
+			"\r",
+			"# Buscamos dentro de la carpeta de nuestro usuario una carpeta oculta llamada .ssh.\r",
+			"# Ahi se creo tanto la llave publica(id_rsa.pub) como la privada(id_rsa).\r",
+			"\r",
+			"# Evaluamos si es encuentra corriendo el servicio de ssh.\r",
+			"eval \\$(ssh-agent -s)\r",
+			"\r",
+			"# Agregaremos la llave privada a gitbash\r",
+			"ssh-add ~/.ssh/id_rsa\r",
+			"\r",
+			"##### Github \r",
+			"# Iremos a settigns añadir sshkey pegamos nuestra llave publica. \r",
+			"# Ahora vamos a nuestro repositorio y en el apartado de clone or download hacemos click sobre ssh\r",
+			"# Copiaremos la url ssh.\r",
+			"\r",
+			"##### Gitbash/PS\r",
+			"# Remplazar origin http por remote ssh en el repo de git",
+			"\\$URL = 'git@github.com:Saycoron/ESTRELLADOS-AL-DEVTOOLS-EAD-.git'\r",
+			"git remote set-url origin \\$URL"
+		],
+		"description": "Añadir auth ssh github (EAD)"
+	},
+	"tgitaliasarbolito": {
+		"prefix": "tgit añadir alias arbolito (EAD)",
+		"body": [
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"alias arbolito=\"git log --all --graph --decorate --oneline\"",
+			"arbolito\r",
+			"# \"Q\" para salir"
+		],
+		"description": "Añadir alias arbolito (EAD)"
+	},
+	"tgitaliaspersonas": {
+		"prefix": "tgit añadir alias personas (EAD)",
+		"body": [
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"alias personas=\"git shortlog -sn --all --no-merges\"",
+			"personas"
+		],
+		"description": "Añadir alias personas para ver el stats la cantidad de commits de cada uno (EAD)"
+	},
+	"tgitañadiracommitanterior": {
+		"prefix": "tgit añadir a commit anterior (EAD)",
+		"body": [
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"Git commit –-amend"
+		],
+		"description": "Añadir a commit anterior (EAD)"
+	},
+    "tgitbuscarpalabraengit": {
+		"prefix": "tgit buscar palabra en git (EAD)",
+		"body": [
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"\\$Palabra = 'Palabra'\r",
+			"# Buscar en repo\r",
+			"git grep \\$Palabra \r",
+			"# Buscar en repo y mostrar nº linea\r",
+			"git grep -n \\$Palabra\r",
+			"# Cantidad de veces que se encuentra en cada archivo\r",
+			"git grep -c \\$Palabra"
+		],
+		"description": "Buscar palabra en git (EAD)"
+	},
+	"tgitverhistvisual": {
+		"prefix": "tgit ver historico visual (EAD)",
+		"body": [
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"#Ver historico visual\r",
+			"gitk"
+		],
+		"description": "Ver historico visual (EAD)"
+	},
+	"tgitreset": {
+		"prefix": "tgit reset rama (EAD)",
+		"body": [
+			"$idCommitARegresar = '3d6919c924e238faaad8b0ab8506024bf9a71747'\r",
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"# Vuelve al commit dejando los cambios de los commits que se borraron en working directory\r",
+			"git reset --soft $idCommitARegresar\r",
+			"\r",
+			"# Vuelve al commit eliminando los cambios de los commits posteriores\r",
+			"git reset --hard $idCommitARegresar"
+		],
+		"description": "Reset rama (EAD)"
+	},
+	"tutilcompilarobj": {
+		"prefix": "tutil compilar objetos (EAD)",
+		"body": [
+			"\\$Server = 'Server'\r",
+			"\\$Instancia = 'Instancia'\r",
+			"\\$BDServer = '127.0.0.1\\InstanciaSql'\r",
+			"\\$Database = 'Database'\r",
+			"\\$Username = 'docker'\r",
+			"\\$Password = 'docker'\r",
+			"\r",
+			"Compile-NAVApplicationObject -navservername \\$Server -navserverinstance \\$Instancia -databaseserver \\$BDServer -databasename \\$Database -synchronizeschemachanges \"force\" -username \\$Username -password \\$Password -filter \"Type=Table; id=17\" –recompile"
+		],
+		"description": "Compilar objetos (EAD)"
+	}
 }

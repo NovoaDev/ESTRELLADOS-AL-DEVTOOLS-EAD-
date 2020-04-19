@@ -154,5 +154,29 @@
 			"end;"
 		],
 		"description": "Función format mes report (EAD)"
+	},
+	"tutilchangedatetostring": {
+		"prefix": "tutil cambiar fecha a texto (EAD)",
+		"body": [
+			"    local procedure changeDateToString(originalDate: date) returnDate: Text[11]\r",
+			"    var\r",
+			"        dayAux: Integer;\r",
+			"        monthAux: Integer;\r",
+			"    begin\r",
+			"        returnDate := '';\r",
+			"        //DIA\r",
+			"        dayAux := Date2DMY(originalDate, 1);\r",
+			"        if dayAux < 10 then\r",
+			"            returnDate := '0';\r",
+			"        returnDate += Format(dayAux) + '/';\r",
+			"        //MES\r",
+			"        monthAux := Date2DMY(originalDate, 2);\r",
+			"        if monthAux < 10 then\r",
+			"            returnDate += '0';\r",
+			"        returnDate += Format(monthAux) + '/';\r",
+			"        returnDate += Format(Date2DMY(originalDate, 3));\r",
+			"    end;"
+		],
+		"description": "Cambiar fecha a texto para reports (EAD)"
 	}
 }

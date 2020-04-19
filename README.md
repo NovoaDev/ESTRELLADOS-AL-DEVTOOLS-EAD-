@@ -26,6 +26,7 @@ AL
 * Manejar overflow en campos texto
 * Cambiar idioma en report
 * Función format mes report
+* Cambiar fecha a texto para reports 
 
 DOCKER
 * Crear contenedor.
@@ -54,6 +55,18 @@ HTTP
 POWERSHELL
 * Activar caracteristica Microsoft-Windows-Subsystem-Linux.
 * Comparar ficheros de texto.
+* Compilar objetos
+
+GITBASH
+* Cambiar origin a un proyecto que use git. 
+* Activar o desactivar uso de ssl para git en terminal. 
+* Añadir auth ssh para usar conexiones seguras con github. 
+* Añadir alias arbolito para ver por terminal el historico de git. 
+* Añadir alias personas para saber cuantos commits tiene cada colaborador. 
+* Añadir a commit anterior. 
+* Buscar palabra en git. 
+* Abrir historico visual para git. 
+* Reset rama. 
 
 JSON
 * Crear ruleset que excluya warning.
@@ -84,6 +97,7 @@ JSON
     * `tutil overflow en campos texto (EAD)` - Manejar overflow en campos texto.
     * `tutil cambiar idioma en report (EAD)` - Cambiar idioma en report.
     * `tutil format mes report (EAD)` - Función format mes report.
+    * `tutil cambiar fecha a texto (EAD)` - Cambiar fecha a texto para reports.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -104,6 +118,18 @@ JSON
 * POWERSHELL
     * `tpowershell Activar caracteristica Microsoft-Windows-Subsystem-Linux (EAD)` - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows.
     * `tpowershell comparar ficheros de texto desde PS (EAD)` - Comparar ficheros de texto desde PS (Verificar rutas).
+    * `tutil compilar objetos (EAD)` - Compilar objetos.
+
+* GITBASH
+    * `tgit cambiar origin git (EAD)` - Cambiar origin a un proyecto que use git. 
+    * `tgit activar o desactivar uso de ssl en git (EAD)` - Activar o desactivar uso de ssl para git en terminal. 
+    * `tgit añadir auth ssh github (EAD)` - Añadir auth ssh para usar conexiones seguras con github. 
+    * `tgit añadir alias arbolito (EAD)` - Añadir alias arbolito para ver por terminal el historico de git. 
+    * `tgit añadir alias personas (EAD)` - Añadir alias personas para saber cuantos commits tiene cada colaborador. 
+    * `tgit añadir a commit anterior (EAD)` - Añadir a commit anterior. 
+    * `tgit buscar palabra en git (EAD)` - Buscar palabra en git. 
+    * `tgit ver historico visual (EAD)` - Abrir historico visual para git. 
+    * `tgit reset rama (EAD)` - Reset rama. 
 
 * HTTP
     * `tapi Test APIs BC Aut basica (EAD)` - Test apis personalizadas BC.
@@ -187,9 +213,20 @@ end;
     * AL - Manejar overflow en campos texto
     * AL - Cambiar idioma en report
     * AL - Función format mes report
+    * AL - Cambiar fecha a texto para reports
     * HTTP - Test APIs personalizadas Aut basica.
     * POWERSHELL - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows
     * POWERSHELL - Comparar ficheros de texto desde PS (Verificar rutas)
+    * POWERSHELL - Compilar objetos
+    * GITBASH - Cambiar origin git
+    * GITBASH - Activar o desactivar uso de ssl en git
+    * GITBASH - Añadir auth ssh github
+    * GITBASH - Añadir alias arbolito git
+    * GITBASH - Añadir alias personas git
+    * GITBASH - Añadir a commit anterior git
+    * GITBASH - Buscar palabra en git
+    * GITBASH - Ver historico visual git
+    * GITBASH - Reset rama git
     * JSON - Crear ruleset que excluya warning en nombre de archivo
 
 * Se Modificaron los siguientes snippets:
