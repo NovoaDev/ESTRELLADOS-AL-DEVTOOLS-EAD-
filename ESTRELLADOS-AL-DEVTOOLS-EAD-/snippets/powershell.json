@@ -138,5 +138,56 @@
 			"Compile-NAVApplicationObject -navservername \\$Server -navserverinstance \\$Instancia -databaseserver \\$BDServer -databasename \\$Database -synchronizeschemachanges \"force\" -username \\$Username -password \\$Password -filter \"Type=Table; id=17\" –recompile"
 		],
 		"description": "Compilar objetos (EAD)"
+	},
+	"timportarlicencialocal": {
+		"prefix": "timportar licencia local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$Instance = \"Test\"\r",
+			"\\$licenseFileUri = 'C:\\Licencia\\licencia.flf'\r",
+			"\r",
+			"Import-NAVServerLicense -LicenseFile \\$licenseFileUri -ServerInstance \\$Instance\r",
+			"Restart-NAVServerInstance -ServerInstance \\$Instance "
+		],
+		"description": "Importar licencia local (EAD)"
+	},
+	"tinstalardesinstalareextensionlocal": {
+		"prefix": "tinstalar desinstalar actualizar app local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$Instance = \"Test\"\r",
+			"\\$appPath = \"C:\\app\\test_productoTest_1.0.0.0.app\"\r",
+			"\\$appName = \"productoTest\"\r",
+			"\\$version = \"1.0.0.0\"\r",
+			"\r",
+			"Publish-NAVApp -ServerInstance \\$Instance -Path \\$appPath -SkipVerification\r",
+			"\r",
+			"Sync-NavApp -ServerInstance \\$Instance -Name \\$appName -Version \\$version\r",
+			"\r",
+			"# Primera instalacion\r",
+			"Install-NAVApp -ServerInstance \\$Instance -Name \\$appName -Version \\$version\r",
+			"\r",
+			"# Update\r",
+			"Start-NAVAppDataUpgrade -ServerInstance \\$Instance -Name \\$appName -Version \\$version\r",
+			"\r",
+			"# Desistalar ext\r",
+			"Uninstall-NAVApp -Name \\$appName -ServerInstance \\$Instance\r",
+			"Unpublish-NAVApp -ServerInstance \\$Instance -Name \\$appName -Version \\$version"
+		],
+		"description": "Instalar desinstalar actualizar app local (EAD)"
+	},
+	"tcrearusuariolocal": {
+		"prefix": "tcrear usuario local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$Instance = \"Test\"\r",
+			"\r",
+			"New-NAVServerUser \\$Instance -username testUser -password (ConvertTo-SecureString \"testUser\" -AsPlainText -Force)\r",
+			"New-NAVServerUserPermissionSet \\$Instance -username testUser -permissionsetid SUPER"
+		],
+		"description": "Crear usuario local (EAD)"
 	}
 }

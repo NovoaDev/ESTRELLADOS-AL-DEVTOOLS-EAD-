@@ -16,5 +16,31 @@
             ""
         ],
         "description": "Crear ruleset que excluya warning en nombre de archivo (EAD)"
-    }
+    },	
+    "tcrearcodeanalysis": {
+		"prefix": "tcrear analizadores de codigo (EAD)",
+		"body": [
+			"    \"al.enableCodeAnalysis\": true,\r",
+			"    \"al.codeAnalyzers\": [\r",
+			"        \"${AppSourceCop}\",\r",
+			"        \"${CodeCop}\",\r",
+			"        \"${PerTenantExtensionCop}\",\r",
+			"        \"${UICop}\"\r",
+			"    ],"
+		],
+		"description": "Activar analizadores de codigo (EAD)"
+    },
+	"tcrearnombreobjetos": {
+		"prefix": "tcrear nombres objetos (EAD)",
+		"body": [
+			"    \"CRS.ObjectNamePrefix\": \"EAD\",\r",
+			"    \"CRS.ExtensionObjectNamePattern\": \"<Prefix><BaseName>\",\r",
+			"    \"CRS.FileNamePattern\": \"<ObjectNameShort>.<ObjectTypeShortPascalCase>.al\",\r",
+			"    \"CRS.FileNamePatternExtensions\": \"<ObjectNameShort>.<ObjectTypeShortPascalCase>.al\",\r",
+			"    \"CRS.FileNamePatternPageCustomizations\": \"<ObjectNameShort>.<ObjectTypeShortPascalCase>.al\",\r",
+			"    \"CRS.OnSaveAlFileAction\": \"Rename\",\r",
+			"    \"CRS.RenameWithGit\": true"
+		],
+		"description": "Crear nombres objetos (EAD)"
+	}
 }

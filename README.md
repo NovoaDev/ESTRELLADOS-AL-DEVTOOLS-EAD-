@@ -27,6 +27,7 @@ AL
 * Cambiar idioma en report
 * Función format mes report
 * Cambiar fecha a texto para reports 
+* Upgrade tags/gestionar CU de upgrade.
 
 DOCKER
 * Crear contenedor.
@@ -56,6 +57,9 @@ POWERSHELL
 * Activar caracteristica Microsoft-Windows-Subsystem-Linux.
 * Comparar ficheros de texto.
 * Compilar objetos
+* Importar licencia a una instalacion local.
+* Instalar, desinstalar actualizar app local.
+* Compilar objetos.
 
 GITBASH
 * Cambiar origin a un proyecto que use git. 
@@ -70,6 +74,8 @@ GITBASH
 
 JSON
 * Crear ruleset que excluya warning.
+* Agrega analizadores de codigo.
+* Agregar configuracion para que renombre nuestros archivos.
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -98,6 +104,7 @@ JSON
     * `tutil cambiar idioma en report (EAD)` - Cambiar idioma en report.
     * `tutil format mes report (EAD)` - Función format mes report.
     * `tutil cambiar fecha a texto (EAD)` - Cambiar fecha a texto para reports.
+    * `tutil Upgrade tags/gestionar CU de upgrade (EAD)` - tutil Upgrade tags/gestionar CU de upgrade.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -119,6 +126,9 @@ JSON
     * `tpowershell Activar caracteristica Microsoft-Windows-Subsystem-Linux (EAD)` - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows.
     * `tpowershell comparar ficheros de texto desde PS (EAD)` - Comparar ficheros de texto desde PS (Verificar rutas).
     * `tutil compilar objetos (EAD)` - Compilar objetos.
+    * `timportar licencia local (EAD)` - Importar licencia a una instalacion local.
+    * `tinstalar desinstalar actualizar app local (EAD)` - Instalar, desinstalar actualizar app local.
+    * `tutil compilar objetos (EAD)` - Compilar objetos.
 
 * GITBASH
     * `tgit cambiar origin git (EAD)` - Cambiar origin a un proyecto que use git. 
@@ -136,6 +146,8 @@ JSON
 
 * JSON
     * `tcrear ruleset que excluya warning en nombre de archivo (EAD)` - Crear ruleset que excluya warning en nombre de archivo.
+    * `tcrear analizadores de codigo (EAD)` - Agrega analizadores de codigo.
+    * `tcrear nombres objetos (EAD)` - Agregar configuracion para que renombre nuestros archivos.
 
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
@@ -214,10 +226,14 @@ end;
     * AL - Cambiar idioma en report
     * AL - Función format mes report
     * AL - Cambiar fecha a texto para reports
+    * AL - Gestion upgrade con upgrade tags
     * HTTP - Test APIs personalizadas Aut basica.
     * POWERSHELL - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows
     * POWERSHELL - Comparar ficheros de texto desde PS (Verificar rutas)
     * POWERSHELL - Compilar objetos
+    * POWERSHELL - Importar licencia local
+    * POWERSHELL - Instalar, actualizar, desinstalar extensiones local
+    * POWERSHELL - Crear usurio local
     * GITBASH - Cambiar origin git
     * GITBASH - Activar o desactivar uso de ssl en git
     * GITBASH - Añadir auth ssh github
@@ -228,6 +244,8 @@ end;
     * GITBASH - Ver historico visual git
     * GITBASH - Reset rama git
     * JSON - Crear ruleset que excluya warning en nombre de archivo
+    * JSON - Agregar codeanalysis
+    * JSON - Agregar cambiar nombre de objetos
 
 * Se Modificaron los siguientes snippets:
     * Docker - Crear usuarios navcontainer.

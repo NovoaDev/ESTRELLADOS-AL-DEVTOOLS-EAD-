@@ -178,5 +178,37 @@
 			"    end;"
 		],
 		"description": "Cambiar fecha a texto para reports (EAD)"
+	},
+	"tutilupgradetags": {
+		"prefix": "tutil Upgrade tags/gestionar CU de upgrade (EAD)",
+		"body": [
+			"    local procedure UpgradeFeature()",
+			"    var",
+			"        UpgradeTag: Codeunit \"Upgrade Tag\";",
+			"        // Tendremos que crear una etiqueta, podriamos hacerlo en una nueva codeunit que tenga un procedimiento que retorne cada una de las etiquetas existentes y hacer la validacion",
+			"        // De cada una de ellas.",
+			"        UpgradeTagEjemplo1: Code[250];",
+			"        UpgradeTagEjemplo2: Code[250];",
+			"    begin",
+			"        // ---- Estructura de la etiqueta ----",
+			"        // 3 primeras letras de prefijo-GUID-Descripcion-DDMMYYYY",
+			"        UpgradeTagEjemplo1 := 'EAD-4273499ef4934924a86d6d61f1a77263-FixCustomer-08052020';",
+			"        UpgradeTagEjemplo2 := 'EAD-5b9182c4586542a78969321a902603a7-FixVendor-09052020';",
+			"",
+			"        // Valida si tiene la ultima etiqueta, en mi caso es upgradeTagEjemplo2 si la tiene sale, se entiende que al tener esta no necesita validar otras mas antiguas.",
+			"        if UpgradeTag.HasUpgradeTag(UpgradeTagEjemplo2) then",
+			"            exit",
+			"        else",
+			"            Message('Lanzar proceso Vendor');",
+			"",
+			"        if NOT UpgradeTag.HasUpgradeTag(UpgradeTagEjemplo1) then",
+			"            Message('Lanzar proceso Customer');",
+			"",
+			"        // Tag de ultima version",
+			"        UpgradeTag.SetUpgradeTag(UpgradeTagEjemplo2);",
+			"    end;",
+			""
+		],
+		"description": "Procedure para gestionar gestionar CU de upgrade mediante upgrade tags (EAD)"
 	}
 }
