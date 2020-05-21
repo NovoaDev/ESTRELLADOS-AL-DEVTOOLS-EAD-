@@ -112,6 +112,22 @@
 		],
 		"description": "Ver historico visual (EAD)"
 	},
+	"tgitCrearAlias": {
+		"prefix": "tgit Crear alias para GIT (EAD)",
+		"body": [
+			"#Alias GIT\r",
+			"#!!!!! Cambiar la terminal a gitbash !!!!!\r",
+			"git config --global alias.cfg \"config --global -e\"\r",
+			"git config --global alias.rank \"shortlog -sn --all --no-merges\"\r",
+			"git config --global alias.arbolito \"log --all --graph --decorate --oneline\"\r",
+			"git config --global alias.agregar \"commit --amend\"\r",
+			"git config --global alias.ultimatag \"describe --tags --abbrev=0\"\r",
+			"git config --global alias.top3 \"log --pretty=format:\\\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\\\" --decorate -n3 --numstat\"\r",
+			"git config --global alias.ls \"log --pretty=format:\\\"%C(yellow)%h\\\\ %ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\\\" --decorate --date=short\"\r",
+			"git config --global alias.top5de \"log --pretty=oneline -n 5 --author='Antonio Novoa'\""
+		],
+		"description": "Crear alias para GIT (EAD)"
+	},
 	"tgitreset": {
 		"prefix": "tgit reset rama (EAD)",
 		"body": [
