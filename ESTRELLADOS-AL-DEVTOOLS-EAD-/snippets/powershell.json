@@ -205,5 +205,45 @@
 			"New-NAVServerUserPermissionSet \\$Instance -username testUser -permissionsetid SUPER"
 		],
 		"description": "Crear usuario local (EAD)"
+	},
+	"tgenerarsimbolos": {
+		"prefix": "tgenerar simbolos (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\140\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$FinsqlPath = \"FinsqlPath\"\r",
+			"\\$Database = \"Database\"\r",
+			"\\$SQLServer = \"SQLServer\"\r",
+			"\\$SQLInstance = \"SQLInstance\" \r",
+			"\\$BCInstance = \"BCInstance\"\r",
+			"\r",
+			"#Ejecutar findsql como administrador.\r",
+			"cd \\$FinsqlPath \r",
+			"finsql.exe Command=generatesymbolreference, Database=\\$Database, ServerName=\\$SQLServer\\\\\\$SQLInstance\r",
+			"#Esperar 20-30 min hasta que se cree un archivo en esta ruta llamado navresult.\r",
+			"\r",
+			"#Por ultimo reiniciar el servicio.\r",
+			"Restart-NAVServerInstance -ServerInstance \\$BCInstance\r",
+			""
+		],
+		"description": "Script para generar simbolos (EAD)"
+	},	
+	"tcompilarobjetolocal": {
+		"prefix": "tcompilar objeto local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$BCSERVER = \"BCSERVER\"\r",
+			"\\$BCINSTANCE = \"BCINSTANCE\"\r",
+			"\\$SQLSERVER = \"SQLSERVER\"\r",
+			"\\$SQLINSTANCE = \"SQLINSTANCE\"\r",
+			"\\$DB = \"DBNAME\"\r",
+			"\\$SYNC = \"force\"\r",
+			"\\$USER = \"USER\"\r",
+			"\\$PASS = \"PASS\"\r",
+			"\r",
+			"Compile-NAVApplicationObject -navservername \\$BCSERVER -navserverinstance \\$BCINSTANCE -databaseserver \\$SQLSERVER\\\\\\$SQLINSTANCE -databasename \\$DB -synchronizeschemachanges \\$SYNC -username \\$USER -password \\$PASS -filter \"Type=Table; id=17\" –recompile"
+		],
+		"description": "Compilar objeto local (EAD)"
 	}
 }

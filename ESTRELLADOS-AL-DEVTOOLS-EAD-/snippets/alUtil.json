@@ -210,5 +210,19 @@
 			""
 		],
 		"description": "Procedure para gestionar gestionar CU de upgrade mediante upgrade tags (EAD)"
+	},
+	"tutillanzarreportconfiltroactual(EAD)": {
+		"prefix": "tutil lanzar report con filtro de la pagina actual (EAD)",
+		"body": [
+			"trigger OnAction()\r",
+			"var\r",
+			"    SalespersonPurchr: Record \"Salesperson/Purchaser\";\r",
+			"begin\r",
+			"    Clear(SalespersonPurchr);\r",
+			"    CurrPage.SETSELECTIONFILTER(SalespersonPurchr);\r",
+			"    REPORT.RUNMODAL(report::\"Commissions List\", true, false, SalespersonPurchr);\r",
+			"end;"
+		],
+		"description": "Lanzar report con filtro de la pagina actual (EAD)"
 	}
 }
