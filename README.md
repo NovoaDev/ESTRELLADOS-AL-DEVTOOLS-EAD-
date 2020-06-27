@@ -71,7 +71,6 @@ POWERSHELL
 * Importar licencia a una instalacion local.
 * Instalar, desinstalar actualizar app local.
 * Compilar objetos Local.
-* Compilar objetos Local.
 * Crear alias para GIT.
 * Generar simbolos.
 * Alias de GIT dentro de la configuracion.
