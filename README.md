@@ -28,6 +28,20 @@ AL
 * Función format mes report
 * Cambiar fecha a texto para reports 
 * Upgrade tags/gestionar CU de upgrade.
+* Función para verificar si existe letra.
+* Ejemplo de Gitignore que despues copiaremos al archivo gitignore.
+* Version ampliada de snippet upgradetags.
+* Traducciones usando expresiones regulares.
+* Formato de fecha mediante la funcion Format.
+* RegExp para encontrar fallos en fichero de traduccion.
+* Bound Action a pagina WebService.
+* Trabajar con Enum.
+* Mostrar un campo en pagina y guardar otro en tabla.
+* Mapear tabla en DB externa.
+* Trabajar con Json anidados.
+* TableRelation con condicional.
+* Lanzar pruebas unitarias desde VSCode.
+* Usar controlAddin para embeber Web dentro de Business Central.
 
 DOCKER
 * Crear contenedor.
@@ -46,12 +60,9 @@ DOCKER
 * Actualizar .app.
 
 HTTP
-* Obtener todas las APis BC Aut Basica.
-* Obtener todas las empresas Aut Basica.
-* Obtener todos los registros Aut Basica.
-* Insertar registro Aut Basica.
-* Modificar registro Aut Basica.
-* Eliminar registro Aut Basica.
+* Test apis personalizadas BC SANDBOX.
+* Test apis personalizadas BC DOCKER.
+* Test WS Docker BC Aut basica.
 
 POWERSHELL
 * Activar caracteristica Microsoft-Windows-Subsystem-Linux.
@@ -59,7 +70,11 @@ POWERSHELL
 * Compilar objetos
 * Importar licencia a una instalacion local.
 * Instalar, desinstalar actualizar app local.
-* Compilar objetos.
+* Compilar objetos Local.
+* Compilar objetos Local.
+* Crear alias para GIT.
+* Generar simbolos.
+* Alias de GIT dentro de la configuracion.
 
 GITBASH
 * Cambiar origin a un proyecto que use git. 
