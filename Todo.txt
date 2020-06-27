@@ -10,11 +10,9 @@ Extraer codigo de las apis
             -containerName $TESTServer 
 ------------------------------------------------
 
-JSON
-Settings.json
-
 SQL
 Agregar DB en un contenedor ya creado.
+Scrips Varios
 
 Extensiones extras
 - script para hacer merge de manera mas eficiente que suba solo todo lo firmado (Merge-NAVApplicationObject).
