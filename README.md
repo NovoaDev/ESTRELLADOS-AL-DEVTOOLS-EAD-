@@ -105,6 +105,20 @@ JSON
     * `tutil format mes report (EAD)` - Función format mes report.
     * `tutil cambiar fecha a texto (EAD)` - Cambiar fecha a texto para reports.
     * `tutil Upgrade tags/gestionar CU de upgrade (EAD)` - tutil Upgrade tags/gestionar CU de upgrade.
+    * `tutil existe letra en (EAD)` - Función para verificar si existe letra.
+    * `tgitignore (EAD)` - Ejemplo de Gitignore que despues copiaremos al archivo gitignore.
+    * `tutil Upgrade tags/gestionar CU de upgrade Ampliada (EAD)` - Version ampliada de snippet upgradetags.
+    * `tutil traduccion con expresiones regulares (EAD)` - Traducciones usando expresiones regulares.
+    * `tutil formato fecha (EAD)` - Formato de fecha mediante la funcion Format.
+    * `tutil expresion regular para encontrar fallos traduciones (EAD)` - RegExp para encontrar fallos en fichero de traduccion.
+    * `tutil bound action para paginas WS (EAD)` - Bound Action a pagina WS.
+    * `tutil trabajar con enum (EAD)` - Trabajar con Enum.
+    * `tonassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)` - Mostrar un campo en pagina y guardar otro en tabla.
+    * `texternalsql mapear db externa (EAD)` - Mapear tabla en DB externa.
+    * `tutil trabajar json anidados (EAD)` - Trabajar con Json anidados.
+    * `tutil tablerelation en funcion de otro campo de la tabla (EAD)` - TableRelation con condicional.
+    * `tutil lanzar test desde VSCode testrunner (EAD)` - Lanzar pruebas unitarias desde VSCode.
+    * `tutil pagina web dentro BC controlAddin (EAD)` - Usar controlAddin para embeber Web dentro de BC.
 
 * DOCKER
     * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
@@ -128,7 +142,10 @@ JSON
     * `tutil compilar objetos (EAD)` - Compilar objetos.
     * `timportar licencia local (EAD)` - Importar licencia a una instalacion local.
     * `tinstalar desinstalar actualizar app local (EAD)` - Instalar, desinstalar actualizar app local.
-    * `tutil compilar objetos (EAD)` - Compilar objetos.
+    * `tutil compilar objetos Local (EAD)` - Compilar objetos Local.
+    * `tgit Crear alias para GIT (EAD)` - Crear alias para GIT.
+    * `tgenerar simbolos (EAD)` - Generar simbolos.
+    * `tgit alias git cfg (EAD)` - Alias de GIT dentro de la configuracion.
 
 * GITBASH
     * `tgit cambiar origin git (EAD)` - Cambiar origin a un proyecto que use git. 
@@ -142,7 +159,9 @@ JSON
     * `tgit reset rama (EAD)` - Reset rama. 
 
 * HTTP
-    * `tapi Test APIs BC Aut basica (EAD)` - Test apis personalizadas BC.
+    * `tapi Test APIs SANDBOX BC Aut basica (EAD)` - Test apis personalizadas BC SANDBOX.
+    * `tapi Test APIs DOCKER BC Aut basica (EAD)` - Test apis personalizadas BC DOCKER.
+    * `tws test WS Docker BC Aut basica (EAD)` - Test WS Docker BC Aut basica.
 
 * JSON
     * `tcrear ruleset que excluya warning en nombre de archivo (EAD)` - Crear ruleset que excluya warning en nombre de archivo.
@@ -209,6 +228,32 @@ begin
 end;
 ```
 ## Release Notes
+### 1.0.2
+* Se agregaron los siguientes snippets:
+    * AL - Lanzar report con filtro.
+    * AL - Funcion existe letra en.
+    * AL - Ejemplo Gitignore.
+    * AL - Upgrade tags ampliada.
+    * AL - Traduccion mediante expresiones regulares.
+    * AL - Ejemplo Formato de fecha con format.
+    * AL - RegExp para encontrar fallo en archivo de traducciones.
+    * AL - Ejemplo Bound Actions para WebServices de tipo pagina.
+    * AL - Ejemplo de trabajar con Enum.
+    * AL - Ejemplo onAssisEdit mostrar un campo en pagina y grabar en otro campo tabla.
+    * AL - Mapeo con ExternalSql.
+    * AL - Trabajar con Json Anidados.
+    * AL - Tablerelation con condicional.
+    * AL - Lanzar pruebas unitarias desdes VSCode.
+    * AL - Web embebida dentro de BC con controlAddin.
+    * HTTP - Test WebServices DOCKER Aut basica.
+    * HTTP - Test APIs personalizadas DOCKER Aut basica.
+    * POWERSHELL - Crear alias GIT.
+    * POWERSHELL - Generar simbolos.
+    * POWERSHELL - Compilar Objetos.
+    * POWERSHELL - Copiar alias GIT a CFG.
+
+* Se Modificaron los siguientes snippets:
+    * AL - Notificacion.
 
 ### 1.0.1
 * Se agregaron los siguientes snippets:

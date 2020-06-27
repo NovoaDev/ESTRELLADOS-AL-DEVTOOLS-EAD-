@@ -245,5 +245,19 @@
 			"Compile-NAVApplicationObject -navservername \\$BCSERVER -navserverinstance \\$BCINSTANCE -databaseserver \\$SQLSERVER\\\\\\$SQLINSTANCE -databasename \\$DB -synchronizeschemachanges \\$SYNC -username \\$USER -password \\$PASS -filter \"Type=Table; id=17\" –recompile"
 		],
 		"description": "Compilar objeto local (EAD)"
+	},
+	"tgitalias": {
+		"prefix": "tgit alias git cfg (EAD) ",
+		"body": [
+			"cfg = config --global -e\r",
+			"rank = shortlog -sn --all --no-merges\r",
+			"arbolito = log --all --graph --decorate --oneline\r",
+			"agregar = commit --amend\r",
+			"ultimatag = describe --tags --abbrev=0\r",
+			"top3 = log --pretty=format:\\\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\\\" --decorate -n3 --numstat\r",
+			"ls = log --pretty=format:\\\"%C(yellow)%h\\\\ %ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\\\" --decorate --date=short\r",
+			"top5mio = log --pretty=oneline -n 5 --author='Antonio Novoa'"
+		],
+		"description": "Alias git cfg (EAD)"
 	}
 }
