@@ -1,0 +1,57 @@
+{
+    "tonpremcompararfc": {
+		"prefix": "tonprem comparar ficheros de texto desde PS (EAD)",
+		"body": [
+			"fc \"C:\\Temp\\1\\*.txt\" \"C:\\Temp\\2\\*.txt\" > \"C:\\Temp\\result.txt\""
+		],
+		"description": "Comparar ficheros de texto desde PS (Verificar rutas) (EAD)"
+    },
+	"tonpremimportarlicencialocal": {
+		"prefix": "tonpremimportar licencia local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$Instance = \"Test\"\r",
+			"\\$licenseFileUri = 'C:\\Licencia\\licencia.flf'\r",
+			"\r",
+			"Import-NAVServerLicense -LicenseFile \\$licenseFileUri -ServerInstance \\$Instance\r",
+			"Restart-NAVServerInstance -ServerInstance \\$Instance "
+		],
+		"description": "Importar licencia local (EAD)"
+	},
+
+	"tonpremcrearusuariolocal": {
+		"prefix": "tonpremcrear usuario local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$Instance = \"Test\"\r",
+			"\r",
+			"New-NAVServerUser \\$Instance -username testUser -password (ConvertTo-SecureString \"testUser\" -AsPlainText -Force)\r",
+			"New-NAVServerUserPermissionSet \\$Instance -username testUser -permissionsetid SUPER"
+		],
+		"description": "Crear usuario local (EAD)"
+	},
+	"tonpremgenerarsimbolos": {
+		"prefix": "tonpremgenerar simbolos (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\140\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$FinsqlPath = \"FinsqlPath\"\r",
+			"\\$Database = \"Database\"\r",
+			"\\$SQLServer = \"SQLServer\"\r",
+			"\\$SQLInstance = \"SQLInstance\" \r",
+			"\\$BCInstance = \"BCInstance\"\r",
+			"\r",
+			"#Ejecutar findsql como administrador.\r",
+			"cd \\$FinsqlPath \r",
+			"finsql.exe Command=generatesymbolreference, Database=\\$Database, ServerName=\\$SQLServer\\\\\\$SQLInstance\r",
+			"#Esperar 20-30 min hasta que se cree un archivo en esta ruta llamado navresult.\r",
+			"\r",
+			"#Por ultimo reiniciar el servicio.\r",
+			"Restart-NAVServerInstance -ServerInstance \\$BCInstance\r",
+			""
+		],
+		"description": "Script para generar simbolos (EAD)"
+	}
+}

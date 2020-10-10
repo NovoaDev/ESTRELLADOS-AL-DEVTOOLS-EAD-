@@ -1,0 +1,52 @@
+{
+    "tpowershellfeaturelinux": {
+		"prefix": "tpowershell Activar caracteristica Microsoft-Windows-Subsystem-Linux (EAD)",
+		"body": [
+			"Enable-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux -Online"
+		],
+		"description": "Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows (EAD)"
+    },
+    "tpowershelltraduccionconexpresionesregulares": {
+		"prefix": "tpowershell traduccion con expresiones regulares (EAD)",
+		"body": [
+			"/*",
+			"Traducciones con expresiones regulares ",
+			"Esto nos permitira, trabajar con dos traducciones, idioma original en ingles y traduccion, en este caso español.",
+			"",
+			"1) Activaremos en app.json la feature de translationfile.",
+			"",
+			"2) Crearemos los labels, caption, tooltip, etc. Con la siguiente estructura.",
+			"    Caption = 'Name', comment = 'Nombre';",
+			"",
+			"3) Copiaremos el fichero xlf que se genera al compilar en misma carpeta translations.",
+			"",
+			"4) Modificaremos el nombre agregando es-ES al nombre quedando algo como \"nombre.es-ES.g.xlf\".",
+			"",
+			"5) Abrimos el archivo nuevo y cambiamos target-language a \"es-ES\".",
+			"",
+			"6) Abrimos el archivo nuevo desde vscode buscamos dentro de el con ctrl + F presionamos la imagen de usar expresiones regulares o RegExp (Alt+R).",
+			"",
+			"7) Click en la flechita para desplegar el replace. ",
+			"",
+			"8) Pegamos lo siguiente:",
+			"En Find:  ",
+			"    <note from=\"D(.*?)>(.*?)</note> ",
+			"",
+			"En Replace: ",
+			"    <note from=\"D$1>$2</note>\\n\\t\\t\\t\\t\\t<target>$2</target> ",
+			"",
+			"9) Remplazamos todos.",
+			"*/"
+		],
+		"description": "Traduccion con expresiones regulares (EAD)"
+    },
+    "tpowershellexpresionregularparaencontrarfallostraduciones": {
+		"prefix": "tpowershell expresion regular para encontrar fallos traduciones (EAD)",
+		"body": [
+			"// Expresion regular encontrar fallos en fichero de traducciones.\r",
+			"// Buscar dentro del fichero que se genera automaticamente al compilar, despues copiar el texto que tiene el error, buscarlo en BC y modificarlo.\r",
+			"// <note from=\"D(.*?)>ESP=\"(.*?)\"(.*?)\"|PSE=|PES=|SEP=|SPE=|EPS=|ESP =|ESP= |ESP\"|'|\\*|`|´| ESP=(.*?)</note>"
+		],
+		"description": "Expresion regular para encontrar fallos traduciones (EAD)"
+	}
+}

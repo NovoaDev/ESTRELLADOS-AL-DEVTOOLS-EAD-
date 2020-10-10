@@ -1,0 +1,60 @@
+{
+    "tonpremcompilarobjetolocal": {
+		"prefix": "tonpremcompilar objeto local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$BCSERVER = \"BCSERVER\"\r",
+			"\\$BCINSTANCE = \"BCINSTANCE\"\r",
+			"\\$SQLSERVER = \"SQLSERVER\"\r",
+			"\\$SQLINSTANCE = \"SQLINSTANCE\"\r",
+			"\\$DB = \"DBNAME\"\r",
+			"\\$SYNC = \"force\"\r",
+			"\\$USER = \"USER\"\r",
+			"\\$PASS = \"PASS\"\r",
+			"\r",
+			"Compile-NAVApplicationObject -navservername \\$BCSERVER -navserverinstance \\$BCINSTANCE -databaseserver \\$SQLSERVER\\\\\\$SQLINSTANCE -databasename \\$DB -synchronizeschemachanges \\$SYNC -username \\$USER -password \\$PASS -filter \"Type=Table; id=17\" –recompile"
+		],
+		"description": "Compilar objeto local (EAD)"
+    },
+    "tonpremcompilarobj": {
+		"prefix": "tonprem compilar objetos (EAD)",
+		"body": [
+			"\\$Server = 'Server'\r",
+			"\\$Instancia = 'Instancia'\r",
+			"\\$BDServer = '127.0.0.1\\InstanciaSql'\r",
+			"\\$Database = 'Database'\r",
+			"\\$Username = 'Username'\r",
+			"\\$Password = 'Password'\r",
+			"\r",
+			"Compile-NAVApplicationObject -navservername \\$Server -navserverinstance \\$Instancia -databaseserver \\$BDServer -databasename \\$Database -synchronizeschemachanges \"force\" -username \\$Username -password \\$Password -filter \"Type=Table; id=17\" –recompile"
+		],
+		"description": "Compilar objetos (EAD)"
+    },
+    "tonpreminstalardesinstalareextensionlocal": {
+		"prefix": "tonpreminstalar desinstalar actualizar app local (EAD)",
+		"body": [
+			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
+			"\r",
+			"\\$Instance = \"Test\"\r",
+			"\\$appPath = \"C:\\app\\test_productoTest_1.0.0.0.app\"\r",
+			"\\$appName = \"productoTest\"\r",
+			"\\$version = \"1.0.0.0\"\r",
+			"\r",
+			"Publish-NAVApp -ServerInstance \\$Instance -Path \\$appPath -SkipVerification\r",
+			"\r",
+			"Sync-NavApp -ServerInstance \\$Instance -Name \\$appName -Version \\$version\r",
+			"\r",
+			"# Primera instalacion\r",
+			"Install-NAVApp -ServerInstance \\$Instance -Name \\$appName -Version \\$version\r",
+			"\r",
+			"# Update\r",
+			"Start-NAVAppDataUpgrade -ServerInstance \\$Instance -Name \\$appName -Version \\$version\r",
+			"\r",
+			"# Desistalar ext\r",
+			"Uninstall-NAVApp -Name \\$appName -ServerInstance \\$Instance\r",
+			"Unpublish-NAVApp -ServerInstance \\$Instance -Name \\$appName -Version \\$version"
+		],
+		"description": "Instalar desinstalar actualizar app local (EAD)"
+	}  
+}

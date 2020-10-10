@@ -1,0 +1,41 @@
+{
+    "ttestlanzartestdesdevscode": {
+		"prefix": "ttest lanzar test desde VSCode testrunner (EAD)",
+		"body": [
+			"codeunit 50100 \"TestRunner\"\r",
+			"{\r",
+			"    Subtype = TestRunner;\r",
+			"\r",
+			"    trigger OnRun()\r",
+			"    begin\r",
+			"        codeunit.Run(Codeunit::\"Test codeunit\"); //Aqui crearemos una linea por cada CodeUnit de test que tengamos.\r",
+			"\r",
+			"        Message('\\Test Satisfactorios: ' + Format(SuccessTest) + '\\Test Fallidos: ' + Format(FailedTests));\r",
+			"    end;\r",
+			"\r",
+			"    trigger OnAfterTestRun(CodeunitId: Integer; CodeunitName: Text; FunctionName: Text; Permissions: TestPermissions; Success: Boolean)\r",
+			"    begin\r",
+			"        if Success then\r",
+			"            SuccessTest += 1\r",
+			"        else\r",
+			"            if FunctionName <> '' then begin\r",
+			"                FailedTests += 1;\r",
+			"                Message(FunctionName + ': ' + GetLastErrorText());\r",
+			"            end;\r",
+			"    end;\r",
+			"\r",
+			"    var\r",
+			"        SuccessTest: Integer;\r",
+			"        FailedTests: Integer;\r",
+			"}\r",
+			"\r",
+			"/*\r",
+			"Crear archivo TestRunner.ps1 el cual tendremos en la raiz del proyecto y lanzaremos por termina de Vscode con .\\TestRunner.ps1\r",
+			"Contenido del archivo\r",
+			"Invoke-NavContainerCodeunit -Codeunitid 50100 -containerName NombreCTN -CompanyName \"CRONUS España S.A.\"\r",
+			"*/\r",
+			""
+		],
+		"description": "Lanzar test desde VSCode testrunner (EAD)"
+	} 
+}
