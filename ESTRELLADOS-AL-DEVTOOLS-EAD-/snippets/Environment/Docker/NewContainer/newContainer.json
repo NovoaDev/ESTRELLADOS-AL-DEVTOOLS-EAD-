@@ -1,0 +1,181 @@
+{
+	"tdockercrearctn": {
+		"prefix": "tdocker crear contenedor BC OnPremise (EAD)",
+		"body": [
+			"# container\r",
+			"\\$ContainerName = '${1:ContainerName}'\r",
+			"\\$licenseFile = '${2:C:\\License\\License.flf}'\r",
+			"\r",
+			"# Image\r",
+			"\\$artifactUrl = Get-BCArtifactUrl -type onPrem -country \"es\" -version ${3:17}  \r",
+			"\\$imageName = '${4:onprem17}'\r",
+			"\r",
+			"# User\r",
+			"\\$UserName = '${5:User}'\r",
+			"\\$Password = ConvertTo-SecureString \"${6:Pass123}\" -AsPlainText -Force\r",
+			"\\$Credential = New-Object System.Management.Automation.PSCredential (\\$UserName, \\$Password)\r",
+			"\r",
+			"New-BCContainer -accept_eula `\r",
+			"                -accept_outdated `\r",
+			"                -updateHosts `\r",
+			"                -containername \\$containername `\r",
+			"                -licenseFile \\$licenseFile `\r",
+			"                -artifactUrl \\$artifactUrl `\r",
+			"                -imageName \\$imageName `\r",
+			"                -auth NavUserPassword `\r",
+			"                -Credential \\$credential"
+		],
+		"description": "Script para crear un contenedor de Business Central OnPremise (EAD) "
+	},
+	"tdockercrearctnSandbox": {
+		"prefix": "tdocker crear contenedor BC SandBox (EAD)",
+		"body": [
+			"# container\r",
+			"\\$ContainerName = '${1:ContainerName}'\r",
+			"\\$licenseFile = '${2:C:\\License\\License.flf}'\r",
+			"\r",
+			"# Image\r",
+			"\\$artifactUrl = Get-BCArtifactUrl -country \"es\" -version ${3:17}  \r",
+			"\\$imageName = '${4:Sass17}'\r",
+			"\r",
+			"# User\r",
+			"\\$UserName = '${5:User}'\r",
+			"\\$Password = ConvertTo-SecureString \"${6:Pass123}\" -AsPlainText -Force\r",
+			"\\$Credential = New-Object System.Management.Automation.PSCredential (\\$UserName, \\$Password)\r",
+			"\r",
+			"New-BCContainer -accept_eula `\r",
+			"                -accept_outdated `\r",
+			"                -updateHosts `\r",
+			"                -containername \\$containername `\r",
+			"                -licenseFile \\$licenseFile `\r",
+			"                -artifactUrl \\$artifactUrl `\r",
+			"                -imageName \\$imageName `\r",
+			"                -auth NavUserPassword `\r",
+			"                -Credential \\$credential"
+		],
+		"description": "Script para crear un contenedor de Business Central Sandbox (EAD) "
+	},
+	"tdockercrearctndesdebak": {
+		"prefix": "tdocker crear contenedor BC desde .bak (EAD)",
+		"body": [
+			"# container\r",
+			"\\$ContainerName = '${1:ContainerName}'\r",
+			"\\$licenseFile = '${2:C:\\License\\License.flf}'\r",
+			"\\$BakFile = '${3:C:\\Temp\\database.bak}'\r",
+			"\r",
+			"# Image\r",
+			"\\$artifactUrl = Get-BCArtifactUrl -type onPrem -country \"es\" -version ${4:17}  \r",
+			"\\$imageName = '${5:onprem17}'\r",
+			"\r",
+			"# User\r",
+			"\\$UserName = '${6:User}'\r",
+			"\\$Password = ConvertTo-SecureString \"${7:Pass123}\" -AsPlainText -Force\r",
+			"\\$Credential = New-Object System.Management.Automation.PSCredential (\\$UserName, \\$Password)\r",
+			"\r",
+			"New-BCContainer -accept_eula `\r",
+			"                -accept_outdated `\r",
+			"                -updateHosts `\r",
+			"                -doNotExportObjectsToText `\r",
+			"                -containername \\$containername `\r",
+			"                -bakFile \\$BakFile `\r",
+			"                -artifactUrl \\$artifactUrl `\r",
+			"                -imageName \\$imageName `\r",
+			"                -auth NavUserPassword `\r",
+			"                -Credential \\$credential\r",
+			"\r",
+			"Import-BCContainerLicense -containerName \\$containerName -licenseFile \\$licenseFile"
+		],
+		"description": "Script para crear un contenedor de Business Central desde .bak (EAD) "
+	},
+	"tdockercrearctnsqlext": {
+		"prefix": "tdocker crear contenedor BC con SQL Externo (EAD)",
+		"body": [
+			"# container\r",
+			"\\$ContainerName = '${1:ContainerName}'\r",
+			"\\$licenseFile = '${2:C:\\License\\License.flf}'\r",
+			"\r",
+			"# Image\r",
+			"\\$artifactUrl = Get-BCArtifactUrl -type onPrem -country \"es\" -version ${3:17}  \r",
+			"\\$imageName = '${4:onprem17}'\r",
+			"\r",
+			"# User\r",
+			"\\$UserName = '${5:User}'\r",
+			"\\$Password = ConvertTo-SecureString \"${6:Pass123}\" -AsPlainText -Force\r",
+			"\\$Credential = New-Object System.Management.Automation.PSCredential (\\$UserName, \\$Password)\r",
+			"\r",
+			"# External SQL\r",
+			"\\$DatabaseServer = \"${7:DatabaseServer}\" \r",
+			"\\$DatabaseInstance = \"${8:DatabaseInstance}\" \r",
+			"\\$DatabaseName = \"${9:DatabaseName}\" \r",
+			"\\$DatabaseUserName = \"${10:DatabaseUserName}\" \r",
+			"\\$DatabasePassword = \"${11:DatabasePassword}\" \r",
+			"\\$DatabaseSecurePassword = ConvertTo-SecureString -String \\$DatabasePassword -AsPlainText -Force \r",
+			"\\$DatabaseCredentials = New-Object PSCredential -ArgumentList \\$DatabaseUserName, \\$DatabaseSecurePassword \r",
+			"\r",
+			"New-BCContainer -accept_eula `\r",
+			"                -accept_outdated `\r",
+			"                -updateHosts `\r",
+			"                -doNotExportObjectsToText `\r",
+			"                -containername \\$containername `\r",
+			"                -licenseFile \\$licenseFile `\r",
+			"                -artifactUrl \\$artifactUrl `\r",
+			"                -imageName \\$imageName `\r",
+			"                -auth NavUserPassword `\r",
+			"                -Credential \\$credential `\r",
+			"                -databaseServer  \\$DatabaseServer `\r",
+			"                -databaseName \\$DatabaseName `\r",
+			"                -databaseinstance \\$databaseInstance `\r",
+			"                -databaseCredential \\$databaseCredentials  "
+		],
+		"description": "Script para crear un contenedor de Business Central que se conecte a un sql externo (EAD)"
+	},
+	"tdockerimportartest": {
+		"prefix": "tdocker importar codeunit y extensiones de test (EAD)",
+		"body": [
+			"\\$containername = '${1:NombreContenedor}'\r",
+			"\r",
+			"Import-TestToolkitToBCContainer -containerName \\$containerName -testToolkitCountry ${2:ES}"
+		],
+		"description": "Importar codeunit y extensiones de test (EAD) "
+	},
+	"tdockerverdetallesimagenesdocker": {
+		"prefix": "tdocker ver detalles de imagenes viejas de Docker (EAD)",
+		"body": [
+			"\\$bcDockerImage = 'mcr.microsoft.com/businesscentral/sandbox:15.1.37881.39313-es-ltsc2019'\r",
+			"\r",
+			"Get-NavContainerImageLabels \\$bcDockerImage"
+		],
+		"description": "Ver detalles de imagenes viejas de Docker (EAD)"
+	},
+	"tdockerextraerbasedectn": {
+		"prefix": "tdocker extraer codigo de la BaseAPP desde contenedor (EAD)",
+		"body": [
+			"# Nombre del contenedor del que queremos extraer la baseapp\r",
+			"# Tiene que ser un contenedor creado con el flag de -includeAL y sin -doNotExportObjectsToText.\r",
+			"\\$containerName = \"${1:BaseAL}\"\r",
+			"\\$alProjectFolder = \"C:\Repositorio\\\\${2:BaseAPP15}\"\r",
+			"\r",
+			"Create-AlProjectFolderFromBcContainer -containerName \\$containerName -alProjectFolder \\$alProjectFolder -useBaseLine -useBaseAppProperties -addGIT"
+		],
+		"description": "Extraer codigo de la BaseAPP desde contenedor (EAD)"
+	},
+	"tdockerimportarlicencia": {
+		"prefix": "tdocker importar licencia (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\\$licenseFileUri = '${2:C:\\Licencia\\licencia.flf}'\r",
+			"\r",
+			"Import-BCContainerLicense -licenseFile \\$licenseFileUri -containerName \\$containerName"
+		],
+		"description": "Importar licencia (EAD)"
+	},
+	"tdockeragregarfuentesalcontenedor": {
+		"prefix": "tdocker agregar fuentes de Windows a un contenedor (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\r",
+			"Add-FontsToBCContainer -containerName \\$containerName"
+		],
+		"description": "Agregar fuentes de Windows a un contenedor (EAD)"
+	}
+}
