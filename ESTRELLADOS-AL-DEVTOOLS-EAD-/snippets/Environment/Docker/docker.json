@@ -1,0 +1,56 @@
+{
+    "tdockerinstallbccontainerhelper": {
+		"prefix": "tdocker instalar bccontainerhelper (EAD)",
+		"body": [
+			"# If we have installed the old navcontainerhelper modudlo we will have to uninstall it\r",
+			"Uninstall-Module -Name navcontainerhelper -AllVersions\r",
+			"\r",
+			"# Install the bccontainerhelper module\r",
+			"Install-Module -Name bccontainerhelper -force"
+		],
+		"description": "tdocker instalar bccontainerhelper"
+    },
+    	"tdockerverayuda": {
+		"prefix": "tdocker ver ayuda de BCcontainerhelper (EAD)",
+		"body": [
+			"get-command -Module BCcontainerhelper\r",
+			"Get-Help New-BCContainer -full\r",
+			"help new-BCcontainer -detailed\r",
+			"Write-BCContainerHelperWelcomeText"
+		],
+		"description": "Ver ayuda de BCcontainerhelper desde vscode (EAD)"
+	},
+	"tdockercopiarcontenedoralocal": {
+		"prefix": "tdocker copiar archivo desde contenedor a local (EAD)",
+		"body": [
+			"Copy-FileFromBCContainer `\r",
+			"    -containerName \"${1:NombreContenedor}\" `\r",
+			"    -containerPath \"${2:C:\\run\\my}\" `\r",
+			"    -localPath \"${3:C:\\Temp\\file.app}\""
+		],
+		"description": "Copiar archivo desde contenedor a local (EAD)"
+	},
+	"tdockercopiarlocalacontenedor": {
+		"prefix": "tdocker copiar archivo local a contenedor (EAD)",
+		"body": [
+			"Copy-FileToBCContainer `\r",
+			"    -containerName \"${1:NombreContenedor}\" `\r",
+			"    -containerPath \"${2:C:\\run\\my}\" `\r",
+			"    -localPath \"${3:C:\\Temp\\file.app}\""
+		],
+		"description": "Copiar archivo local a contenedor (EAD)"
+    },
+    "tdockercrearusuario": {
+		"prefix": "tdocker crear usuario en contenedor (EAD)",
+		"body": [
+			"\\$containername = 'NombreContenedor'\r",
+			"\\$userName = \"Usuario\"\r",
+			"\\$password = ConvertTo-SecureString -String \"Pass\" -AsPlainText -Force\r",
+			"\\$credential = New-Object -TypeName \"System.Management.Automation.PSCredential\" -ArgumentList \\$userName, \\$password\r",
+			"\\$permisionSetId = \"SUPER\"\r",
+			"\r",
+			"New-BCContainerBCUser -Credential \\$credential -containerName \\$containername -PermissionSetId \\$permisionSetId\r"
+		],
+		"description": "Crear usuario en contenedor (EAD)"
+	},
+}

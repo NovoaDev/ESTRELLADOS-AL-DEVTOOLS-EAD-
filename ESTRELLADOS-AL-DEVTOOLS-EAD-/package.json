@@ -26,7 +26,15 @@
         "snippets": [
             {
                 "language": "powershell",
-                "path": "./snippets/docker.json"
+                "path": "./snippets/Environment/Docker/docker.json"
+            }, 
+            {
+                "language": "powershell",
+                "path": "./snippets/Environment/Docker/NewContainer/newContainer.json"
+            }, 
+            {
+                "language": "powershell",
+                "path": "./snippets/Environment/Docker/AppManagement/AppManagement.json"
             }, 
             {
                 "language": "powershell",

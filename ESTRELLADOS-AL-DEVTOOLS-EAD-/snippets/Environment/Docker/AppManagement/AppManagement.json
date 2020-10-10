@@ -1,0 +1,55 @@
+{
+    "tdockerinstalarapp": {
+		"prefix": "tdocker instalar app (EAD)",
+		"body": [
+			"\\$ContainerName = \"${1:ContainerName}\"\r",
+			"\\$AppFile = \"${2:C:\\Temp\\File.app}\"\r",
+			"\r",
+			"Publish-BCContainerApp -containerName \\$ContainerName -appFile \\$AppFile -SkipVerification -sync -install"
+		],
+		"description": "instalar app (EAD)"
+	},
+	"tdockeractualizarrapp": {
+		"prefix": "tdocker actualizar app (EAD)",
+		"body": [
+			"\\$ContainerName = \"${1:ContainerName}\"\r",
+			"\\$AppFile = \"${2:C:\\Temp\\File.app}\"\r",
+			"\\$AppName = \"${3:AppName}\"\r",
+			"\\$LastAppVersion = \"${4:1.0.0.0}\"\r",
+			"\\$NewAppVersion = \"${5:1.0.0.1}\"\r",
+			"\r",
+			"UnInstall-BCContainerApp -containerName \\$ContainerName -appName \\$AppName -appVersion \\$LastAppVersion\r",
+			"\r",
+			"Publish-BCContainerApp -containerName \\$ContainerName -appFile \\$AppFile -SkipVerification\r",
+			"\r",
+			"Sync-BCContainerApp -containerName \\$ContainerName -appName \\$AppName -appVersion \\$NewAppVersion\r",
+			"#Sync-BCContainerApp -containerName \\$ContainerName -appName \\$appName -Mode ForceSync\r",
+			"#Sync-BCContainerApp -containerName \\$ContainerName -appName \\$appName -Mode Clean\r",
+			"\r",
+			"Start-BCContainerAppDataUpgrade -containerName \\$ContainerName -appName \\$AppName -appVersion \\$NewAppVersion\r",
+			"\r",
+			"UnPublish-BCContainerApp -containerName \\$ContainerName -appName \\$AppName -version \\$LastAppVersion"
+		],
+		"description": "tdocker actualizar app (EAD)"
+    },
+    "tdockerdesinstalarapp": {
+		"prefix": "tdocker desinstalar/despublicar app (EAD)",
+		"body": [
+			"\\$containerName = \"${1:NombreContenedor}\"\r",
+			"\\$appName = \"${2:App}\"\r",
+			"\r",
+			"UnInstall-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -Verbose `",
+			"    -ErrorAction SilentlyContinue",
+			"\r",
+			"UnPublish-NavContainerApp `",
+			"    -containerName \\$containername `",
+			"    -appName \\$appName `",
+			"    -Verbose `",
+			"    -ErrorAction SilentlyContinue"
+		],
+		"description": "Desinstalar/despublicar app (EAD)"
+	}	 
+}

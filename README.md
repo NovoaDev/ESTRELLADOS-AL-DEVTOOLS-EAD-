@@ -71,7 +71,6 @@ POWERSHELL
 * Importar licencia a una instalacion local.
 * Instalar, desinstalar actualizar app local.
 * Compilar objetos Local.
-* Compilar objetos Local.
 * Crear alias para GIT.
 * Generar simbolos.
 * Alias de GIT dentro de la configuracion.
@@ -136,8 +135,10 @@ JSON
     * `tutil pagina web dentro BC controlAddin (EAD)` - Usar controlAddin para embeber Web dentro de BC.
 
 * DOCKER
-    * `tdocker crear contenedor BC (EAD)` - Crear contenedor.
+    * `tdocker crear contenedor BC OnPremise (EAD)` - Crear contenedor.
+    * `tdocker crear contenedor BC Sandbox (EAD)` - Crear contenedor.
     * `tdocker crear contenedor BC desde .bak (EAD)` - Crear contenedor desde respaldo .bak.
+    * `tdocker crear contenedor BC con Sql Externo (EAD)` - Crear contenedor desde respaldo .bak.
     * `tdocker importar codeunit y extensiones de test (EAD)` - Importar C/U de test.
     * `tdocker ver detalles de imagenes de Docker (EAD)` - Extraer BaseApp desde un contenedor.
     * `tdocker extraer codigo de la BaseAPP desde contenedor (EAD)` - Ver detalles de imagen antes de descargar.
@@ -186,28 +187,28 @@ JSON
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
 ```powershell
-#Install-Module navcontainerhelper -force
-#Import-Module navcontainerhelper
-# Rutas y nombres
-$bcDockerImage = 'mcr.microsoft.com/businesscentral/sandbox:15.1.37881.39313-es-ltsc2019'
-$licenseFileUri = 'C:\Licencia\licencia.flf'
-$containername = 'NombreContenedor'
-# Usuarios
-$userName = "Usuario"
-$password = ConvertTo-SecureString -String "Pass" -AsPlainText -Force
-$credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $userName, $password
+#container
+$ContainerName = 'ContainerName'
+$licenseFile = 'C:\License\License.flf'
 
+# Image
+$artifactUrl = Get-BCArtifactUrl -type onPrem -country "es" -version 17  
+$imageName = 'onprem17'
+
+# User
+$UserName = 'User'
+$Password = ConvertTo-SecureString "Pass123" -AsPlainText -Force
+$Credential = New-Object System.Management.Automation.PSCredential ($UserName, $Password)
+			
 New-BCContainer -accept_eula `
-                 -containername $containername `
-                 -auth UserPassword `
-                 -Credential $credential `
-                 -licenseFile $licenseFileUri `
-                 -includeAL `
-                 -updateHosts `
-                 -accept_outdated `
-                 -assignPremiumPlan `
-                 -imageName $bcdockerimage `
-                 -useBestContainerOS
+                -accept_outdated `
+                -updateHosts `
+                -containername $containername `
+                -licenseFile $licenseFile `
+   		        -artifactUrl $artifactUrl `
+                -imageName $imageName `
+                -auth NavUserPassword `
+                -Credential $credential
 ```
 
 **`tcambiar color de campos en pagina (EAD)`**
@@ -243,6 +244,17 @@ begin
 end;
 ```
 ## Release Notes
+### 1.0.3
+* Se modificaron los siguientes snippets: crear contenedores con artifacts
+    * Docker - Instalar BCContainerHelper.
+    * Docker - Crear contenedor Onpremise.
+    * Docker - Crear contenedor SandBox.
+    * Docker - Crear contenedor desde respaldo .bak. 
+    * Docker - Crear contenedor con sql externo. 
+    * Docker - Desinstalar .app.
+    * Docker - Instalar .app.
+    * Docker - Actualizar .app.
+    
 ### 1.0.2
 * Se agregaron los siguientes snippets:
     * AL - Lanzar report con filtro.
