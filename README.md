@@ -44,8 +44,10 @@ AL
 * Usar controlAddin para embeber Web dentro de Business Central.
 
 DOCKER
-* Crear contenedor.
+* Crear contenedor Onpremise.
+* Crear contenedor SandBox.
 * Crear contenedor desde respaldo .bak. 
+* Crear contenedor BD Externa. 
 * Importar C/U de test.
 * Extraer BaseApp desde un contenedor.
 * Ver detalles de imagen antes de descargar.

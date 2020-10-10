@@ -1,0 +1,248 @@
+{
+    "tutildivisible": {
+		"prefix": "tutil numero es divisible (EAD)",
+		"body": [
+			"    procedure itsDivisibleBy(number: integer; multiple: Integer): Boolean\r",
+			"    var\r",
+			"        moduleOP: Integer;\r",
+			"    begin\r",
+			"        moduleOP := number MOD multiple;\r",
+			"        if moduleOP = 0 then\r",
+			"            exit(true);\r",
+			"    end;"
+		],
+		"description": "Muestra si un numero es multiplo de otro (EAD)"
+    },
+    "tutilaccioncargarblob": {
+		"prefix": "tutil accion cargar blob (EAD)",
+		"body": [
+			"        action(\"UploadFile\")\r",
+			"        {\r",
+			"           Caption = 'Upload', comment = 'ESP=\"Actualizar\"';\r",
+			"           ToolTip = 'Action to upload image', comment = 'ESP=\"Accion para subir imagen\"';\r",
+			"\r",
+			"           ApplicationArea = All;\r",
+			"           Image = LaunchWeb;\r",
+			"           Promoted = true;\r",
+			"           PromotedCategory = Process;\r",
+			"           PromotedIsBig = true;\r",
+			"           PromotedOnly = true;\r",
+			"\r",
+			"           trigger OnAction()\r",
+			"           var\r",
+			"               InStr: InStream;\r",
+			"               FileName: Text;\r",
+			"           begin\r",
+			"               UploadIntoStream('Upload', '', '', FileName, InStr);\r",
+			"              \"Campo\".ImportStream(InStr, FileName);\r",
+			"           end;\r",
+			"        }"
+		],
+		"description": "Accion cargar blob (EAD)"
+	},
+	"tutiloverflowtexto": {
+		"prefix": "tutil overflow en campos texto (EAD)",
+		"body": [
+			"Tabla.Campo := copyStr(Variable, 1, maxstrlen(Tabla.Campo));"
+		],
+		"description": "Overflow en campos texto (EAD)"
+	},
+	"tutilexisteletraen": {
+		"prefix": "tutil existe letra en (EAD)",
+		"body": [
+			"procedure isAValidLetter(Letter: Text[1]): Boolean\r",
+			"begin\r",
+			"    if Letter in ['8', '9', 'X', 'Y', 'Z'] then\r",
+			"        exit(true);\r",
+			"end;"
+		],
+		"description": "Existe letra en (EAD)"
+	},	
+	"tutiltrabajarconenum": {
+		"prefix": "tutil trabajar con enum (EAD)",
+		"body": [
+			"    trigger OnOpenPage();",
+			"    var",
+			"        NUNEnumColor: Enum \"NUN Enum Color\";",
+			"    begin",
+			"        Message('Obtener Caption desde indice con Format : ' + Format(NUNEnumColor::GREEN));",
+			"        Message('Obtener indice de ENUM desde nombre en texto : ' + Format(ObtenerIndiceEnumDesdeNombre('RED')));",
+			"        Message('Obtener nombre desde indice usando var integer: ' + ObtenerNombreDelEnumDesdeIndice(0));",
+			"        Message('Obtener nombre desde indice usando indexOF : ' + ObtenerNombreDelEnumDesdeIndice2(NUNEnumColor::RED));",
+			"    end;",
+			"",
+			"    procedure ObtenerIndiceEnumDesdeNombre(TextoEnum: Text) Indice: Integer",
+			"    var",
+			"        NUNEnumColor: Enum \"NUN Enum Color\";",
+			"    begin",
+			"        Indice := NUNEnumColor.Names().IndexOf(TextoEnum);",
+			"        if Indice > 0 then",
+			"            Indice -= 1;",
+			"        exit(Indice);",
+			"    end;",
+			"",
+			"    procedure ObtenerNombreDelEnumDesdeIndice(Indice: integer) Nombre: Text",
+			"    var",
+			"        NUNEnumColor: Enum \"NUN Enum Color\";",
+			"    begin",
+			"        Indice += 1;",
+			"        NUNEnumColor.Names().Get(Indice, Nombre);",
+			"        exit(Nombre);",
+			"    end;",
+			"",
+			"    procedure ObtenerNombreDelEnumDesdeIndice2(NUNEnumColor: Enum \"NUN Enum Color\") Nombre: Text",
+			"    var",
+			"        Indice: Integer;",
+			"    begin",
+			"        Indice := NUNEnumColor.Ordinals().IndexOf(NUNEnumColor.AsInteger());",
+			"        NUNEnumColor.Names().Get(Indice, Nombre);",
+			"        exit(Nombre);",
+			"    end;"
+		],
+		"description": "Trabajar con enum (EAD)"
+	},
+	"tutilonassisteditmostraruncampoygrabarotro": {
+		"prefix": "tutilonassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)",
+		"body": [
+			"    // Grabar\r",
+			"    trigger OnAssistEdit()\r",
+			"    var\r",
+			"        Deporte: Record \"Deporte\";\r",
+			"    begin\r",
+			"        // Visualizar un campo en pagina pero guardar el que tiene la relacion onAssisEdit. \r",
+			"        if Action::LookupOK = Page.RunModal(page::\"Deporte List\", Deporte) then begin\r",
+			"            // Guardamos el valor que tiene la relacion\r",
+			"            VALIDATE(\"Codigo\", Deporte.Codigo);\r",
+			"            // Variable global que sera un campo de la pagina donde visualizaremos la descripcion.\r",
+			"            GobalVar := Deporte.Nombre;\r",
+			"        end;\r",
+			"    end;\r",
+			"\r",
+			"    // Visualizar cuando abrimos la pagina o cambiamos de registro necesitaremos que la variable global se rellene\r",
+			"    trigger OnAfterGetRecord()\r",
+			"    var\r",
+			"        Deporte: Record \"Deporte\";\r",
+			"    begin\r",
+			"        if Deporte.Get(\"Tipo Deporte\") then\r",
+			"            GobalVar := Deporte.\"Deporte\";\r",
+			"    end;"
+		],
+		"description": "tonassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)"
+	},
+	"tutiltableralationenfunciondeotrocampodelatabla": {
+		"prefix": "tutil tablerelation en funcion de otro campo de la tabla (EAD)",
+		"body": [
+			"    // Table relacion en funcion de otro campo de la tabla\r",
+			"    TableRelation = IF (\"Country/Region Code\" = CONST('')) \"Post Code\".City\r",
+			"    ELSE\r",
+			"    IF (\"Country/Region Code\" = FILTER(<> '')) \"Post Code\".City WHERE(\"Country/Region Code\" = FIELD(\"Country/Region Code\"));\r",
+			"    //This property is currently not supported\r",
+			"    //TestTableRelation = false;\r",
+			"    ValidateTableRelation = false;"
+		],
+		"description": "Tablerelation en funcion de otro campo de la tabla (EAD)"
+    },
+    "tutilblobescribir": {
+		"prefix": "tutilblob escribir desde texto (EAD)",
+		"body": [
+			"procedure ${1:SetBlob}(Text: Text)\r",
+			"var \r",
+			"    OutStream: OutStream; \r",
+			"begin \r",
+			"    ${2:\"Campo BLOB\"}.CreateOutStream(OutStream); \r",
+			"    OutStream.WriteText(Text); \r",
+			"end; "
+		],
+		"description": "Escribir un campo de tipo blob desde un texto (EAD)"
+	},
+	"tutilblobleer": {
+		"prefix": "tutilblob obtener texto desde blob (EAD)",
+		"body": [
+			"procedure ${1:GetBlob}(): Text \r",
+			"Var \r",
+			"    InStream: InStream; \r",
+			"    Text: Text; \r",
+			"Begin \r",
+			"    CalcFields(${2:\"Campo BLOB\"}); \r",
+			"    ${2:\"Campo BLOB\"}.CreateInStream(InStream); \r",
+			"    InStream.ReadText(Text); \r",
+			"    exit(Text); \r",
+			"end; "
+		],
+		"description": "Obtener texto desde un campo de tipo blob (EAD)"
+    },
+    "tutilsing": {
+        "prefix": "tutilfirma una línea (EAD)",
+        "body": [
+            "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}"
+        ],
+        "description": "Plantilla para firmar codigo una linea (EAD)"
+    },
+    "tutilsingMultiline": {
+       "prefix": "tutilfirma multilínea (EAD)",
+       "body": [
+           "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
+           " ",
+           "//$1 - $2 - FIN"
+       ],
+       "description": "Plantilla para firmar codigo multilínea (EAD)"
+	},
+	"tutilfindset": {
+		"prefix": "tutilfindset recorrer record (EAD)",
+		"body": [
+			"        if not ${1:record}.IsEmpty() then",
+			"            if ${1:record}.Findset() then",
+			"                repeat",
+			"",
+			"                until ${1:record}.next() = 0;"
+		],
+		"description": "Snippet plantilla para recorrer record (EAD)"
+	},
+	"tutilcampoPagina": {
+		"prefix": "tutilcampo en pagina con tooltip (EAD)",
+		"body": [
+			"field(${1:Campo})",
+			"{",
+			"\tApplicationArea = All;",
+			"\tToolTip = '${2:ENU}', comment = 'ESP=\"${3:ESP}\"';",
+			"}"
+		],
+		"description": "Snippet plantilla para crear campos en tablas con tooltip (EAD)"
+	}, 
+	
+	"tutilcambiarcolor": {
+		"prefix": "tutilcambiar color de campos en pagina (EAD)",
+		"body": [
+			"procedure ${1:fontColorChange}(VAR ${2:styleColor}: Text; ${3:Validations : Text})",
+			"// Para funcionar correctamente necesitamos:",
+			"// 1- Propiedad StyleExpr en los campos en los que queremos cambiar el estilo. Ejemplo: StyleExpr = fontStyle (Variable global de página).",
+			"// 2- Usa un disparador para llamar a nuestra función a la cual pasaremos como la variable global que asignamos a la propiedad StyleExpr.",
+			"// 3- Modifica el parámetro \"Validación\", el caso y los colores que queremos usar.",
+			"begin",
+				"\tcase ${4:Validations} of",
+					"\t\t'Soft Red':",
+						"\t\t\t${2:styleColor}:= 'Attention';",
+					"\t\t'Soft blue':",
+						"\t\t\t${2:styleColor} := 'AttentionAccent';",
+					"\t\t'Soft gray':",
+						"\t\t\t${2:styleColor} := 'Subordinate';",
+					"\t\t'Standard Black':",
+						"\t\t\t${2:styleColor} := 'Standard';",
+					"\t\t'Standard Blue':",
+						"\t\t\t${2:styleColor} := 'StandardAccent';",
+					"\t\t'Strong Black':",
+						"\t\t\t${2:styleColor} := 'Strong';",
+					"\t\t'Strong Blue':",
+						"\t\t\t${2:styleColor} := 'StrongAccent';",
+					"\t\t'Red strong':",
+						"\t\t\t${2:styleColor} := 'Unfavorable';",
+					"\t\t'Green':",
+						"\t\t\t${2:styleColor}:= 'Favorable';",
+					"\t\t'Yellow':",
+						"\t\t\t${2:styleColor} := 'Ambiguous';",  
+				"\tend;",
+			"end;"
+		],
+		"description": "Plantilla para cambiar el color de texto en paginas (EAD)"
+	}
+}

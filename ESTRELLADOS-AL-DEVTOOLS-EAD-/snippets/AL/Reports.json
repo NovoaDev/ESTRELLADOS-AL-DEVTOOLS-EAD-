@@ -1,0 +1,117 @@
+{
+    "treportformatofecha": {
+		"prefix": "treport formato fecha (EAD)",
+		"body": [
+			"Format(WorkDate(),0,'<Day,2>*<Month,2>*<Year4>'); "
+		],
+		"description": "Formato fecha (EAD)"
+    },
+    "treportlanzarreportconfiltroactual(EAD)": {
+		"prefix": "treport lanzar report con filtro de la pagina actual (EAD)",
+		"body": [
+			"trigger OnAction()\r",
+			"var\r",
+			"    SalespersonPurchr: Record \"Salesperson/Purchaser\";\r",
+			"begin\r",
+			"    Clear(SalespersonPurchr);\r",
+			"    CurrPage.SETSELECTIONFILTER(SalespersonPurchr);\r",
+			"    REPORT.RUNMODAL(report::\"Commissions List\", true, false, SalespersonPurchr);\r",
+			"end;"
+		],
+		"description": "Lanzar report con filtro de la pagina actual (EAD)"
+    },
+    "treportlancodereport": {
+		"prefix": "treport cambiar idioma en report (EAD)",
+		"body": [
+			"lanCode := 'ENU'; //Para test se usa una variable\r",
+			"//Si lanCode no existe en la tabla language o esta en blanco usa el lenguaje del S.O.\r",
+			"CurrReport.LANGUAGE := Language.GetLanguageID(lanCode);"
+		],
+		"description": "Cambiar idioma en report (EAD)"
+	},
+	"treportformatmesreport": {
+		"prefix": "treport format mes report (EAD)",
+		"body": [
+			"local procedure FormatMes(Mes : Integer) : Text\r",
+			"var\r",
+			"    EneLbl: Label 'January', comment = 'ESP=\"Enero\"';\r",
+			"    FebLbl: Label 'February', comment = 'ESP=\"Febrero\"';\r",
+			"    MarLbl: Label 'March', comment = 'ESP=\"Marzo\"';\r",
+			"    AbrLbl: Label 'April', comment = 'ESP=\"Abril\"';\r",
+			"    MayLbl: Label 'May', comment = 'ESP=\"Mayo\"';\r",
+			"    JunLbl: Label 'June', comment = 'ESP=\"Junio\"';\r",
+			"    JulLbl: Label 'July', comment = 'ESP=\"Julio\"';\r",
+			"    AgoLbl: Label 'August', comment = 'ESP=\"Agosto\"';\r",
+			"    SepLbl: Label 'September', comment = 'ESP=\"Septiembre\"';\r",
+			"    OctLbl: Label 'October', comment = 'ESP=\"Octubre\"';\r",
+			"    NovLbl: Label 'November', comment = 'ESP=\"Noviembre\"';\r",
+			"    DicLbl: Label 'December', comment = 'ESP=\"Diciembre\"';\r",
+			"begin\r",
+			"    CASE Mes OF\r",
+			"        1:\r",
+			"        MesText := EneLbl;\r",
+			"        2:\r",
+			"        MesText := FebLbl;\r",
+			"        3:\r",
+			"        MesText := MarLbl;\r",
+			"        4:\r",
+			"        MesText := AbrLbl;\r",
+			"        5:\r",
+			"        MesText := MayLbl;\r",
+			"        6:\r",
+			"        MesText := JunLbl;\r",
+			"        7:\r",
+			"        MesText := JulLbl;\r",
+			"        8:\r",
+			"        MesText := AgoLbl;\r",
+			"        9:\r",
+			"        MesText := SepLbl;\r",
+			"        10:\r",
+			"        MesText := OctLbl;\r",
+			"        11:\r",
+			"        MesText := NovLbl;\r",
+			"        12:\r",
+			"        MesText := DicLbl;\r",
+			"    END;\r",
+			"    EXIT(MesText);\r",
+			"end;"
+		],
+		"description": "Función format mes report (EAD)"
+	},
+	"treportchangedatetostring": {
+		"prefix": "treport cambiar fecha a texto (EAD)",
+		"body": [
+			"    local procedure changeDateToString(originalDate: date) returnDate: Text[11]\r",
+			"    var\r",
+			"        dayAux: Integer;\r",
+			"        monthAux: Integer;\r",
+			"    begin\r",
+			"        returnDate := '';\r",
+			"        //DIA\r",
+			"        dayAux := Date2DMY(originalDate, 1);\r",
+			"        if dayAux < 10 then\r",
+			"            returnDate := '0';\r",
+			"        returnDate += Format(dayAux) + '/';\r",
+			"        //MES\r",
+			"        monthAux := Date2DMY(originalDate, 2);\r",
+			"        if monthAux < 10 then\r",
+			"            returnDate += '0';\r",
+			"        returnDate += Format(monthAux) + '/';\r",
+			"        returnDate += Format(Date2DMY(originalDate, 3));\r",
+			"    end;"
+		],
+		"description": "Cambiar fecha a texto para reports (EAD)"
+    },
+    "treportcambiarinforme": {
+		"prefix": "treport reemplazar informe (EAD)",
+		"body": [
+			"    [EventSubscriber(ObjectType::Codeunit, Codeunit::ReportManagement, 'OnAfterSubstituteReport', '', false, false)]\r",
+			"    local procedure OnSubstituteReport(ReportId: Integer; var NewReportId: Integer)\r",
+			"    begin\r",
+			"        if ReportId = Report::${1:\"Customer - List\"} then\r",
+			"            NewReportId := Report::${2:\"Sales - Invoice\"};\r",
+			"    end;"
+		],
+		"description": "Suscripción a un evento para remplazar report (EAD)"
+	}
+}

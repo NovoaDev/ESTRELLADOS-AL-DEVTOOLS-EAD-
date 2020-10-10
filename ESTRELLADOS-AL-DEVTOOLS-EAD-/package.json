@@ -38,31 +38,55 @@
             }, 
             {
                 "language": "powershell",
-                "path": "./snippets/powershell.json"
+                "path": "./snippets/Environment/OnPremise/OnPremise.json"
             }, 
             {
-                "language": "al",
-                "path": "./snippets/al.json"
+                "language": "powershell",
+                "path": "./snippets/Environment/OnPremise/AppManagement/AppManagement.json"
+            }, 
+            {
+                "language": "powershell",
+                "path": "./snippets/GIT/GIT.json"
             },
             {
-            "language": "al",
-            "path": "./snippets/algoritmos.json"
-            },
-            {
-                "language": "al",
-                "path": "./snippets/alUtil.json"
-            },
-            {
-                "language": "al",
-                "path": "./snippets/test.json"
+                "language": "powershell",
+                "path": "./snippets/PowerShell/PowerShell.json"
             },
             {
                 "language": "http",
-                "path": "./snippets/http.json"
+                "path": "./snippets/HTTP/HTTP.json"
             },
             {
                 "language": "json",
-                "path": "./snippets/json.json"
+                "path": "./snippets/JSON/JSON.json"
+            },
+            {
+                "language": "al",
+                "path": "./snippets/AL/Algorithms.json"
+            },
+            {
+                "language": "al",
+                "path": "./snippets/AL/InstallUpgrade.json"
+            },            
+            {
+                "language": "al",
+                "path": "./snippets/AL/Reports.json"
+            },            
+            {
+                "language": "al",
+                "path": "./snippets/AL/Template.json"
+            },            
+            {
+                "language": "al",
+                "path": "./snippets/AL/Test.json"
+            },            
+            {
+                "language": "al",
+                "path": "./snippets/AL/Util.json"
+            },
+            {
+                "language": "al",
+                "path": "./snippets/AL/WSAPI.json"
             }
         ]
     },
