@@ -16,34 +16,48 @@
     "categories": [
         "Snippets"
     ],
-    "contributes": {	
-        "commands": [
-        {
-            "command": "ALToolsFunctions.GenerateXliffFiles",
-            "title": "TestLola"
-        }
+    "activationEvents": [
+        "onCommand:extension.translation",
+        "onCommand:extension.settings",
+        "onCommand:extension.gitignore"
     ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.translation",
+                "title": "Generar traducciones (EAD)"
+            },
+            {
+                "command": "extension.settings",
+                "title": "Generar Settings.json (EAD)"
+            },
+            {
+                "command": "extension.gitignore",
+                "title": "Generar .gitignore (EAD)"
+            }
+        ],
         "snippets": [
             {
                 "language": "powershell",
                 "path": "./snippets/Environment/Docker/docker.json"
-            }, 
+            },
             {
                 "language": "powershell",
                 "path": "./snippets/Environment/Docker/NewContainer/newContainer.json"
-            }, 
+            },
             {
                 "language": "powershell",
                 "path": "./snippets/Environment/Docker/AppManagement/AppManagement.json"
-            }, 
+            },
             {
                 "language": "powershell",
                 "path": "./snippets/Environment/OnPremise/OnPremise.json"
-            }, 
+            },
             {
                 "language": "powershell",
                 "path": "./snippets/Environment/OnPremise/AppManagement/AppManagement.json"
-            }, 
+            },
             {
                 "language": "powershell",
                 "path": "./snippets/GIT/GIT.json"
@@ -67,19 +81,19 @@
             {
                 "language": "al",
                 "path": "./snippets/AL/InstallUpgrade.json"
-            },            
+            },
             {
                 "language": "al",
                 "path": "./snippets/AL/Reports.json"
-            },            
+            },
             {
                 "language": "al",
                 "path": "./snippets/AL/Template.json"
-            },            
+            },
             {
                 "language": "al",
                 "path": "./snippets/AL/Test.json"
-            },            
+            },
             {
                 "language": "al",
                 "path": "./snippets/AL/Util.json"
@@ -87,18 +101,45 @@
             {
                 "language": "al",
                 "path": "./snippets/AL/WSAPI.json"
+            },            {
+                "language": "al",
+                "path": "./snippets/AL/Translations.json"
             }
         ]
     },
     "author": {
-		"name": "Antonio Novoa",
-		"url": "https://www.tipsdevbusinesscentral.com",
-		"email": "antonio.novoa@outlook.es"
-	},
-	"keywords": [
-		"AL Language",
+        "name": "Antonio Novoa",
+        "url": "https://www.tipsdevbusinesscentral.com",
+        "email": "antonio.novoa@outlook.es"
+    },
+    "keywords": [
+        "AL Language",
         "AL-DEVTOOLS",
         "AL Snippets",
         "ANJ"
-	]
+    ],
+    "dependencies": {
+        "fs-extra": "^9.1.0",
+        "nodegit": "^0.27.0",
+        "xml2js": "^0.4.23"
+    },
+    "extensionPack": [
+        "waldo.crs-al-language-extension",
+        "rasmus.al-var-helper",
+        "andrzejzwierzchowski.al-code-outline",
+        "martonsagi.al-object-designer",
+        "nwallace.createguid",
+        "microsoft.al",
+        "CoenraadS.bracket-pair-colorizer-2",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "donjayamanne.githistory",
+        "ms-vscode.powershell",
+        "wayou.vscode-todo-highlight",
+        "humao.rest-client",
+        "Gruntfuggly.todo-tree",
+        "usernamehw.errorlens",
+        "ms-mssql.mssql",
+        "ms-vsliveshare.vsliveshare"
+    ]
 }
