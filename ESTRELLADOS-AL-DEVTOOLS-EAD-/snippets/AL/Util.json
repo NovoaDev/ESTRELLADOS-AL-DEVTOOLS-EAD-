@@ -63,19 +63,19 @@
 		"body": [
 			"    trigger OnOpenPage();",
 			"    var",
-			"        NUNEnumColor: Enum \"NUN Enum Color\";",
+			"        EnumColor: Enum \"Enum Color\";",
 			"    begin",
-			"        Message('Obtener Caption desde indice con Format : ' + Format(NUNEnumColor::GREEN));",
+			"        Message('Obtener Caption desde indice con Format : ' + Format(EnumColor::GREEN));",
 			"        Message('Obtener indice de ENUM desde nombre en texto : ' + Format(ObtenerIndiceEnumDesdeNombre('RED')));",
 			"        Message('Obtener nombre desde indice usando var integer: ' + ObtenerNombreDelEnumDesdeIndice(0));",
-			"        Message('Obtener nombre desde indice usando indexOF : ' + ObtenerNombreDelEnumDesdeIndice2(NUNEnumColor::RED));",
+			"        Message('Obtener nombre desde indice usando indexOF : ' + ObtenerNombreDelEnumDesdeIndice2(EnumColor::RED));",
 			"    end;",
 			"",
 			"    procedure ObtenerIndiceEnumDesdeNombre(TextoEnum: Text) Indice: Integer",
 			"    var",
-			"        NUNEnumColor: Enum \"NUN Enum Color\";",
+			"        EnumColor: Enum \"Enum Color\";",
 			"    begin",
-			"        Indice := NUNEnumColor.Names().IndexOf(TextoEnum);",
+			"        Indice := EnumColor.Names().IndexOf(TextoEnum);",
 			"        if Indice > 0 then",
 			"            Indice -= 1;",
 			"        exit(Indice);",
@@ -83,19 +83,19 @@
 			"",
 			"    procedure ObtenerNombreDelEnumDesdeIndice(Indice: integer) Nombre: Text",
 			"    var",
-			"        NUNEnumColor: Enum \"NUN Enum Color\";",
+			"        EnumColor: Enum \"Enum Color\";",
 			"    begin",
 			"        Indice += 1;",
-			"        NUNEnumColor.Names().Get(Indice, Nombre);",
+			"        EnumColor.Names().Get(Indice, Nombre);",
 			"        exit(Nombre);",
 			"    end;",
 			"",
-			"    procedure ObtenerNombreDelEnumDesdeIndice2(NUNEnumColor: Enum \"NUN Enum Color\") Nombre: Text",
+			"    procedure ObtenerNombreDelEnumDesdeIndice2(EnumColor: Enum \"Enum Color\") Nombre: Text",
 			"    var",
 			"        Indice: Integer;",
 			"    begin",
-			"        Indice := NUNEnumColor.Ordinals().IndexOf(NUNEnumColor.AsInteger());",
-			"        NUNEnumColor.Names().Get(Indice, Nombre);",
+			"        Indice := EnumColor.Ordinals().IndexOf(EnumColor.AsInteger());",
+			"        EnumColor.Names().Get(Indice, Nombre);",
 			"        exit(Nombre);",
 			"    end;"
 		],
@@ -190,8 +190,7 @@
 	"tutilfindset": {
 		"prefix": "tutilfindset recorrer record (EAD)",
 		"body": [
-			"        if not ${1:record}.IsEmpty() then",
-			"            if ${1:record}.Findset() then",
+			"            if ${1:record}.FindSet(false,false) then",
 			"                repeat",
 			"",
 			"                until ${1:record}.next() = 0;"
@@ -244,5 +243,25 @@
 			"end;"
 		],
 		"description": "Plantilla para cambiar el color de texto en paginas (EAD)"
-	}
+	},
+	"Link page": {
+        "prefix": "tAgregar Links en page (EAD)",
+        "description": "Agregar Links en page (EAD)",
+        "body": [
+            "\tsystempart(ControlList; Links)",
+			"\t{",
+			"\t\tApplicationArea = RecordLinks;",
+			"\t}"
+        ]
+    },
+	"Notes page": {
+        "prefix": "tAgregar Notes en page (EAD)",
+        "description": "Agregar Notes en page (EAD)",
+        "body": [
+            "\tsystempart(ControlNotes; Notes)",
+			"\t{",
+			"\t\tApplicationArea = Notes;",
+			"\t}"
+        ]
+    }
 }

@@ -7,14 +7,10 @@ function run() {
 		findRootPah()
 
         let src = os.homedir
-        src += "\\.vscode\\extensions\\ESTRELLADOS-AL-DEVTOOLS-EAD-\\resources\\architectural patterns\\"
+        src += "\\.vscode\\extensions\\ESTRELLADOS-AL-DEVTOOLS-EAD-\\resources\\disaster patterns\\"
         let dsc = `${ROOT_PATH}/src/`
 
         switch (type) {
-            case 'Configuración':
-                src += "Setup\\"  
-                dsc += "SetupExample/"
-                break;
             case 'UpgradeTags':
                 src += "UpgradeTags\\"  
                 dsc += "UpgradeTagsExample/"
@@ -23,6 +19,10 @@ function run() {
                 src += "ControllAddin\\"  
                 dsc += "ControllAddinExample/"
 		        break;
+            case 'Configuración':
+                src += "Setup\\"  
+                dsc += "SetupExample/"
+                break;
             case 'Baja':
                 break;
             }
@@ -39,7 +39,7 @@ function choosePattern() {
 	const options = ({
 		canPickMany: false,
 		ignoreFocusOut: true,
-		placeHolder: 'Seleccione patron de arquitectura'
+		placeHolder: 'Seleccione nivel de configuración'
 	})
 	const createItem = (label, description, picked = false) => {
 		return {
@@ -50,9 +50,9 @@ function choosePattern() {
 	}
 	return new Promise((resolve) => {
 		vscode.window.showQuickPick([
-			createItem("Configuración", "Tabla + Pagina + CU Management"),
-            createItem("WIP", "Etiquetas para gestionar CU Upgrade"),
-			createItem("WIP", "Embeber pagina"),
+			createItem("WIP", "WIP"),
+            createItem("WIP", "WIP"),
+			createItem("WIP", "WIP"),
 			
 		], options).then(target => {
 			resolve(target.label)

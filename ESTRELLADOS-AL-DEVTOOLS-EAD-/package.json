@@ -17,7 +17,9 @@
         "Snippets"
     ],
     "activationEvents": [
-        "onCommand:extension.translation",
+        "onCommand:extension.patterns",
+        "onCommand:extension.designpatterns",
+        "onCommand:extension.disasterpatterns",
         "onCommand:extension.settings",
         "onCommand:extension.gitignore"
     ],
@@ -25,8 +27,16 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.translation",
-                "title": "Generar traducciones (EAD)"
+                "command": "extension.patterns",
+                "title": "Patrones de arquitectura (EAD)"
+            },
+            {
+                "command": "extension.designpatterns",
+                "title": "Patrones de diseño (EAD)"
+            },
+            {
+                "command": "extension.disasterpatterns",
+                "title": "Patrones EAD !AT YOUR OWN RISK! (EAD)"
             },
             {
                 "command": "extension.settings",
