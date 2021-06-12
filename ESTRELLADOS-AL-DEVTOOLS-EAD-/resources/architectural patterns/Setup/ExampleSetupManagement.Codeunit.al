@@ -4,8 +4,7 @@ codeunit 50000 "Example Setup Management"
     var
         ExampleSetup: Record "Example Setup";
     begin
-        ExampleSetup.InitSetupRecord();
+        ExampleSetup.GetRecord();
         exit(ExampleSetup."Example Enabled");
     end;
-
 }

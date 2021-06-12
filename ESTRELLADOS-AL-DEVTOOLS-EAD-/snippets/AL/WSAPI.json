@@ -45,7 +45,7 @@
 			"    [ServiceEnabled]\r",
 			"    procedure ClonarClienteConParametroYRetorno(nombre: Text[100]): code[20]\r",
 			"    var\r",
-			"        NUNParaacciones: Codeunit \"EAD Para acciones\";\r",
+			"        Paraacciones: Codeunit \"EAD Para acciones\";\r",
 			"        ActionContext: WebServiceActionContext;\r",
 			"    begin\r",
 			"        ActionContext.SetObjectType(ObjectType::Page);\r",

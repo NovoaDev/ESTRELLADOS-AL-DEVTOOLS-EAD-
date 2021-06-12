@@ -23,8 +23,11 @@ page 50000 "Example Setup"
         }
     }
 
-    trigger OnOpenPage();
+    trigger OnOpenPage()
     begin
-        Rec.InitSetupRecord();
+        if not Rec.Get() then begin
+            Rec.Init();
+            Rec.Insert(true);
+        end;
     end;
 }

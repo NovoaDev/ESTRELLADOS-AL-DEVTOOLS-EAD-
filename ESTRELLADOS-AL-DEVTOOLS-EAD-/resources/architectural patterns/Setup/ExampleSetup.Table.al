@@ -1,5 +1,8 @@
 table 50000 "Example Setup"
 {
+    Caption = 'Example Setup', Comment = 'Ejemplo de configuración';
+    DrillDownPageID = "Example Setup";
+    LookupPageID = "Example Setup";
 
     fields
     {
@@ -23,11 +26,18 @@ table 50000 "Example Setup"
         }
     }
 
-    procedure InitSetupRecord();
+    procedure GetRecord();
     begin
-        If not Get() then begin
-            Init();
-            Insert();
+        if HasBeenRead then
+            exit;
+
+        If not Rec.Get() then begin
+            Rec.Init();
+            Rec.Insert(true);
         end;
+        HasBeenRead := true;
     end;
+
+    var
+        HasBeenRead: Boolean;
 }
