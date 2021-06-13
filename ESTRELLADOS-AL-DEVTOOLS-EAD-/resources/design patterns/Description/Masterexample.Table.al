@@ -1,4 +1,4 @@
-table 50000 "Master example"
+table 50000 "Master Example"
 {
     DataClassification = CustomerContent;
 
@@ -7,12 +7,11 @@ table 50000 "Master example"
         field(1; "No."; Code[20])
         {
             DataClassification = CustomerContent;
-
         }
         //Copiar a objeto
         field(2; "Description"; Text[100])
         {
-            Caption = 'Description';
+            Caption = 'Description', Comment = 'Descripción';
 
             trigger OnValidate()
             begin
@@ -22,11 +21,11 @@ table 50000 "Master example"
         }
         field(3; "Search Description"; Code[100])
         {
-            Caption = 'Search Description';
+            Caption = 'Search Description', Comment = 'Descripción para busqueda';
         }
         field(4; "Description 2"; Text[50])
         {
-            Caption = 'Description 2';
+            Caption = 'Description 2', Comment = 'Descripción 2';
         }
         //Copiar a objeto
     }

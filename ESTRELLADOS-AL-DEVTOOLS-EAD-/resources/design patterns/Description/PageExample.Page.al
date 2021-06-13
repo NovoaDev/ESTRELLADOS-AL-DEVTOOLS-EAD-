@@ -2,7 +2,7 @@ page 50000 "Page Example"
 {
     ApplicationArea = All;
     PageType = Card;
-    SourceTable = "Master example";
+    SourceTable = "Master Example";
     UsageCategory = Administration;
 
     layout
