@@ -2,7 +2,7 @@ page 90000 "Page Example"
 {
     ApplicationArea = All;
     PageType = Card;
-    SourceTable = "Master example";
+    SourceTable = "Master Example";
     UsageCategory = Administration;
 
     layout
@@ -26,7 +26,7 @@ page 90000 "Page Example"
         //Copiar a objeto
         area(factboxes)
         {
-            part(ControlDimensionFa; "Dimensions FactBox")
+            part(ControlDimension; "Dimensions FactBox")
             {
                 ApplicationArea = All;
                 SubPageLink = "Table ID" = const(50000),
@@ -40,6 +40,7 @@ page 90000 "Page Example"
     {
         area(Processing)
         {
+            //Copiar a objeto
             action(Dimensions)
             {
                 ApplicationArea = Dimensions;
@@ -52,6 +53,7 @@ page 90000 "Page Example"
                                   "No." = FIELD("No.");
                 ShortCutKey = 'Alt+D';
             }
+            //Copiar a objeto
         }
     }
 }

@@ -263,5 +263,23 @@
 			"\t\tApplicationArea = Notes;",
 			"\t}"
         ]
+    },
+	"Email Field": {
+        "prefix": "tAgregar campo Email (EAD)",
+        "description": "Agregar Notes en page (EAD)",
+        "body": [
+            "\tfield(50000; \"E-Mail\"; Text[80])",
+			"\t{",
+			"\t\tCaption = 'E-Mail', Comment = 'E-Mail';",
+			"\t\tExtendedDatatype = EMail;",
+			"\t\t",
+			"\t\ttrigger OnValidate()",
+			"\t\tvar",
+			"\t\t\tMailManagement: Codeunit \"Mail Management\";",
+			"\t\tbegin",
+			"\t\t\tMailManagement.ValidateEmailAddressField(\"E-Mail\");",
+			"\t\tend;",
+			"\t}"
+        ]
     }
 }

@@ -1,4 +1,4 @@
-table 50000 "Master example"
+table 50000 "Master Example"
 {
     DataClassification = CustomerContent;
 
@@ -11,7 +11,7 @@ table 50000 "Master example"
         //Copiar a objeto
         field(2; "Global Dimension 1 Code"; Code[20])
         {
-            Caption = 'Global Dimension 1 Code', Comment = 'Codigo dimension global 1';
+            Caption = 'Global Dimension 1 Code', Comment = 'Codigo dimensión global 1';
             CaptionClass = '1,1,1';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
 
@@ -22,7 +22,7 @@ table 50000 "Master example"
         }
         field(3; "Global Dimension 2 Code"; Code[20])
         {
-            Caption = 'Global Dimension 2 Code', Comment = 'Codigo dimension global 2';
+            Caption = 'Global Dimension 2 Code', Comment = 'Codigo dimensión global 2';
             CaptionClass = '1,1,2';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
 
@@ -41,22 +41,23 @@ table 50000 "Master example"
             Clustered = true;
         }
     }
+
     //Copiar a objeto
     trigger OnInsert()
     begin
-        DimensionManagement.UpdateDefaultDim(Database::"Master example", "No.", "Global Dimension 1 Code", "Global Dimension 2 Code");
+        DimensionManagement.UpdateDefaultDim(Database::"Master Example", "No.", "Global Dimension 1 Code", "Global Dimension 2 Code");
     end;
 
     trigger OnDelete()
     begin
-        DimensionManagement.DeleteDefaultDim(Database::"Master example", "No.");
+        DimensionManagement.DeleteDefaultDim(Database::"Master Example", "No.");
     end;
 
     procedure ValidateShortcutDimensionCode(FieldNumber: Integer; var ShortcutDimCode: Code[20])
     begin
         DimensionManagement.ValidateDimValueCode(FieldNumber, ShortcutDimCode);
         if not IsTemporary then begin
-            DimensionManagement.SaveDefaultDim(Database::"Master example", "No.", FieldNumber, ShortcutDimCode);
+            DimensionManagement.SaveDefaultDim(Database::"Master Example", "No.", FieldNumber, ShortcutDimCode);
             Modify(true);
         end;
     end;

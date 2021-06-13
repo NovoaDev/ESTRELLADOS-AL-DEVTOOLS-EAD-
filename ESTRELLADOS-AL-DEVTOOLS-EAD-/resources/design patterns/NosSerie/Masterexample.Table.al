@@ -1,4 +1,4 @@
-table 50000 "Master example"
+table 50000 "Master Example"
 {
     DataClassification = CustomerContent;
 
@@ -59,9 +59,9 @@ table 50000 "Master example"
         ExampleSetup.TestField("Example Nos.");
     end;
 
-    procedure NosSeriesAssistEdit(OldMasterExample: Record "Master example"): Boolean
+    procedure NosSeriesAssistEdit(OldMasterExample: Record "Master Example"): Boolean
     var
-        MasterExample: Record "Master example";
+        MasterExample: Record "Master Example";
     begin
         MasterExample := Rec;
         TestExampleNoSeries();

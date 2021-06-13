@@ -1,4 +1,4 @@
-table 50000 "Master example"
+table 50000 "Master Example"
 {
     DataClassification = CustomerContent;
 
@@ -7,7 +7,6 @@ table 50000 "Master example"
         field(1; "No."; Code[20])
         {
             DataClassification = CustomerContent;
-
         }
         //Copiar a objeto
         field(2; Blocked; Boolean)
@@ -25,6 +24,7 @@ table 50000 "Master example"
             Clustered = true;
         }
     }
+
     //Copiar a objeto
     internal procedure TestBlocked()
     var

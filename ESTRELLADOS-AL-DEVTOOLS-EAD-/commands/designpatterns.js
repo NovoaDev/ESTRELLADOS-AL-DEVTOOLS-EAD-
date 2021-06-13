@@ -31,6 +31,18 @@ function run() {
                 src += "Dimensions\\"  
                 dsc += "Dimensions/"
                 break;
+            case 'Vendedor':
+                src += "SalesPerson\\"  
+                dsc += "SalesPerson/"
+                break;
+            case 'Direcciones':
+                src += "Address\\"  
+                dsc += "Address/"
+                break;
+            case 'Contacto':
+                src += "Contact\\"  
+                dsc += "Contact/"
+                break;
             case 'Baja':
                 break;
             }
@@ -63,7 +75,9 @@ function choosePattern() {
 			createItem("Descripcion", "Agregar campos descripciones"),
             createItem("Nos Series", "Agregar campo con patron Nº de series."),
             createItem("Dimensiones", "Agregar campos dimensiones a un maestro."),
-            createItem("Wip", "WIP")
+            createItem("Vendedor", "Agegar campo SalesPerson Code con validacion"),
+            createItem("Direcciones", "Agregar campos direcciones con validacion"),
+            createItem("Contacto", "Agregar campos contacto con validacion")
 		], options).then(target => {
 			resolve(target.label)
 		})
