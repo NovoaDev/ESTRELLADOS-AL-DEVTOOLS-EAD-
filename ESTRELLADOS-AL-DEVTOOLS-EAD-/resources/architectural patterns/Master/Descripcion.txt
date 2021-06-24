@@ -1,0 +1,3 @@
+El patron Maestro estan diseñados para tratar con personas y cosas,
+las personas pueden ser cliente, proveedores o empleados y las cosas
+pueden ser cuentas de mayor, activos fijos etc.

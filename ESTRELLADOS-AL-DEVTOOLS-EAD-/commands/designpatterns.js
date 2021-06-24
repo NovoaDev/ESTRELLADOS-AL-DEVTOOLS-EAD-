@@ -59,7 +59,7 @@ function choosePattern() {
 	const options = ({
 		canPickMany: false,
 		ignoreFocusOut: true,
-		placeHolder: 'Seleccione nivel de configuración'
+		placeHolder: 'Seleccione patrón'
 	})
 	const createItem = (label, description, picked = false) => {
 		return {

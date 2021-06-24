@@ -1,0 +1,10 @@
+El patrón compuesto nos ayuda a definir atributos que depende de una combinación de dos entidades. Esto
+nos permite crear flexibilidad adicional al diseñar la configuración de la aplicación permitiendo la relación
+muchos a muchos.
+
+La tabla tiene dos campos de tipo Code[x0] permitiendo valores en blanco e incluidos en la PK.
+
+Ejemplos:
+252 - General Posting Setup
+325 - Vat Posting Setup
+5813 - Inventory Posting Setup

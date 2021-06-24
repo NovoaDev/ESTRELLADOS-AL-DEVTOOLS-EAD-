@@ -15,7 +15,7 @@ codeunit 50001 "Upgrade tags Example"
 
     procedure GetUpgradeTagEjemplo1(): code[250]
     begin
-        exit('DYN-427349-FixCustomer-08052020')
+        exit('EAD-427349-FixCustomer-08052020')
     end;
 
     procedure RunUpgradeEjemplo1()
@@ -25,7 +25,7 @@ codeunit 50001 "Upgrade tags Example"
 
     procedure GetUpgradeTagEjemplo2(): code[250]
     begin
-        exit('DYN-5b9182-FixVendor-09052020')
+        exit('EAD-5b9182-FixVendor-09052020')
     end;
 
     procedure RunUpgradeEjemplo2()
@@ -35,6 +35,6 @@ codeunit 50001 "Upgrade tags Example"
 
     procedure GetUpgradeTagPerDB(): code[250]
     begin
-        exit('DYN-5b2282-PerData-10052020')
+        exit('EAD-5b2282-PerData-10052020')
     end;
 }
