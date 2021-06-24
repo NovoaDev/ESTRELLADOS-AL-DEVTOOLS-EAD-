@@ -292,5 +292,15 @@
 			"\t\tVideo.Play(Url);",
 			"\tend;"
         ]
+    },
+	"tutil open link": {
+        "prefix": "tutil abrir url (EAD)",
+        "description": "Agregar función para abrir url (EAD)",
+        "body": [
+            "\tlocal procedure DoOpenLink(Url: text[100])",
+			"\tbegin",
+			"\t\tSystem.Hyperlink(URL);",
+			"\tend;"
+        ]
     }
 }

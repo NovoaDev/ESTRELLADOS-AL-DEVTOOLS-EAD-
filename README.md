@@ -137,6 +137,8 @@ JSON
     * `tutil Agregar Links en page (EAD)` - Agregar Links en page (EAD).
     * `tutil Agregar Notes en page (EAD)` - Agregar Notes en page (EAD).
     * `tutil Validar campo Email (EAD)` - Validar campo Email (EAD).
+    * `tutil play video (EAD)` - función play video (EAD).
+    * `tutil abrir url (EAD)` - función abrir url (EAD).
     * `twsapi API insert/modify (EAD)` - API Insert/Modify.
     * `twsapi bound action para paginas WS (EAD)` - Bound Action a pagina WS.
     * `twsapi trabajar json anidados (EAD)` - Trabajar con Json anidados.
@@ -257,12 +259,56 @@ end;
 ```
 
 ## Comandos
+Los comandos EAD que usaremos desde la paleta crearan una nueva carpeta en nuestro proyecto con los archivos plantilla.
+* Generar settings.json.
+* Generar .gitignore.
+* Patrones de arquitectura.
+    * Singleton.
+    * Supplemental and subsidiary.
+    * Compound.
+    * Master.
+* Patrones de diseño.
+    * Comentarios.
+    * Bloqueado.
+    * Descripcion.
+    * Nos Series.
+    * Dimensiones.
+    * Vendedor.
+    * Direcciones.
+    * Contacto.
+* Patrones EAD !AT YOUR OWN RISK!.
+    * UpgradeTags.
+    * ControlAddin.
+
 ## Release Notes
 ### 1.0.4
 * Se agregarón los siguientes snippetes:
-    * Docker - Instalar BCContainerHelper.
-* Se agregarón los siguientes snippetes:
-    * Docker - Instalar BCContainerHelper.
+    * AL - Plantilla agregar links en paginas.
+    * AL - Plantilla agregar notas en paginas.
+    * AL - Agregar campo Email con validación.
+    * AL - Agregar función para reproducir video.
+    * AL - Agregar función para abrir url.
+
+* Se agregarón los siguientes comentarios:
+    * Generar settings.json.
+    * Generar .gitignore.
+    * Patrones de arquitectura.
+        * Singleton.
+        * Supplemental and subsidiary.
+        * Compound.
+        * Master.
+    * Patrones de diseño.
+        * Comentarios.
+        * Bloqueado.
+        * Descripcion.
+        * Nos Series.
+        * Dimensiones.
+        * Vendedor.
+        * Direcciones.
+        * Contacto.
+    * Patrones EAD !AT YOUR OWN RISK!.
+        * UpgradeTags.
+        * ControlAddin.
 ### 1.0.3
 * Se modificaron los siguientes snippets: crear contenedores con artifacts
     * Docker - Instalar BCContainerHelper.
