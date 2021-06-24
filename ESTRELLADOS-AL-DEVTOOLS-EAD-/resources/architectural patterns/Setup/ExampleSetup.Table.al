@@ -6,7 +6,7 @@ table 50000 "Example Setup"
 
     fields
     {
-        field(1; "Primary Key"; Code[1])
+        field(1; "Primary Key"; Code[10])
         {
             Caption = 'Primary Key', Comment = 'Clave primaria';
             DataClassification = CustomerContent;

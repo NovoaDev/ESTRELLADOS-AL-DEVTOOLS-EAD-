@@ -6,3 +6,7 @@ Una página que no permite insertar ni eliminar registros, en su onOpenPage inte
 
 Mas cosas la tabla cuenta con un método GetRecord el cual controlara mediante un booleano que se obtengan datos una sola vez sobre esa instancia de esa forma podremos usar ese método
 en varios sitios de una C/U por ejemplo y asegurarnos que siempre tendrá el registro y no hacer consultas innecesarias a la db.
+
+Ejemplos:
+79 - Company Information
+98 - General Ledger Setup

@@ -142,7 +142,7 @@
 		"description": "Alias git cfg (EAD)"
     },
     "tgitignore": {
-		"prefix": "tgitignore (EAD)",
+		"prefix": "tgit gitignore (EAD)",
 		"body": [
 			"#ignoramos todos los compilados y simbolos \r",
 			"\r",

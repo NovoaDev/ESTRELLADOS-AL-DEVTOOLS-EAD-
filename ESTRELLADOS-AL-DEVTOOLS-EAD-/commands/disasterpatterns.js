@@ -19,10 +19,6 @@ function run() {
                 src += "ControllAddin\\"  
                 dsc += "ControllAddinExample/"
 		        break;
-            case 'Configuración':
-                src += "Setup\\"  
-                dsc += "SetupExample/"
-                break;
             case 'Baja':
                 break;
             }
@@ -39,7 +35,7 @@ function choosePattern() {
 	const options = ({
 		canPickMany: false,
 		ignoreFocusOut: true,
-		placeHolder: 'Seleccione nivel de configuración'
+		placeHolder: 'Seleccione patrón'
 	})
 	const createItem = (label, description, picked = false) => {
 		return {
@@ -50,9 +46,8 @@ function choosePattern() {
 	}
 	return new Promise((resolve) => {
 		vscode.window.showQuickPick([
-			createItem("WIP", "WIP"),
-            createItem("WIP", "WIP"),
-			createItem("WIP", "WIP"),
+			createItem("UpgradeTags", "Ejemplo de upgrade tags"),
+            createItem("ControllAddin", "Ejemplo de control Addin"),
 			
 		], options).then(target => {
 			resolve(target.label)

@@ -1,27 +1,27 @@
 {
     "Caption With Comment": {
-        "prefix": "tcaption (EAD)",
+        "prefix": "ttraduccion Caption (EAD)",
         "description": "Caption with comment (EAD)",
         "body": [
             "Caption = '${1:EnglishText}', Comment = '${2:SpanishText}';$3"
         ]
     },
     "ToolTip With Comment": {
-        "prefix": "ttoolTip (EAD)",
+        "prefix": "ttraduccion ToolTip (EAD)",
         "description": "ToolTip with comment (EAD)",
         "body": [
             "ToolTip = '${1:EnglishText}', Comment = '${2:SpanishText}';$3"
         ]
     },
     "Label With Comment": {
-        "prefix": "tlabel (EAD)",
+        "prefix": "ttraduccion Label (EAD)",
         "description": "Label with comment (EAD)",
         "body": [
             "${1:LabelName}: Label '${2:EnglishText}', Comment = '${3:SpanishText}';$4"
         ]
     },
     "Comment with Language code": {
-        "prefix": "tcomment (EAD)",
+        "prefix": "ttraduccion Comment (EAD)",
         "description": "Comment (EAD)",
         "body": [
             ", Comment = '${1:SpanishText}';$2"

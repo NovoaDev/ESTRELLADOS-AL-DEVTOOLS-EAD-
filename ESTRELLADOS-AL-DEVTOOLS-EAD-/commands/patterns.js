@@ -11,18 +11,26 @@ function run() {
         let dsc = `${ROOT_PATH}/src/`
 
         switch (type) {
-            case 'Configuración':
+            case 'Singleton':
                 src += "Setup\\"  
-                dsc += "SetupExample/"
+                dsc += "Setup/"
                 break;
-            case 'UpgradeTags':
-                src += "UpgradeTags\\"  
-                dsc += "UpgradeTagsExample/"
+            case 'Supplemental And Subsidiary':
+                src += "Supplemental\\"  
+                dsc += "Supplemental/"
 		        break;
-            case 'ControllAddin':
-                src += "ControllAddin\\"  
-                dsc += "ControllAddinExample/"
+            case 'Compound':
+                src += "Compound\\"  
+                dsc += "Compound/"
 		        break;
+            case 'Rule':
+                src += "Rule\\"  
+                dsc += "Rule/"
+                break;
+            case 'Master':
+                src += "Master\\"  
+                dsc += "Master/"
+                break;
             case 'Baja':
                 break;
             }
@@ -39,7 +47,7 @@ function choosePattern() {
 	const options = ({
 		canPickMany: false,
 		ignoreFocusOut: true,
-		placeHolder: 'Seleccione patron de arquitectura'
+		placeHolder: 'Seleccione patrón'
 	})
 	const createItem = (label, description, picked = false) => {
 		return {
@@ -50,10 +58,11 @@ function choosePattern() {
 	}
 	return new Promise((resolve) => {
 		vscode.window.showQuickPick([
-			createItem("Configuración", "Tabla + Pagina + CU Management"),
-            createItem("WIP", "Etiquetas para gestionar CU Upgrade"),
-			createItem("WIP", "Embeber pagina"),
-			
+			createItem("Singleton", "Tabla de configuración"),
+            createItem("Supplemental And Subsidiary", "Tabla Suplementaria/Auxiliar/Subsidiaria"),
+			createItem("Compound", "Tabla configuración compuesta"),
+            createItem("Rule", "Tabla configuración reglas"),
+            createItem("Master", "Tabla maestra"),
 		], options).then(target => {
 			resolve(target.label)
 		})

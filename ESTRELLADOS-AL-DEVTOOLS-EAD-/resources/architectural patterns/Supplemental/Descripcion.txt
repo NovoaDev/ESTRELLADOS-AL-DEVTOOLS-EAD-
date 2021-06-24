@@ -1,0 +1,14 @@
+El patrón complementaria y subsidiaria tiene un solo campo Clave principal que se denomina típicamente 
+Código, tiene el código de tipo de datos y una longitud de 10 caracteres. 
+
+Normalmente los usuarios normales solo acceso de lectura a esas tablas.  La referencia a esta entidad
+se puede agregar como valor a la clave primaria.
+
+Se utiliza en campos con relacionen a esta tabla de configuración que tiene más de un valor.
+
+Ejemplos:
+3 - The Payment Terms
+4 - Currency
+14 - Location
+91 - User Setup
+92 - Customer posting group
