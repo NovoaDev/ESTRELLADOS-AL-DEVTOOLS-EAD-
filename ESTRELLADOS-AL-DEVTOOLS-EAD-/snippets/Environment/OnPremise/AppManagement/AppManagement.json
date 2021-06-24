@@ -1,6 +1,6 @@
 {
     "tonpremcompilarobjetolocal": {
-		"prefix": "tonpremcompilar objeto local (EAD)",
+		"prefix": "tonprem compilar objeto local (EAD)",
 		"body": [
 			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
 			"\r",
@@ -17,22 +17,8 @@
 		],
 		"description": "Compilar objeto local (EAD)"
     },
-    "tonpremcompilarobj": {
-		"prefix": "tonprem compilar objetos (EAD)",
-		"body": [
-			"\\$Server = 'Server'\r",
-			"\\$Instancia = 'Instancia'\r",
-			"\\$BDServer = '127.0.0.1\\InstanciaSql'\r",
-			"\\$Database = 'Database'\r",
-			"\\$Username = 'Username'\r",
-			"\\$Password = 'Password'\r",
-			"\r",
-			"Compile-NAVApplicationObject -navservername \\$Server -navserverinstance \\$Instancia -databaseserver \\$BDServer -databasename \\$Database -synchronizeschemachanges \"force\" -username \\$Username -password \\$Password -filter \"Type=Table; id=17\" –recompile"
-		],
-		"description": "Compilar objetos (EAD)"
-    },
     "tonpreminstalardesinstalareextensionlocal": {
-		"prefix": "tonpreminstalar desinstalar actualizar app local (EAD)",
+		"prefix": "tonprem instalar desinstalar actualizar app local (EAD)",
 		"body": [
 			"Import-Module 'C:\\Program Files\\Microsoft Dynamics 365 Business Central\\150\\Service\\NavAdminTool.ps1'\r",
 			"\r",

@@ -102,7 +102,7 @@
 		"description": "Trabajar con enum (EAD)"
 	},
 	"tutilonassisteditmostraruncampoygrabarotro": {
-		"prefix": "tutilonassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)",
+		"prefix": "tutil onassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)",
 		"body": [
 			"    // Grabar\r",
 			"    trigger OnAssistEdit()\r",
@@ -143,7 +143,7 @@
 		"description": "Tablerelation en funcion de otro campo de la tabla (EAD)"
     },
     "tutilblobescribir": {
-		"prefix": "tutilblob escribir desde texto (EAD)",
+		"prefix": "tutil blob escribir desde texto (EAD)",
 		"body": [
 			"procedure ${1:SetBlob}(Text: Text)\r",
 			"var \r",
@@ -156,7 +156,7 @@
 		"description": "Escribir un campo de tipo blob desde un texto (EAD)"
 	},
 	"tutilblobleer": {
-		"prefix": "tutilblob obtener texto desde blob (EAD)",
+		"prefix": "tutil blob obtener texto desde blob (EAD)",
 		"body": [
 			"procedure ${1:GetBlob}(): Text \r",
 			"Var \r",
@@ -172,14 +172,14 @@
 		"description": "Obtener texto desde un campo de tipo blob (EAD)"
     },
     "tutilsing": {
-        "prefix": "tutilfirma una línea (EAD)",
+        "prefix": "tutil firma una línea (EAD)",
         "body": [
             "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}"
         ],
         "description": "Plantilla para firmar codigo una linea (EAD)"
     },
     "tutilsingMultiline": {
-       "prefix": "tutilfirma multilínea (EAD)",
+       "prefix": "tutil firma multilínea (EAD)",
        "body": [
            "//${1:Requerimiento} - ${2:Iniciales} - $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR - ${3:Descripción}",
            " ",
@@ -188,7 +188,7 @@
        "description": "Plantilla para firmar codigo multilínea (EAD)"
 	},
 	"tutilfindset": {
-		"prefix": "tutilfindset recorrer record (EAD)",
+		"prefix": "tutil findset recorrer record (EAD)",
 		"body": [
 			"            if ${1:record}.FindSet(false,false) then",
 			"                repeat",
@@ -198,7 +198,7 @@
 		"description": "Snippet plantilla para recorrer record (EAD)"
 	},
 	"tutilcampoPagina": {
-		"prefix": "tutilcampo en pagina con tooltip (EAD)",
+		"prefix": "tutil campo en pagina con tooltip (EAD)",
 		"body": [
 			"field(${1:Campo})",
 			"{",
@@ -208,9 +208,8 @@
 		],
 		"description": "Snippet plantilla para crear campos en tablas con tooltip (EAD)"
 	}, 
-	
 	"tutilcambiarcolor": {
-		"prefix": "tutilcambiar color de campos en pagina (EAD)",
+		"prefix": "tutil cambiar color de campos en pagina (EAD)",
 		"body": [
 			"procedure ${1:fontColorChange}(VAR ${2:styleColor}: Text; ${3:Validations : Text})",
 			"// Para funcionar correctamente necesitamos:",
@@ -244,8 +243,8 @@
 		],
 		"description": "Plantilla para cambiar el color de texto en paginas (EAD)"
 	},
-	"Link page": {
-        "prefix": "tAgregar Links en page (EAD)",
+	"tutil Link page": {
+        "prefix": "tutil Agregar Links en page (EAD)",
         "description": "Agregar Links en page (EAD)",
         "body": [
             "\tsystempart(ControlList; Links)",
@@ -254,8 +253,8 @@
 			"\t}"
         ]
     },
-	"Notes page": {
-        "prefix": "tAgregar Notes en page (EAD)",
+	"tutil Notes page": {
+        "prefix": "tutil Agregar Notes en page (EAD)",
         "description": "Agregar Notes en page (EAD)",
         "body": [
             "\tsystempart(ControlNotes; Notes)",
@@ -265,8 +264,8 @@
         ]
     },
 	"Email Field": {
-        "prefix": "tAgregar campo Email (EAD)",
-        "description": "Agregar Notes en page (EAD)",
+        "prefix": "tutil Validar campo Email (EAD)",
+        "description": "Validar validar campo Email (EAD)",
         "body": [
             "\tfield(50000; \"E-Mail\"; Text[80])",
 			"\t{",
@@ -280,6 +279,18 @@
 			"\t\t\tMailManagement.ValidateEmailAddressField(\"E-Mail\");",
 			"\t\tend;",
 			"\t}"
+        ]
+    },
+	"tutil play video": {
+        "prefix": "tutil play video (EAD)",
+        "description": "Agregar función para reproducir video (EAD)",
+        "body": [
+            "\tlocal procedure DoPlayVideo(Url: text[100])",
+			"\tvar",
+			"\t\tVideo: Codeunit Video;",
+			"\tbegin",
+			"\t\tVideo.Play(Url);",
+			"\tend;"
         ]
     }
 }

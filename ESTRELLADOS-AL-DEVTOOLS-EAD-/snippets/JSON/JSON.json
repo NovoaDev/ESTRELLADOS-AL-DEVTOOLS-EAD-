@@ -1,6 +1,6 @@
 {
     "tcrearruleset": {
-        "prefix": "tcrear ruleset que excluya warning en nombre de archivo (EAD)",
+        "prefix": "tjson ruleset que excluya warning en nombre de archivo (EAD)",
         "body": [
             "{\r",
             "    \"name\": \"EADRuleset\",\r",
@@ -17,8 +17,8 @@
         ],
         "description": "Crear ruleset que excluya warning en nombre de archivo (EAD)"
     },	
-    "tcrearcodeanalysis": {
-		"prefix": "tcrear analizadores de codigo (EAD)",
+    "tjsoncodeanalysis": {
+		"prefix": "tjson analizadores de codigo (EAD)",
 		"body": [
 			"    \"al.enableCodeAnalysis\": true,\r",
 			"    \"al.codeAnalyzers\": [\r",
@@ -30,8 +30,8 @@
 		],
 		"description": "Activar analizadores de codigo (EAD)"
     },
-	"tcrearnombreobjetos": {
-		"prefix": "tcrear nombres objetos (EAD)",
+	"tjsonnombreobjetos": {
+		"prefix": "tjson nombres objetos (EAD)",
 		"body": [
 			"    \"CRS.ObjectNamePrefix\": \"EAD\",\r",
 			"    \"CRS.ExtensionObjectNamePattern\": \"<Prefix><BaseName>\",\r",

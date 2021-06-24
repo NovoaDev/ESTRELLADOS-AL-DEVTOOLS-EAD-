@@ -32,7 +32,7 @@
 	"treportformatmesreport": {
 		"prefix": "treport format mes report (EAD)",
 		"body": [
-			"local procedure FormatMes(Mes : Integer) : Text\r",
+			"local procedure FormatMes(Mes : Integer)MesText: Text\r",
 			"var\r",
 			"    EneLbl: Label 'January', comment = 'ESP=\"Enero\"';\r",
 			"    FebLbl: Label 'February', comment = 'ESP=\"Febrero\"';\r",

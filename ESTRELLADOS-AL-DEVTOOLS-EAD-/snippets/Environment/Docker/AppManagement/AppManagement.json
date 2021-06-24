@@ -51,5 +51,12 @@
 			"    -ErrorAction SilentlyContinue"
 		],
 		"description": "Desinstalar/despublicar app (EAD)"
-	}	 
+	},
+	"tdockercompilarobs": {
+		"prefix": "tdocker compilar objetos contenedor (EAD)",
+		"body": [
+			"Compile-ObjectsInNavContainer -containerName <NombreContenedor>"
+		],
+		"description": "Compilar objetos contenedor (EAD)"
+	}
 }

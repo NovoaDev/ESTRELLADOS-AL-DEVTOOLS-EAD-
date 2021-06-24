@@ -98,45 +98,54 @@ JSON
 ## Snippets
 
 * AL
-    * `tblob escribir desde texto (EAD)` - Crear procesos para escribir en un campo blob.
-    * `tblob obtener texto desde blob (EAD)` - Crear procesos para leer un campo blob.
-    * `tfirma una línea (EAD)` - Agregar comentario para firmar codigo.
-    * `tfirma multilínea (EAD)` - Agregar comentario para firmar codigo en varias lienas.
-    * `tfindset recorrer record (EAD)` - Agregar complemento para Findset repeater.
-    * `tcampo en pagina con tooltip (EAD)` - Crear campo en pagina con tooltip.
-    * `tnotification (EAD)` - Crear plantilla para Notificacion.
-    * `tcambiar color de campos en pagina (EAD)` - Crear plantilla para cambiar color de los campos en paginas.
-    * `tutil numero es divisible (EAD)` - Muestra si un numero es multiplo de otro.
-    * `tutil enviar mail (EAD)` - Procedimiento para enviar email.
-    * `tutil reemplazar informe (EAD)` - Suscripción a un evento para remplazar report.
-    * `tutil API insert/modify (EAD)` - API Insert/Modify.
-    * `tutil accion cargar blob (EAD)` - Accion cargar blob.
     * `talgo ordenamiento bubbleSort (EAD)` - Algoritmo de ordenamiento bubbleSort (existen mejores algoritmos).
     * `talgo ordenamiento InsertionSort (EAD)` - Algoritmo de ordenamiento InsertionSort (existen mejores algoritmos).
     * `talgo ordenamiento QuickSort (EAD)` - Algoritmo de ordenamiento QuickSort.
     * `talgo ordenamiento cocktailSort (EAD)` - Algoritmo de ordenamiento cocktailSort (existen mejores algoritmos).
     * `talgo recursividad/factorial (EAD)` - Procedimiento para hacer factoriales - recursividad.
+    * `tinstall Upgrade tags/gestionar CU de upgrade (EAD)` - Upgrade tags/gestionar CU de upgrade.
+    * `tinstall Upgrade tags/gestionar CU de upgrade Ampliada (EAD)` - Version ampliada de snippet upgradetags.
+    * `treport formato fecha (EAD)` - Formato de fecha mediante la funcion Format.
+    * `treport lanzar report con filtro de la pagina actual (EAD)` - Lanzar report desde pagina.
+    * `treport cambiar idioma en report (EAD)` - Cambiar idioma en report.
+    * `treport format mes report (EAD)` - Función format mes report.
+    * `treport cambiar fecha a texto (EAD)` - Cambiar fecha a texto para reports.
+    * `treport reemplazar informe (EAD)` - Suscripción a un evento para remplazar report.
+    * `ttemplate enviar mail (EAD)` - Procedimiento para enviar email.
+    * `ttemplate mapear db externa (EAD)` - Mapear tabla en DB externa.
+    * `ttemplate pagina web dentro BC controlAddin (EAD)` - Usar controlAddin para embeber Web dentro de BC.
+    * `ttemplate (EAD)` - Crear plantilla para Notificacion.
+    * `ttest lanzar test desde VSCode testrunner (EAD)` - Lanzar pruebas unitarias desde VSCode.
+    * `ttraduccion Caption (EAD)` - Crear propiedad caption con comentario.
+    * `ttraduccion ToolTip (EAD)` - Crear propiedad ToolTip con comentario.
+    * `ttraduccion Label (EAD)` - Crear propiedad Label con comentario.
+    * `ttraduccion Comment (EAD)` - Crear Comment.
+    * `tutil numero es divisible (EAD)` - Muestra si un numero es multiplo de otro.
+    * `tutil accion cargar blob (EAD)` - Accion cargar blob.
     * `tutil overflow en campos texto (EAD)` - Manejar overflow en campos texto.
-    * `tutil cambiar idioma en report (EAD)` - Cambiar idioma en report.
-    * `tutil format mes report (EAD)` - Función format mes report.
-    * `tutil cambiar fecha a texto (EAD)` - Cambiar fecha a texto para reports.
-    * `tutil Upgrade tags/gestionar CU de upgrade (EAD)` - tutil Upgrade tags/gestionar CU de upgrade.
     * `tutil existe letra en (EAD)` - Función para verificar si existe letra.
-    * `tgitignore (EAD)` - Ejemplo de Gitignore que despues copiaremos al archivo gitignore.
-    * `tutil Upgrade tags/gestionar CU de upgrade Ampliada (EAD)` - Version ampliada de snippet upgradetags.
-    * `tutil traduccion con expresiones regulares (EAD)` - Traducciones usando expresiones regulares.
-    * `tutil formato fecha (EAD)` - Formato de fecha mediante la funcion Format.
-    * `tutil expresion regular para encontrar fallos traduciones (EAD)` - RegExp para encontrar fallos en fichero de traduccion.
-    * `tutil bound action para paginas WS (EAD)` - Bound Action a pagina WS.
     * `tutil trabajar con enum (EAD)` - Trabajar con Enum.
-    * `tonassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)` - Mostrar un campo en pagina y guardar otro en tabla.
-    * `texternalsql mapear db externa (EAD)` - Mapear tabla en DB externa.
-    * `tutil trabajar json anidados (EAD)` - Trabajar con Json anidados.
+    * `tutil onassisedit mostrar un campo en pagina y guardar otro en tabla (EAD)` - Mostrar un campo en pagina y guardar otro en tabla.
     * `tutil tablerelation en funcion de otro campo de la tabla (EAD)` - TableRelation con condicional.
-    * `tutil lanzar test desde VSCode testrunner (EAD)` - Lanzar pruebas unitarias desde VSCode.
-    * `tutil pagina web dentro BC controlAddin (EAD)` - Usar controlAddin para embeber Web dentro de BC.
+    * `tutil escribir desde texto (EAD)` - Crear procesos para escribir en un campo blob.
+    * `tutil obtener texto desde blob (EAD)` - Crear procesos para leer un campo blob.
+    * `tutil firma una línea (EAD)` - Agregar comentario para firmar codigo.
+    * `tutil firma multilínea (EAD)` - Agregar comentario para firmar codigo en varias lienas.
+    * `tutil recorrer record (EAD)` - Agregar complemento para Findset repeater.
+    * `tutil campo en pagina con tooltip (EAD)` - Crear campo en pagina con tooltip.
+    * `tutil cambiar color de campos en pagina (EAD)` - Crear plantilla para cambiar color de los campos en paginas.
+    * `tutil Agregar Links en page (EAD)` - Agregar Links en page (EAD).
+    * `tutil Agregar Notes en page (EAD)` - Agregar Notes en page (EAD).
+    * `tutil Validar campo Email (EAD)` - Validar campo Email (EAD).
+    * `twsapi API insert/modify (EAD)` - API Insert/Modify.
+    * `twsapi bound action para paginas WS (EAD)` - Bound Action a pagina WS.
+    * `twsapi trabajar json anidados (EAD)` - Trabajar con Json anidados.
 
 * DOCKER
+    * `tdocker instalar app (EAD)` - Instalar .app.
+    * `tdocker actualizar app (EAD)` - Actualizar .app.
+    * `tdocker desinstalar/despublicar app (EAD)` - Desinstalar .app.
+    * `tdocker compilar objetos (EAD)` - Compilar objetos de contenedor.
     * `tdocker crear contenedor BC OnPremise (EAD)` - Crear contenedor.
     * `tdocker crear contenedor BC Sandbox (EAD)` - Crear contenedor.
     * `tdocker crear contenedor BC desde .bak (EAD)` - Crear contenedor desde respaldo .bak.
@@ -144,27 +153,25 @@ JSON
     * `tdocker importar codeunit y extensiones de test (EAD)` - Importar C/U de test.
     * `tdocker ver detalles de imagenes de Docker (EAD)` - Extraer BaseApp desde un contenedor.
     * `tdocker extraer codigo de la BaseAPP desde contenedor (EAD)` - Ver detalles de imagen antes de descargar.
+    * `tdocker importar licencia (EAD)` - Importar licencia a contenedor.
+    * `tdocker agregar fuentes de Windows a un contenedor (EAD)` - Agergar fuentes de Windows a un contenedor.
+    * `tdocker instalar BCcontainerhelper (EAD)` - instalar BCcontainerhelper a contenedor.
     * `tdocker ver ayuda de navcontainerhelper (EAD)` - Ver ayuda navcontainerhelper.
     * `tdocker copiar archivo desde contenedor a local (EAD)` - Copiar archivo de contenedor a local.
     * `tdocker copiar archivo local a contenedor (EAD)` - Copiar archivo de local a contenedor.
-    * `tdocker importar licencia (EAD)` - Importar licencia a contenedor.
-    * `tdocker agregar fuentes de Windows a un contenedor (EAD)` - Agergar fuentes de Windows a un contenedor.
     * `tdocker crear usuario en contenedor (EAD)` - Crear usuarios navcontainer.
-    * `tdocker desinstalar/despublicar app (EAD)` - Desinstalar .app.
-    * `tdocker instalar app (EAD)` - Instalar .app.
-    * `tdocker actualizar app (EAD)` - Actualizar .app.
 
 * POWERSHELL
+    * `tonprem compilar objetos Local (EAD)` - Compilar objetos Local.
+    * `tonprem instalar desinstalar actualizar app local (EAD)` - Instalar, desinstalar actualizar app local.
+    * `tonprem comparar ficheros de texto desde PS (EAD)` - Comparar ficheros de texto desde PS (Verificar rutas).
+    * `tonprem importar licencia local (EAD)` - Importar licencia a una instalacion local.
+    * `tonprem crear usuario local (EAD)` - crear usuario en una instalacion local.
+    * `tonprem generar simbolos local (EAD)` - generar simbolos en una instalacion local.
     * `tpowershell Activar caracteristica Microsoft-Windows-Subsystem-Linux (EAD)` - Activar caracteristica Microsoft-Windows-Subsystem-Linux para ejecutar la terminal de linux dentro de Windows.
-    * `tpowershell comparar ficheros de texto desde PS (EAD)` - Comparar ficheros de texto desde PS (Verificar rutas).
-    * `tutil compilar objetos (EAD)` - Compilar objetos.
-    * `timportar licencia local (EAD)` - Importar licencia a una instalacion local.
-    * `tinstalar desinstalar actualizar app local (EAD)` - Instalar, desinstalar actualizar app local.
-    * `tutil compilar objetos Local (EAD)` - Compilar objetos Local.
-    * `tgit Crear alias para GIT (EAD)` - Crear alias para GIT.
-    * `tgenerar simbolos (EAD)` - Generar simbolos.
-    * `tgit alias git cfg (EAD)` - Alias de GIT dentro de la configuracion.
-
+    * `tpowershell traduccion con expresiones regulares (EAD)` - Traducciones usando expresiones regulares.
+    * `tpowershell expresion regular para encontrar fallos traduciones (EAD)` - RegExp para encontrar fallos en fichero de traduccion.
+    
 * GITBASH
     * `tgit cambiar origin git (EAD)` - Cambiar origin a un proyecto que use git. 
     * `tgit activar o desactivar uso de ssl en git (EAD)` - Activar o desactivar uso de ssl para git en terminal. 
@@ -174,7 +181,10 @@ JSON
     * `tgit añadir a commit anterior (EAD)` - Añadir a commit anterior. 
     * `tgit buscar palabra en git (EAD)` - Buscar palabra en git. 
     * `tgit ver historico visual (EAD)` - Abrir historico visual para git. 
+    * `tgit Crear alias para GIT (EAD)` - Crear alias para GIT.
     * `tgit reset rama (EAD)` - Reset rama. 
+    * `tgit alias git cfg (EAD)` - Alias de GIT dentro de la configuracion.
+    * `tgit gitignore (EAD)` - Ejemplo de Gitignore que despues copiaremos al archivo gitignore.
 
 * HTTP
     * `tapi Test APIs SANDBOX BC Aut basica (EAD)` - Test apis personalizadas BC SANDBOX.
@@ -182,9 +192,9 @@ JSON
     * `tws test WS Docker BC Aut basica (EAD)` - Test WS Docker BC Aut basica.
 
 * JSON
-    * `tcrear ruleset que excluya warning en nombre de archivo (EAD)` - Crear ruleset que excluya warning en nombre de archivo.
-    * `tcrear analizadores de codigo (EAD)` - Agrega analizadores de codigo.
-    * `tcrear nombres objetos (EAD)` - Agregar configuracion para que renombre nuestros archivos.
+    * `tjson ruleset que excluya warning en nombre de archivo (EAD)` - Crear ruleset que excluya warning en nombre de archivo.
+    * `tjson analizadores de codigo (EAD)` - Agrega analizadores de codigo.
+    * `tjson nombres objetos (EAD)` - Agregar configuracion para que renombre nuestros archivos.
 
 ####Ejemplos :
 **`tdocker crear contenedor BC (EAD)`**
@@ -245,7 +255,14 @@ begin
     end;
 end;
 ```
+
+## Comandos
 ## Release Notes
+### 1.0.4
+* Se agregarón los siguientes snippetes:
+    * Docker - Instalar BCContainerHelper.
+* Se agregarón los siguientes snippetes:
+    * Docker - Instalar BCContainerHelper.
 ### 1.0.3
 * Se modificaron los siguientes snippets: crear contenedores con artifacts
     * Docker - Instalar BCContainerHelper.
