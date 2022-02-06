@@ -11,7 +11,7 @@ table 50000 "Master Example"
         //Copiar a objeto
         field(2; "Description"; Text[100])
         {
-            Caption = 'Description', Comment = 'Descripción';
+            Caption = 'Description', Comment = 'ESP="Descripción"';
 
             trigger OnValidate()
             begin
@@ -21,11 +21,11 @@ table 50000 "Master Example"
         }
         field(3; "Search Description"; Code[100])
         {
-            Caption = 'Search Description', Comment = 'Descripción para busqueda';
+            Caption = 'Search Description', Comment = 'ESP="Descripción para busqueda"';
         }
         field(4; "Description 2"; Text[50])
         {
-            Caption = 'Description 2', Comment = 'Descripción 2';
+            Caption = 'Description 2', Comment = 'ESP="Descripción 2"';
         }
         //Copiar a objeto
     }

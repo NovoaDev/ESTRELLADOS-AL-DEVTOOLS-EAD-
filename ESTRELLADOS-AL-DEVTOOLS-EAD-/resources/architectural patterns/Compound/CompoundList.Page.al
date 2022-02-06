@@ -1,7 +1,7 @@
 page 90000 "Compound List"
 {
     ApplicationArea = All;
-    Caption = 'Compound List', Comment = 'Pagina patrón compuesto';
+    Caption = 'Compound List', Comment = 'ESP="Pagina patrón compuesto"';
     CardPageID = "Compound Card";
     PageType = List;
     SourceTable = "Compound Table";

@@ -1,10 +1,11 @@
 codeunit 50000 "Example Setup Management"
 {
-    procedure GetExampleEnabled(): Boolean
-    var
-        ExampleSetup: Record "Example Setup";
+    internal procedure GetExampleEnabled(): Boolean
     begin
-        ExampleSetup.GetRecord();
+        ExampleSetup.GetInstance();
         exit(ExampleSetup."Example Enabled");
     end;
+
+    var
+        ExampleSetup: Record "Example Setup";
 }

@@ -5,20 +5,20 @@ table 50000 "Suplemental Example"
         //Colocar  QuickEntry = false; en los campos de las paginas
         field(1; "Code"; Code[10])
         {
-            Caption = 'Code', Comment = 'Código';
+            Caption = 'Code', Comment = 'ESP="Código"';
             NotBlank = true;
         }
         field(2; "Address"; Text[100])
         {
-            Caption = 'Address', Comment = 'Dirección';
+            Caption = 'Address', Comment = 'ESP="Dirección"';
         }
         field(3; "Address 2"; Text[50])
         {
-            Caption = 'Address 2', Comment = 'Dirección 2';
+            Caption = 'Address 2', Comment = 'ESP="Dirección 2"';
         }
         field(4; "City"; Text[30])
         {
-            Caption = 'City', Comment = 'Ciudad';
+            Caption = 'City', Comment = 'ESP="Ciudad"';
             TableRelation = if ("Country/Region Code" = const('')) "Post Code".City
             else
             if ("Country/Region Code" = filter(<> '')) "Post Code".City where("Country/Region Code" = field("Country/Region Code"));
@@ -36,7 +36,7 @@ table 50000 "Suplemental Example"
         }
         field(5; "Country/Region Code"; Code[10])
         {
-            Caption = 'Country/Region Code', Comment = 'Código de país/región';
+            Caption = 'Country/Region Code', Comment = 'ESP="Código de país/región"';
             TableRelation = "Country/Region";
 
             trigger OnValidate()
@@ -46,7 +46,7 @@ table 50000 "Suplemental Example"
         }
         field(6; "Post Code"; Code[20])
         {
-            Caption = 'Post Code', Comment = 'Código postal';
+            Caption = 'Post Code', Comment = 'ESP="Código postal"';
             TableRelation = if ("Country/Region Code" = const('')) "Post Code"
             else
             if ("Country/Region Code" = filter(<> '')) "Post Code" where("Country/Region Code" = field("Country/Region Code"));
@@ -64,7 +64,7 @@ table 50000 "Suplemental Example"
         }
         field(7; "County"; Text[30])
         {
-            Caption = 'County', Comment = 'Municipio';
+            Caption = 'County', Comment = 'ESP="Municipio"';
             CaptionClass = '5,1,' + "Country/Region Code";
         }
     }

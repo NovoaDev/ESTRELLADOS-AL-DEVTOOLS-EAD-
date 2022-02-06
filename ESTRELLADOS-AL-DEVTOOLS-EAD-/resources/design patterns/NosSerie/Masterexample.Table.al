@@ -7,7 +7,7 @@ table 50000 "Master Example"
         //Copiar a objeto
         field(1; "No."; Code[20])
         {
-            Caption = 'No.', Comment = 'Nº';
+            Caption = 'No.', Comment = 'ESP="Nº"';
 
             trigger OnValidate()
             begin
@@ -21,7 +21,7 @@ table 50000 "Master Example"
 
         field(2; "No. Series"; Code[20])
         {
-            Caption = 'No. Series', Comment = 'Nº Serie';
+            Caption = 'No. Series', Comment = 'ESP="Nº Serie"';
             Editable = false;
             TableRelation = "No. Series";
         }

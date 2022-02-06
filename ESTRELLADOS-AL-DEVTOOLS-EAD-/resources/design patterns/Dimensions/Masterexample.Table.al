@@ -6,12 +6,12 @@ table 50000 "Master Example"
     {
         field(1; "No."; Code[20])
         {
-            Caption = 'No.', Comment = 'Nº';
+            Caption = 'No.', Comment = 'ESP="Nº"';
         }
         //Copiar a objeto
         field(2; "Global Dimension 1 Code"; Code[20])
         {
-            Caption = 'Global Dimension 1 Code', Comment = 'Codigo dimensión global 1';
+            Caption = 'Global Dimension 1 Code', Comment = 'ESP="Codigo dimensión global 1"';
             CaptionClass = '1,1,1';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
 
@@ -22,7 +22,7 @@ table 50000 "Master Example"
         }
         field(3; "Global Dimension 2 Code"; Code[20])
         {
-            Caption = 'Global Dimension 2 Code', Comment = 'Codigo dimensión global 2';
+            Caption = 'Global Dimension 2 Code', Comment = 'ESP="Codigo dimensión global 2"';
             CaptionClass = '1,1,2';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
 

@@ -4,12 +4,12 @@ table 90000 "Master Example"
     {
         field(1; "Code"; Code[20])
         {
-            Caption = 'Code', Comment = 'Código';
+            Caption = 'Code', Comment = 'ESP="Código"';
         }
         //Copiar a objeto
         field(2; "Contact No."; Code[20])
         {
-            Caption = 'Contact No.', Comment = 'Contacto';
+            Caption = 'Contact No.', Comment = 'ESP="Contacto"';
             TableRelation = Contact;
 
             trigger OnLookup()

@@ -1,6 +1,6 @@
 table 90000 "Compound Table"
 {
-    Caption = 'Supplemental Table', Comment = 'Tabla suplementaria';
+    Caption = 'Supplemental Table', Comment = 'ESP="Tabla suplementaria"';
     DrillDownPageID = "Compound List";
     LookupPageID = "Compound List";
 
@@ -8,17 +8,17 @@ table 90000 "Compound Table"
     {
         field(1; "Code 1"; Code[20])
         {
-            Caption = 'Code 1', Comment = 'Code 1';
+            Caption = 'Code 1', Comment = 'ESP="Code 1"';
             //TableRelation = "";
         }
         field(2; "Code 2"; Code[20])
         {
-            Caption = 'Code 2', Comment = 'Code 2';
+            Caption = 'Code 2', Comment = 'ESP="Code 2"';
             //TableRelation = "";
         }
         field(3; Description; Text[100])
         {
-            Caption = 'Description', Comment = 'Descripción';
+            Caption = 'Description', Comment = 'ESP="Descripción"';
         }
     }
 

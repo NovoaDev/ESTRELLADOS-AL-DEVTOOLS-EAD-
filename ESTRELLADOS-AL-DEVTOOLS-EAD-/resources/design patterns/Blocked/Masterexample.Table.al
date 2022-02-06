@@ -11,7 +11,7 @@ table 50000 "Master Example"
         //Copiar a objeto
         field(2; Blocked; Boolean)
         {
-            Caption = 'Blocked', Comment = 'Bloqueado';
+            Caption = 'Blocked', Comment = 'ESP="Bloqueado"';
             DataClassification = CustomerContent;
         }
         //Copiar a objeto
@@ -28,7 +28,7 @@ table 50000 "Master Example"
     //Copiar a objeto
     internal procedure TestBlocked()
     var
-        BlockedErr: Label 'The %1 register is locked.', Comment = 'El registro %1 se encuentra bloqueado.';
+        BlockedErr: Label 'The %1 register is locked.', Comment = 'ESP="El registro %1 se encuentra bloqueado."';
     begin
         if Blocked then
             Error(BlockedErr, "No.");

@@ -1,6 +1,6 @@
 page 90001 "Compound Card"
 {
-    Caption = 'Compound Card', Comment = 'Pagina patrón compuesto';
+    Caption = 'Compound Card', Comment = 'ESP="Pagina patrón compuesto"';
     PageType = Card;
     SourceTable = "Compound Table";
 

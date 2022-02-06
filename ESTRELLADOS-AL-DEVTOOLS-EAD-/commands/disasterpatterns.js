@@ -19,6 +19,10 @@ function run() {
                 src += "ControllAddin\\"  
                 dsc += "ControllAddinExample/"
 		        break;
+			case 'ControllAddin':
+					src += "ReplaceReports\\"  
+					dsc += "ReplaceReports/"
+					break;
             case 'Baja':
                 break;
             }
@@ -48,7 +52,7 @@ function choosePattern() {
 		vscode.window.showQuickPick([
 			createItem("UpgradeTags", "Ejemplo de upgrade tags"),
             createItem("ControllAddin", "Ejemplo de control Addin"),
-			
+			createItem("ReplaceReports", "Ejemplo remplazar report estandar parametrizado"),
 		], options).then(target => {
 			resolve(target.label)
 		})
