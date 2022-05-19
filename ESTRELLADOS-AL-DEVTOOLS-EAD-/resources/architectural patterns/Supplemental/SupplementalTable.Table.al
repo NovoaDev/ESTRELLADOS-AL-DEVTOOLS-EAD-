@@ -2,6 +2,7 @@ table 90000 "Supplemental Table"
 {
     Caption = 'Supplemental Table', Comment = 'ESP="Tabla suplementaria"';
     LookupPageId = "Supplemental Page";
+    Access = Internal;
 
     fields
     {

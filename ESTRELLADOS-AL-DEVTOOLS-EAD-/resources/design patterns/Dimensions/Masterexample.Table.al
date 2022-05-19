@@ -1,6 +1,7 @@
 table 50000 "Master Example"
 {
     DataClassification = CustomerContent;
+    Access = Internal;
 
     fields
     {

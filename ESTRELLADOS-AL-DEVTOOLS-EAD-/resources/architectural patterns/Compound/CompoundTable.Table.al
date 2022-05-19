@@ -1,5 +1,6 @@
 table 90000 "Compound Table"
 {
+    Access = Internal;
     Caption = 'Supplemental Table', Comment = 'ESP="Tabla suplementaria"';
     DrillDownPageID = "Compound List";
     LookupPageID = "Compound List";

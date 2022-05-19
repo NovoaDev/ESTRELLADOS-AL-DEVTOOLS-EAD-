@@ -1,5 +1,6 @@
 table 50000 "Suplemental Example"
 {
+    Access = Internal;
     fields
     {
         //Colocar  QuickEntry = false; en los campos de las paginas

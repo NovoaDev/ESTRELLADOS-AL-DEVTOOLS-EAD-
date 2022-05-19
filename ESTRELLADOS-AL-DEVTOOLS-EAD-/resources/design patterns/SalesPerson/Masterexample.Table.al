@@ -1,5 +1,6 @@
 table 50000 "Master Example"
 {
+    Access = Internal;
     fields
     {
         field(1; "Code"; Code[20])

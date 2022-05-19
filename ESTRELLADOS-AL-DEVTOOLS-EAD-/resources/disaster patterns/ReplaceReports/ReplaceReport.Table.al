@@ -4,6 +4,7 @@ table 50100 "Replace Report"
     DataClassification = CustomerContent;
     DrillDownPageId = "Replace Report";
     LookupPageId = "Replace Report";
+    Access = Internal;
 
     fields
     {

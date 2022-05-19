@@ -3,6 +3,7 @@ table 50000 "Example Setup"
     Caption = 'Example Setup', comment = 'ESP="Ejemplo de configuración"';
     DrillDownPageID = "Example Setup";
     LookupPageID = "Example Setup";
+    Access = Internal;
 
     fields
     {

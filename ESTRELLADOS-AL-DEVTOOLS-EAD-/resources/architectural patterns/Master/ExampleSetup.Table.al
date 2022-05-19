@@ -1,5 +1,6 @@
 table 90001 "Example Setup"
 {
+    Access = Internal;
     fields
     {
         field(1; "Primary Key"; Code[10])

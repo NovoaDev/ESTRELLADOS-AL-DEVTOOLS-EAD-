@@ -2,6 +2,7 @@ table 90000 "Master Example"
 {
     Caption = 'Master Example', comment = 'ESP="Ejemplo maestros"';
     DataClassification = CustomerContent;
+    Access = Internal;
 
     fields
     {

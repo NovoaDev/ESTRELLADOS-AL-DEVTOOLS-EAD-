@@ -1,5 +1,7 @@
 codeunit 50000 "Example Setup Management"
 {
+    Access = Internal;
+
     internal procedure GetExampleEnabled(): Boolean
     begin
         ExampleSetup.GetInstance();
