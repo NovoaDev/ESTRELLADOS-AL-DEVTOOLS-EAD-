@@ -1,7 +1,7 @@
 page 90003 "Example Setup"
 {
     ApplicationArea = All;
-    Caption = 'Example Setup', Comment = 'Ejemplo de configuración';
+    Caption = 'Example Setup', Comment = 'ESP="Ejemplo de configuración"';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;
@@ -14,7 +14,7 @@ page 90003 "Example Setup"
         {
             group(General)
             {
-                Caption = 'General', Comment = 'General';
+                Caption = 'General', Comment = 'ESP="General"';
                 //Copiar a objeto
                 field("Example Nos."; Rec."Example Nos.")
                 {

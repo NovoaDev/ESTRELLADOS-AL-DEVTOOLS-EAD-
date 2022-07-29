@@ -25,6 +25,10 @@ function run() {
 					break;
             case 'Baja':
                 break;
+			case 'ExternalSql':
+				src += "ExternalSql\\"  
+				dsc += "ExternalSql/"
+				break;
             }
             CopyPattern.run(src, dsc)
     })
@@ -51,6 +55,7 @@ function choosePattern() {
 	return new Promise((resolve) => {
 		vscode.window.showQuickPick([
 			createItem("UpgradeTags", "Ejemplo de upgrade tags"),
+			createItem("ExternalSql", "Ejemplo de ExternalSql"),
             createItem("ControllAddin", "Ejemplo de control Addin"),
 			createItem("ReplaceReports", "Ejemplo remplazar report estandar parametrizado"),
 		], options).then(target => {

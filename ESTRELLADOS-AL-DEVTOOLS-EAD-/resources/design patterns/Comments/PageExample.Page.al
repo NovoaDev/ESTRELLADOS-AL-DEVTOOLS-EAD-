@@ -33,7 +33,7 @@ page 50000 "Page Example"
             action(Comments)
             {
                 ApplicationArea = Comments;
-                Caption = 'Comments', Comment = 'Comentarios';
+                Caption = 'Comments', Comment = 'ESP="Comentarios"';
                 Image = ViewComments;
                 Promoted = true;
                 RunObject = Page "Comment Sheet";

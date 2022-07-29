@@ -134,5 +134,38 @@
 			"    end;"
 		],
 		"description": "Trabajar json anidados (EAD)"
+	},
+	"twsapigetjsonvalue": {
+		"prefix": "twsapi get json value (EAD)",
+		"body": [
+			"    /// <summary>",
+			"    /// GetJsonValueToInteger.",
+			"    /// </summary>",
+			"    /// <param name=\"JsonKey\">Text.</param>",
+			"    /// <param name=\"RequestJsonObject\">VAR JsonObject.</param>",
+			"    /// <returns>Return value of type Integer.</returns>",
+			"    local procedure GetJsonValueToInteger(JsonKey: Text; var RequestJsonObject: JsonObject): Integer",
+			"    var",
+			"        AuxJsonToken: JsonToken;",
+			"    begin",
+			"        if RequestJsonObject.Get(JsonKey, AuxJsonToken) then",
+			"            exit(AuxJsonToken.AsValue().AsInteger());",
+			"    end;",
+			"",
+			"    /// <summary>",
+			"    /// GetJsonValueToText",
+			"    /// </summary>",
+			"    /// <param name=\"JsonKey\"></param>",
+			"    /// <param name=\"RequestJsonObject\"></param>",
+			"    /// <returns></returns>",
+			"    local procedure GetJsonValueToText(JsonKey: Text; var RequestJsonObject: JsonObject): Text",
+			"    var",
+			"        AuxJsonToken: JsonToken;",
+			"    begin",
+			"        if RequestJsonObject.Get(JsonKey, AuxJsonToken) then",
+			"            exit(AuxJsonToken.AsValue().AsText());",
+			"    end;"
+		],
+		"description": "Obtener valor de json value (EAD)"
 	}
 }
