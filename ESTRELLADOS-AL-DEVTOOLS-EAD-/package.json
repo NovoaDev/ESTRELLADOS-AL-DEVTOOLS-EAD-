@@ -130,7 +130,6 @@
     ],
     "dependencies": {
         "fs-extra": "^9.1.0",
-        "nodegit": "^0.27.0",
         "xml2js": "^0.4.23"
     },
     "extensionPack": [
