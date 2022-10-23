@@ -64,7 +64,8 @@ function buildAltaRuleset(){
 		"al.enableCodeAnalysis": true,
 		"al.codeAnalyzers": [
 			"${CodeCop}",
-			"${PerTenantExtensionCop}"
+			"${PerTenantExtensionCop}",
+			"${analyzerFolder}BusinessCentral.LinterCop.dll"
 		],
 		"al.ruleSetPath": "./.vscode/ruleset.json",
 		"CRS.AlSubFolderName": "src",
@@ -97,24 +98,19 @@ function buildRulesetJson() {
 		"description": "Customization of the analyzer to exclude errors and warning",
 		"rules": [
 			{
-				"id": "AA0218",
-				"action": "None",
-				"justification": "Disable tooltip warning on pages"
+				"id": "LC0009",
+            	"action": "None",
+            	"justification": "Justification"
 			},
 			{
 				"id": "AA0205",
-				"action": "None",
-				"justification": "Disable warning Use of unassigned variable"
-			},      
-			{
-				"id": "AA0072",
-				"action":"None",
-				"justification": "Disable warning of variables names"
-			},    
+				"action": "Error",
+				"justification": "Change behavior to avoid leaving trash in the project - unassigned variable"
+			},       
 			{
 				"id": "AA0206",
-				"action":"None",
-				"justification": "Disable warning The variable is initialized but not used"
+				"action":"Error",
+				"justification": "Change behavior to avoid leaving trash in the project - initialized but not used"
 			}
 		]
 	}
@@ -126,7 +122,8 @@ function buildAlta(){
 		"al.enableCodeAnalysis": true,
 		"al.codeAnalyzers": [
 			"${CodeCop}",
-			"${PerTenantExtensionCop}"
+			"${PerTenantExtensionCop}",
+			"${analyzerFolder}BusinessCentral.LinterCop.dll"
 		],
 		"CRS.AlSubFolderName": "src",
 		"CRS.OnSaveAlFileAction": "Rename",
