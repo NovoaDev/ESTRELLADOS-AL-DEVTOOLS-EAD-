@@ -44,7 +44,7 @@ page 90000 "Page Example"
             action(Dimensions)
             {
                 ApplicationArea = Dimensions;
-                Caption = 'Dimensions', Comment = 'Dimensiones';
+                Caption = 'Dimensions', Comment = 'ESP="Dimensiones"';
                 Image = Dimensions;
                 Promoted = true;
                 PromotedIsBig = true;

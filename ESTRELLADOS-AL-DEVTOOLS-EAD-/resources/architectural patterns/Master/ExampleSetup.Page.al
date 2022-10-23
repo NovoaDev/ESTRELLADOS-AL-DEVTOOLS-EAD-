@@ -1,7 +1,7 @@
-page 50000 "Example Setup"
+page 90003 "Example Setup"
 {
     ApplicationArea = All;
-    Caption = 'Example Setup', comment = 'ESP="Ejemplo de configuración"';
+    Caption = 'Example Setup', Comment = 'ESP="Ejemplo de configuración"';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;
@@ -15,16 +15,21 @@ page 50000 "Example Setup"
             group(General)
             {
                 Caption = 'General', Comment = 'ESP="General"';
-                field("Example Enabled"; Rec."Example Enabled")
+                //Copiar a objeto
+                field("Example Nos."; Rec."Example Nos.")
                 {
                     ApplicationArea = All;
                 }
+                //Copiar a objeto
             }
         }
     }
 
     trigger OnOpenPage()
     begin
-        Rec.GetInstance();
+        if not Rec.Get() then begin
+            Rec.Init();
+            Rec.Insert(true);
+        end;
     end;
 }

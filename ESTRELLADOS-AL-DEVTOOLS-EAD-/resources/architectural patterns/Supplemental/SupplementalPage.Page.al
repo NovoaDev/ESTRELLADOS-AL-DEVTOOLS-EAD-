@@ -1,7 +1,7 @@
 page 90000 "Supplemental Page"
 {
     ApplicationArea = All;
-    Caption = 'Supplemental Page', Comment = 'Pagina suplementaria';
+    Caption = 'Supplemental Page', Comment = 'ESP="Pagina suplementaria"';
     PageType = List;
     SourceTable = "Supplemental Table";
     UsageCategory = Lists;

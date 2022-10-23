@@ -1,6 +1,8 @@
 table 90000 "Master Example"
 {
+    Caption = 'Master Example', comment = 'ESP="Ejemplo maestros"';
     DataClassification = CustomerContent;
+    Access = Internal;
 
     fields
     {
@@ -19,7 +21,7 @@ table 90000 "Master Example"
         }
         field(2; "Name"; Text[100])
         {
-            Caption = 'Name', Comment = 'Nombre';
+            Caption = 'Name', Comment = 'ESP="Nombre"';
 
             trigger OnValidate()
             begin
@@ -29,15 +31,15 @@ table 90000 "Master Example"
         }
         field(3; "Name 2"; Text[50])
         {
-            Caption = 'Name 2', Comment = 'Nombre 2';
+            Caption = 'Name 2', Comment = 'ESP="Nombre 2"';
         }
         field(4; "Search Name"; Code[100])
         {
-            Caption = 'Search Name', Comment = 'Nombre para busqueda';
+            Caption = 'Search Name', Comment = 'ESP="Nombre para busqueda"';
         }
         field(5; "No. Series"; Code[20])
         {
-            Caption = 'No. Series', Comment = 'Nº Serie';
+            Caption = 'No. Series', Comment = 'ESP="Nº Serie"';
             Editable = false;
             TableRelation = "No. Series";
         }
@@ -51,7 +53,6 @@ table 90000 "Master Example"
         }
         key(Key2; "Search Name")
         {
-
         }
     }
 

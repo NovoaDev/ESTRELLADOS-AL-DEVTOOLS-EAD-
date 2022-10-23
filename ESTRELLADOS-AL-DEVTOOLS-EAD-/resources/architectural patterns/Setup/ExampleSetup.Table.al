@@ -1,19 +1,20 @@
 table 50000 "Example Setup"
 {
-    Caption = 'Example Setup', Comment = 'Ejemplo de configuración';
+    Caption = 'Example Setup', comment = 'ESP="Ejemplo de configuración"';
     DrillDownPageID = "Example Setup";
     LookupPageID = "Example Setup";
+    Access = Internal;
 
     fields
     {
         field(1; "Primary Key"; Code[10])
         {
-            Caption = 'Primary Key', Comment = 'Clave primaria';
+            Caption = 'Primary Key', Comment = 'ESP="Clave primaria"';
             DataClassification = CustomerContent;
         }
         field(2; "Example Enabled"; Boolean)
         {
-            Caption = 'Example Enabled', Comment = 'Ejemplo booleano';
+            Caption = 'Example Enabled', Comment = 'ESP="Ejemplo booleano"';
             DataClassification = CustomerContent;
         }
     }
@@ -26,7 +27,7 @@ table 50000 "Example Setup"
         }
     }
 
-    procedure GetRecord();
+    internal procedure GetInstance();
     begin
         if HasBeenRead then
             exit;

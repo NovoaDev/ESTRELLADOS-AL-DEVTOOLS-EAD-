@@ -6,14 +6,15 @@ table 50000 "Master Example"
     {
         field(1; "No."; Code[20])
         {
-            Caption = 'No.', Comment = 'Nº';
+            Caption = 'No.', Comment = 'ESP="Nº"';
             DataClassification = CustomerContent;
         }
+
         //Copiar a objeto
         field(2; Comment; Boolean)
         {
             CalcFormula = Exist("Comment Line" where("Table Name" = const(Example), "No." = field("No.")));
-            Caption = 'Comment', Comment = 'Comentarios';
+            Caption = 'Comment', Comment = 'ESP="Comentarios"';
             Editable = false;
             FieldClass = FlowField;
         }
@@ -27,6 +28,7 @@ table 50000 "Master Example"
             Clustered = true;
         }
     }
+
     //Copiar a objeto integridad refenrencial 
     trigger OnDelete()
     var

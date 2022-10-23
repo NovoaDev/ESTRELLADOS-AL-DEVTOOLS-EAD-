@@ -1,5 +1,4 @@
 var vscode = require('vscode')
-var translations = require('./commands/translations')
 var settings = require('./commands/settings')
 var gitignores = require('./commands/gitignore')
 var patternss = require('./commands/patterns')
@@ -7,9 +6,6 @@ var designpatternss = require('./commands/designpatterns')
 var disasterpatternss = require('./commands/disasterpatterns')
 
 function activate(context) {
-	var translation = vscode.commands.registerCommand('extension.translation', function () {
-		translations.run()
-	})
 	var setting = vscode.commands.registerCommand('extension.settings', function () {
 		settings.run()
 	})

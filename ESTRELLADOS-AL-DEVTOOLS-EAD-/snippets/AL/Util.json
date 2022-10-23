@@ -193,7 +193,7 @@
 			"            if ${1:record}.FindSet(false,false) then",
 			"                repeat",
 			"",
-			"                until ${1:record}.next() = 0;"
+			"                until ${1:record}.Next() = 0;"
 		],
 		"description": "Snippet plantilla para recorrer record (EAD)"
 	},
@@ -301,6 +301,24 @@
 			"\tbegin",
 			"\t\tSystem.Hyperlink(URL);",
 			"\tend;"
+        ]
+    },
+	"tutil campo email": {
+        "prefix": "tutil campo email (EAD)",
+        "description": "Crear campo email (EAD)",
+        "body": [
+            "\tfield(10; \"E-Mail\"; Text[80])",
+			"\t{",
+			"\t\tCaption = 'E-Mail', Comment = 'ESP=\"E-Mail\"';",
+			"\t\tExtendedDatatype = EMail;",
+			"\t\t",
+			"\t\ttrigger OnValidate()",
+			"\t\tvar",
+			"\t\t\tMailManagement: Codeunit \"Mail Management\";",
+			"\t\tbegin",
+			"\t\t\tMailManagement.ValidateEmailAddressField(\"E-Mail\");",
+			"\t\tend;",
+			"\t}"
         ]
     }
 }

@@ -1,9 +1,7 @@
-page 90000 "Page Example"
+page 90002 "Page Example"
 {
-    ApplicationArea = All;
-    PageType = Card;
+    Caption = 'Master Example', comment = 'ESP="Ejemplo maestros"';
     SourceTable = "Master Example";
-    UsageCategory = Administration;
 
     layout
     {
@@ -11,7 +9,10 @@ page 90000 "Page Example"
         {
             group(GroupName)
             {
-                //Copiar a objeto
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                }
                 field(Name; Rec."Name")
                 {
                     ApplicationArea = All;
@@ -26,15 +27,11 @@ page 90000 "Page Example"
                 field("Name 2"; Rec."Name 2")
                 {
                     ApplicationArea = All;
-                    Importance = Additional;
-                    Visible = false;
                 }
                 field("Search Name"; Rec."Search Name")
                 {
                     ApplicationArea = All;
-                    Importance = Additional;
                 }
-                //Copiar a objeto
             }
         }
     }

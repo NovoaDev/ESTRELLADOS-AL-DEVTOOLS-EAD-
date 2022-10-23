@@ -1,15 +1,16 @@
 table 50000 "Master Example"
 {
+    Access = Internal;
     fields
     {
         field(1; "Code"; Code[20])
         {
-            Caption = 'Code', Comment = 'Codigo';
+            Caption = 'Code', Comment = 'ESP="Codigo"';
         }
         //Copiar a objeto
         field(2; "Salesperson Code"; Code[20])
         {
-            Caption = 'Salesperson Code', Comment = 'Código vendedor';
+            Caption = 'Salesperson Code', Comment = 'ESP="Código vendedor"';
             TableRelation = "Salesperson/Purchaser";
 
             trigger OnValidate()
