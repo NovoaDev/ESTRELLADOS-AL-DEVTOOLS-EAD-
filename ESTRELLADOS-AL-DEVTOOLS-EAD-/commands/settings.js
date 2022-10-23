@@ -100,7 +100,7 @@ function buildRulesetJson() {
 			{
 				"id": "LC0009",
             	"action": "None",
-            	"justification": "Justification"
+            	"justification": "Activate cyclomatic complexity, initial value deactivated to activate with extension"
 			},
 			{
 				"id": "AA0205",
