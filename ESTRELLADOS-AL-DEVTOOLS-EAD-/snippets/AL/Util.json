@@ -489,5 +489,23 @@
 			"    end;\r",
 			"}"
 		]
+	},
+	"tutil ejemplo dialog": {
+		"prefix": "tutil ejemplo dialog (EAD)",
+		"description": "Ejemplo dialog (EAD)",
+		"body": [
+			"    local procedure DialogExample()\r",
+			"    var\r",
+			"        AuxDialog: Dialog;\r",
+			"        RecIterator: Integer;\r",
+			"        TotalRec: Integer;\r",
+			"        LoadingMsg: Label 'Processing records...\\#1###### of #2######', comment = 'ESP=\"Procesando registros...\\#1###### de #2######\"';\r",
+			"    begin\r",
+			"        AuxDialog.Open(LoadingMsg);\r",
+			"        AuxDialog.Update(2, Format(TotalRec));\r",
+			"        AuxDialog.Update(1, Format(RecIterator));\r",
+			"        AuxDialog.Close();\r",
+			"    end;"
+		]		
 	}
 }
