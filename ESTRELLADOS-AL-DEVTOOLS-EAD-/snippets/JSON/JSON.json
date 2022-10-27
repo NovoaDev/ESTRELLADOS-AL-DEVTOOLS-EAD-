@@ -42,5 +42,23 @@
 			"    \"CRS.RenameWithGit\": true"
 		],
 		"description": "Crear nombres objetos (EAD)"
+	},
+	"tjsonactivarreglacomplejidadciclomatica": {
+		"prefix": "tjson activar regla complejidad ciclomatica (EAD)",
+		"description": "Activar regla complejidad ciclomatica (EAD)",
+		"body": [
+			"{\r",
+			"    \"id\": \"LC0009\",\r",
+			"    \"action\": \"info\",\r",
+			"    \"justification\": \"Activate Cyclomatic Complexity Calculation\"\r",
+			"}"
+		]
+	},
+	"tjsonactivarlintercop": {
+		"prefix": "tjson activar lintercop (EAD)",
+		"description": "Activar lintercop (EAD)",
+		"body": [
+			"\"${analyzerFolder}BusinessCentral.LinterCop.dll\""
+		]
 	}
 }
