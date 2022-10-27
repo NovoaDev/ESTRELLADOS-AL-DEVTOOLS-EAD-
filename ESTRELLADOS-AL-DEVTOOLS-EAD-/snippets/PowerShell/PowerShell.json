@@ -48,5 +48,12 @@
 			"// <note from=\"D(.*?)>ESP=\"(.*?)\"(.*?)\"|PSE=|PES=|SEP=|SPE=|EPS=|ESP =|ESP= |ESP\"|'|\\*|`|´| ESP=(.*?)</note>"
 		],
 		"description": "Expresion regular para encontrar fallos traduciones (EAD)"
+	},
+	"tpowershell mostrar licencia BC": {
+		"prefix": "tpowershell Mostrar licencia BC (EAD)",
+		"description": "Mostrar licencia BC (EAD)",
+		"body": [
+			"Export-NAVServerLicenseInformation -ServerInstance ${1:Instance}"
+		]
 	}
 }
