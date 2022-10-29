@@ -1,0 +1,9 @@
+{
+    "containerName":  "ContainerName",
+    "licenseFile":  "C:\\License\\Dev.flf",
+    "auth": "NavUserPassword",
+    "userName":  "User",
+    "password":  "Password123",
+    "type": "onPrem",
+    "onPremVersion": 21.0
+}

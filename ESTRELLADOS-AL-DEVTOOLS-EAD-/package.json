@@ -21,7 +21,8 @@
         "onCommand:extension.designpatterns",
         "onCommand:extension.disasterpatterns",
         "onCommand:extension.settings",
-        "onCommand:extension.gitignore"
+        "onCommand:extension.gitignore",
+        "onCommand:extension.devenvs"
     ],
     "main": "./extension",
     "contributes": {
@@ -45,6 +46,10 @@
             {
                 "command": "extension.gitignore",
                 "title": "Generar .gitignore (EAD)"
+            },
+            {
+                "command": "extension.devenvs",
+                "title": "Generar script para crear entorno de desarrollo (EAD)"
             }
         ],
         "snippets": [

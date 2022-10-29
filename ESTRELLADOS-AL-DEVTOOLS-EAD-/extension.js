@@ -4,6 +4,7 @@ var gitignores = require('./commands/gitignore')
 var patternss = require('./commands/patterns')
 var designpatternss = require('./commands/designpatterns')
 var disasterpatternss = require('./commands/disasterpatterns')
+var devenvss = require('./commands/devenvs')
 
 function activate(context) {
 	var setting = vscode.commands.registerCommand('extension.settings', function () {
@@ -21,12 +22,16 @@ function activate(context) {
 	var disasterpatterns = vscode.commands.registerCommand('extension.disasterpatterns', function () {
 		disasterpatternss.run()
 	})
+	var devenvs = vscode.commands.registerCommand('extension.devenvs', function () {
+		devenvss.run()
+	})
 	context.subscriptions.push(translation)
 	context.subscriptions.push(setting)
 	context.subscriptions.push(gitignore)
 	context.subscriptions.push(patterns)
 	context.subscriptions.push(designpatterns)
 	context.subscriptions.push(disasterpatterns)
+	context.subscriptions.push(devenvs)
 }
 
 exports.activate = activate;
