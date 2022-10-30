@@ -55,5 +55,34 @@
 		"body": [
 			"Export-NAVServerLicenseInformation -ServerInstance ${1:Instance}"
 		]
+	},
+	"tpowershell parsear settings.json": {
+		"prefix": "tpowershell parsear settings.json (EAD)",
+		"description": "Parsear settings.json (EAD)",
+		"body": [
+			"# Create environment using the same data as always.\r",
+			"$FileSettings = \".\\settings.json\"\r",
+			"$SettingsJson = Get-Content $FileSettings -Raw -Encoding UTF8 | ConvertFrom-Json\r",
+			"\r",
+			"# Container\r",
+			"$ContainerName = $SettingsJson.containerName\r",
+			"$LicenseFile = $SettingsJson.licenseFile\r",
+			"\r",
+			"# User\r",
+			"$Auth = $SettingsJson.auth\r",
+			"$UserName = $SettingsJson.userName\r",
+			"$Password = ConvertTo-SecureString $SettingsJson.password -AsPlainText -Force\r",
+			"$Credential = New-Object System.Management.Automation.PSCredential ($UserName, $Password)"
+		]
+	},
+	"tpowershell lanzar script": {
+		"prefix": "tpowershell lanzar script (EAD)",
+		"description": "Lanzar script (EAD)",
+		"body": [
+			"$scriptPath = $ArtifactFolder + '.\\..\\.AL-GO\\localDevEnv.ps1'\r",
+			"$params = '-containerName $ContainerName -auth $Auth -credential $Credential -licenseFileUrl $LicenseFile'\r",
+			"\r",
+			"Invoke-Expression \"$scriptPath $params\""
+		]
 	}
 }

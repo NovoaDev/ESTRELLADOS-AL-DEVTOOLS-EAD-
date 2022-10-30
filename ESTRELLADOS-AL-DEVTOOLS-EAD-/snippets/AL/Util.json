@@ -507,5 +507,41 @@
 			"        AuxDialog.Close();\r",
 			"    end;"
 		]		
+	},
+	"tutil export to excel": {
+		"prefix": "tutil export to excel (EAD)",
+		"description": "Export to excel (EAD)",
+		"body": [
+			"    action(ExportToExcel)\r",
+			"    {\r",
+			"        ApplicationArea = All;\r",
+			"        Caption = 'Export To Excel', comment = 'ESP=\"Exportar a Excel\"';\r",
+			"        Image = Excel;\r",
+			"        Promoted = true;\r",
+			"        PromotedCategory = Process;\r",
+			"        PromotedIsBig = true;\r",
+			"        PromotedOnly = true;\r",
+			"        ToolTip = 'Action to open Export To Excel', comment = 'ESP=\"Accion para Regenerar pesadas\"';\r",
+			"\r",
+			"        trigger OnAction()\r",
+			"        var\r",
+			"            JokerRecordRef: RecordRef;\r",
+			"        begin\r",
+			"            JokerRecordRef.GetTable(Rec);\r",
+			"            RecordRefToExcel(JokerRecordRef, Report::\"Add Contacts\", 'Filename.xlsx');\r",
+			"        end;\r",
+			"    }\r",
+			"    local procedure RecordRefToExcel(ToReportRecordRef: RecordRef; ReportId: Integer; ToFileName: Text)\r",
+			"    var\r",
+			"        TempBlob: Codeunit \"Temp Blob\";\r",
+			"        AuxInStream: InStream;\r",
+			"        AuxOutStream: OutStream;\r",
+			"    begin\r",
+			"        TempBlob.CreateOutStream(AuxOutStream);\r",
+			"        Report.SaveAs(ReportId, '', ReportFormat::Excel, AuxOutStream, ToReportRecordRef);\r",
+			"        TempBlob.CreateInStream(AuxInStream);\r",
+			"        DownloadFromStream(AuxInStream, 'Export', '', 'All Files (*.*)|*.*', ToFileName);\r",
+			"    end;"
+		]
 	}
 }
