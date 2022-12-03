@@ -15,10 +15,14 @@ function run() {
                 src += "Setup\\"  
                 dsc += "Setup/"
                 break;
-            case 'Supplemental And Subsidiary':
+            case 'Supplemental':
                 src += "Supplemental\\"  
                 dsc += "Supplemental/"
 		        break;
+            case 'Subsidiary':
+                    src += "Subsidiary\\"  
+                    dsc += "Subsidiary/"
+                    break;
             case 'Compound':
                 src += "Compound\\"  
                 dsc += "Compound/"

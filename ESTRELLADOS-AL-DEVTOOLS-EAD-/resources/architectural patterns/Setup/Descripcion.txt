@@ -1,11 +1,12 @@
-En ingeniería de software , el patrón singleton es un patrón de diseño de software que restringe la instanciación de una clase a una instancia "única". 
-Esto es útil cuando se necesita exactamente un objeto para coordinar acciones en todo el sistema. El término proviene del concepto matemático de singleton.
+Tablas que solo contienen un registro. 
 
-Lo usaremos para crear las tablas de configuración como el "estándar". consta de una tabla con un campo clave primaria de tipo code[10] el cual se rellenara en blanco,
+Tiene un campo llamado "Primary Key" de tipo code[10] el cual se rellenara en blanco.
 Una página que no permite insertar ni eliminar registros, en su onOpenPage intentara obtener el registro, en caso contrario lo creara.
 
 Mas cosas la tabla cuenta con un método GetRecord el cual controlara mediante un booleano que se obtengan datos una sola vez sobre esa instancia de esa forma podremos usar ese método
 en varios sitios de una C/U por ejemplo y asegurarnos que siempre tendrá el registro y no hacer consultas innecesarias a la db.
+
+Se puede controlar en un CU de instalación que automáticamente cuando instales la extensión inserte el registro en blanco.
 
 Ejemplos:
 79 - Company Information

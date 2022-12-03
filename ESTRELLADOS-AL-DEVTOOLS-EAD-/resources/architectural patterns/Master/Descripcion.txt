@@ -1,3 +1,10 @@
-El patron Maestro estan diseñados para tratar con personas y cosas,
-las personas pueden ser cliente, proveedores o empleados y las cosas
-pueden ser cuentas de mayor, activos fijos etc.
+Tabla independiente. 
+
+Por lo general las tablas maestras no están relacionadas con otras tablas, aunque muchas tablas si se relacionan con las maestras.
+La clave principal es un Code[20] llamado "No.".
+El valor de este campo se asigna automáticamente a través de números de serie.
+
+Ejemplos:
+18 - Customer
+23 - Vendor
+27 - Item

@@ -1,0 +1,9 @@
+Tablas que almacenan información adicional sobre un registro de una tabla maestra o una tabla suplementaria. 
+
+La clave primaria son los campos de la clave de la tabla maestra o suplementaria mas un campo entero para identificar el número de línea.
+Normalmente se accede a la lista de esta tabla en una acción desde la pagina que usa el maestro o la suplementaria relacionada.
+No se muestran los campos de la clave en la pagina y se usa la propiedad AutoSplitKey.
+
+Ejemplos:
+99 - Item Vendor
+5203 - Employee Qualification

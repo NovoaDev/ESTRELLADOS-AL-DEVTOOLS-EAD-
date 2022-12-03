@@ -13,7 +13,6 @@ page 90000 "Compound List"
         {
             repeater(Control1)
             {
-                ShowCaption = false;
                 field("Code 1"; Rec."Code 1")
                 {
                     ApplicationArea = All;

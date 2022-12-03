@@ -1,9 +1,10 @@
-page 90000 "Supplemental Page"
+page 90000 "Subsidiary Page"
 {
     ApplicationArea = All;
-    Caption = 'Supplemental Page', Comment = 'ESP="Pagina suplementaria"';
+    Caption = 'Subsidiary Page', Comment = 'ESP="Pagina Subsidiaria"';
     PageType = List;
-    SourceTable = "Supplemental Table";
+    SourceTable = "Subsidiary Table";
+    AutoSplitKey = true;
     UsageCategory = Lists;
 
     layout
@@ -12,11 +13,7 @@ page 90000 "Supplemental Page"
         {
             repeater(Control1)
             {
-                field(Code; Rec.Code)
-                {
-                    ApplicationArea = All;
-                }
-                field("Supplemental No."; Rec."Supplemental No.")
+                field("Subsidiary No."; Rec."Subsidiary No.")
                 {
                     ApplicationArea = All;
                 }

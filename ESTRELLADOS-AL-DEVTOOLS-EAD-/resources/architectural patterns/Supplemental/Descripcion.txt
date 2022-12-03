@@ -1,10 +1,7 @@
-El patrón complementaria y subsidiaria tiene un solo campo Clave principal que se denomina típicamente 
-Código, tiene el código de tipo de datos y una longitud de 10 caracteres. 
+Tabla independiente. Es como una tabla maestra pero sin asignar automáticamente la clave y para tipo de información menos importante
 
-Normalmente los usuarios normales solo acceso de lectura a esas tablas.  La referencia a esta entidad
-se puede agregar como valor a la clave primaria.
-
-Se utiliza en campos con relacionen a esta tabla de configuración que tiene más de un valor.
+Por lo general no están relacionadas con otras tablas, aunque muchas tablas si se relacionan con las complementarias.
+La clave principal es un Code[10] llamado "No.".
 
 Ejemplos:
 3 - The Payment Terms

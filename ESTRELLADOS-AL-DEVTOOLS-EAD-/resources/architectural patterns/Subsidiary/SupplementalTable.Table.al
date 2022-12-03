@@ -1,7 +1,7 @@
-table 90000 "Supplemental Table"
+table 90000 "Subsidiary Table"
 {
-    Caption = 'Supplemental Table', Comment = 'ESP="Tabla suplementaria"';
-    LookupPageId = "Supplemental Page";
+    Caption = 'Subsidiary Table', Comment = 'ESP="Tabla Subsidiaria"';
+    LookupPageId = "Subsidiary Page";
     Access = Internal;
 
     fields
@@ -11,11 +11,15 @@ table 90000 "Supplemental Table"
             Caption = 'Code', Comment = 'ESP="Código"';
             NotBlank = true;
         }
-        field(2; "Supplemental No."; Text[100])
+        field(2; "Line No."; Integer)
         {
-            Caption = 'Supplemental No.', Comment = 'ESP="Nº campo suplementario"';
+            Caption = 'Line No.', Comment = 'ESP="Línea"';
         }
-        field(3; Blocked; Boolean)
+        field(3; "Subsidiary No."; Text[100])
+        {
+            Caption = 'Subsidiary No.', Comment = 'ESP="Nº campo Subsidiaria"';
+        }
+        field(4; Blocked; Boolean)
         {
             Caption = 'Blocked', Comment = 'ESP="Bloqueado"';
         }
