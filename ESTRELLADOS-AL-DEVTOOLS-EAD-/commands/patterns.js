@@ -63,7 +63,8 @@ function choosePattern() {
 	return new Promise((resolve) => {
 		vscode.window.showQuickPick([
 			createItem("Singleton", "Tabla de configuración"),
-            createItem("Supplemental And Subsidiary", "Tabla Suplementaria/Auxiliar/Subsidiaria"),
+            createItem("Supplemental", "Tabla Suplementaria"),
+            createItem("Subsidiary", "Tabla Subsidiaria"),
 			createItem("Compound", "Tabla configuración compuesta"),
             createItem("Rule", "Tabla configuración reglas"),
             createItem("Master", "Tabla maestra"),
