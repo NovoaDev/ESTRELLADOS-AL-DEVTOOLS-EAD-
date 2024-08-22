@@ -243,5 +243,52 @@
 			""
 		],
 		"description": "Test APIs DOCKER BC Aut basica (EAD)"
-	}
+	},
+	"ttestunboundactions": {
+        "prefix": "Test Unbound Action SAAS (EAD)",
+        "body": [
+            "@TenantId = ${1:1111111-1111-1111-1111-111111111111} \r",
+            "@AppId = ${2:1111111-1111-1111-1111-111111111111}\r",
+            "@Secret = ${3:1111111-1111-1111-1111-111111111111}\r",
+            "\r",
+            "# @name AuthResponse\r",
+            "POST https://login.microsoftonline.com/{{TenantId}}/oauth2/v2.0/token\r",
+            "Content-type: application/x-www-form-urlencoded\r",
+            "\r",
+            "grant_type=client_credentials\r",
+            "&client_id={{AppId}}\r",
+            "&client_secret={{Secret}}\r",
+            "&scope=https://api.businesscentral.dynamics.com/.default\r",
+            "\r",
+            "#### Token\r",
+            "@AuthHeader = Bearer {{AuthResponse.response.body.$.access_token}}\r",
+            "### \r",
+            "\r",
+            "@Environment = Production\r",
+            "### Metadata ODataV4 ###\r",
+            "GET https://api.businesscentral.dynamics.com/v2.0/{{TenantId}}/{{Environment}}/ODataV4/$metadata\r",
+            "Authorization: {{AuthHeader}}\r",
+            "###\r",
+            "\r",
+            "### Companies ###\r",
+            "GET https://api.businesscentral.dynamics.com/v2.0/{{TenantId}}/{{Environment}}/api/v2.0/companies\r",
+            "Authorization: {{AuthHeader}}\r",
+            "###\r",
+            "\r",
+            "@Entity = ${4:EntityName}\r",
+            "@Action = ${5:ActionName}\r",
+            "@Company = ${6:1111111-1111-1111-1111-111111111111}\r",
+            "### getsystemidfromfields ###\r",
+            "POST https://api.businesscentral.dynamics.com/v2.0/{{TenantId}}/{{Environment}}/ODataV4/{{Entity}}_{{Action}}?company={{Company}}\r",
+            "content-type: application/json\r",
+            "Authorization: {{AuthHeader}}\r",
+            "\r",
+            "{\r",
+            "    \"EntryNo\": 1,\r",
+            "    \"Status\": \"Ok\", \r",
+            "    \"Error\": \"Texto de error\"\r",
+            "}"
+        ],
+		"description": "Test Unbound Action SAAS (EAD)"
+    }
 }
